@@ -21,5 +21,26 @@ def square(x):
 
 if __name__ == '__main__':
     # print(square(3) + square(4) == square(5))
-    calc.Calculator.uniClassification(51)
-    doc = parse_docstring(calc.Calculator.uniClassification.__doc__)
+    # calc.Calculator.uniClassification(51)
+    # doc = parse_docstring(calc.Calculator.uniClassification.__doc__)
+    import configparser
+    import os
+
+    config = configparser.ConfigParser()
+    config.read('./mockapp/input.ini')
+    os.chdir('./mockapp/')
+    sections = config.sections()
+    print(f'Sections: {sections}')
+    for section in sections:
+
+        if config.has_section(section):
+            print(f'Config file has section {section}')
+
+        section1 = dict(config[section])
+    import yaml
+
+    with open("./config.yml", 'r') as stream:
+        try:
+            yml = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
