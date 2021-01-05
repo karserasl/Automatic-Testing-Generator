@@ -43,7 +43,7 @@ def cmp_item(lhs, rhs):
     return -1 if lhs.weights < rhs.weights else 1
 
 
-class AllPairs:
+class Pairwise:
     def __init__(self, parameters, filter_func=lambda x: True, previously_tested=None, n=2):
         """
         TODO: check that input arrays are:

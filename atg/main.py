@@ -5,21 +5,7 @@ import random
 import yaml
 import inspect
 import os
-
-
-def getEqPartitions(x):
-    result = []
-    for part in x.split(','):
-        if '-' in part:
-            a, b = part.split('-')
-            a, b = int(a), int(b)
-            result.append(random.choice(range(a, b + 1)))
-        else:
-            a = int(part)
-            result.append(a)
-
-    return result
-
+from techniques.partitioning import createPartitions
 
 parsed_pairs = {}
 
@@ -49,23 +35,27 @@ class ATG:
         self.logger.info('Initialized ATG')
 
     def _getConfiguration(self):
-        with open(self._config_file, 'r') as stream:
+        with open(self._config_file, 'r') as s:
             try:
-                return yaml.safe_load(stream)
-            except yaml.YAMLError as exc:
-                print(exc)
+                return yaml.safe_load(s)
+            except yaml.YAMLError as e:
+                print(e)
 
-    def _getModule(self):
+    def _getModule(self, mod):
         from pathlib import Path
         path_to_dir = (Path(__file__).parent / self._config_file).resolve().parent
-        modulename = (path_to_dir / self._config['test_config']['file_path']).resolve()
-        return modulename
+        module_name = (path_to_dir / self._config[mod]['file_path']).resolve()
+        return module_name
 
     def run(self):
-        module = self._getModule()
-        # TODO: Apply BlackBox techniques. Seperate file
-        # TODO: Get the return and push it to test generator
-        pass
+        for mod in self._config.keys():
+            module = self._getModule(mod)
+            partitions = createPartitions(self._config[mod]['partitions'], self._config[mod]['invalid_choices'])
+            # TODO: Apply BlackBox techniques. Seperate file
+            # TODO: Get the return and push it to test generator
+            return module, partitions
+
 
 if __name__ == '__main__':
     atg = ATG("../mockapp/config.yml")
+    # parseCode(atg.run())

@@ -1,7 +1,10 @@
-test_config:
+Calculator:
     file_path: ./calculator.py
     class: Calculator
     function: uniClassification
     variables: { 'a': int }
-    partitions: { 0-39: 'Failed', 40-100: 'Pass' }
-    errors: 'Wrong grade.'
+    partitions: { 0-39: 'Failed',40-49: 'Pass', 50-59: '2-2', 60-69: '2-1', 70-100: 'First' }
+    invalid_choices:
+
+        errors: 'Wrong grade.'
+Class:
