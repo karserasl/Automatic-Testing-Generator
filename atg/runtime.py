@@ -1,5 +1,3 @@
-# @Author: Lampros.Karseras
-# @Date:   01/12/2020 12:36
 from collections import defaultdict
 import sys
 
@@ -19,6 +17,7 @@ class Function(object):
     def handle_return(self, code, args, value):
         callArgs = self.work.pop()
         self.calls[repr(callArgs)].append((callArgs, value))
+        print('HEY %s' % self.calls)
 
     def add_mock(self, code, function):
         self.mocks.append((code, function))

@@ -1,8 +1,15 @@
+from __future__ import absolute_import
+
+import sys
 from collections import OrderedDict, namedtuple
 from functools import cmp_to_key, reduce
 from itertools import combinations
+from atg.tools.pairs_storage import PairsStorage, key
 
-from .pairs_storage import PairsStorage, key
+TECH_ID = 'pairwise'
+
+MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
+PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
 
 
 class Item:

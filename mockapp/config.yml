@@ -1,10 +1,27 @@
+file_path: ./calculator.py
 Calculator:
-    file_path: ./calculator.py
-    class: Calculator
-    function: uniClassification
-    variables: { 'a': int }
-    partitions: { 0-39: 'Failed',40-49: 'Pass', 50-59: '2-2', 60-69: '2-1', 70-100: 'First' }
-    invalid_choices:
-
-        errors: 'Wrong grade.'
-Class:
+    uniClassification:
+        a:
+            partitions: { 0-39: 'Failed',40-49: 'Pass', 50-59: '2-2', 60-69: '2-1', 70-100: 'First' }
+            invalid_choices:
+                errors: 'Wrong grade.'
+        b:
+            partitions: { 0-39: 'Failed',40-49: 'Pass', 50-59: '2-2', 60-69: '2-1', 70-100: 'First' }
+            invalid_choices:
+                errors: 'Wrong grade.'
+#    add:
+#        a:
+#            type: int
+#            value: 10
+#        b:
+#            type: int
+#            value: 15
+#
+#        result: 25
+#
+#    pairwiseTest:
+#        variables: { 'a': int, 'b': str }
+#        combinations: { "a": [ "Brand 1", "Brand 2" ], "b": [ "b_test1", "b_test2", "b_test3" ], "c": [ 'c_test1', 'c_test2' ] }
+#Class:
+#test:
+#    pass

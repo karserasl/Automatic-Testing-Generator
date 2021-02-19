@@ -1,6 +1,12 @@
 # @Author: Lampros.Karseras
 # @Date:   04/01/2021 20:44
 import random
+import sys
+
+TECH_ID = 'partitioning'
+
+MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
+PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
 
 
 def getEqPartitions(partitions: dict) -> dict:
@@ -36,7 +42,7 @@ def getBoundaries(partitions: dict, inv_choices: dict) -> dict:
     return result
 
 
-def createPartitions(partitions: dict, inv_choices: dict) -> dict:
+def run(partitions: dict, inv_choices: dict) -> dict:
     return {
         'EqP': getEqPartitions(partitions),
 
