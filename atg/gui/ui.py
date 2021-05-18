@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import datetime
-# from atg.techniques.pairwise import Pairwise
+# from techniques.pairwise import Pairwise
 from allpairspy import AllPairs as Pairwise
 
 from PyQt5.QtWidgets import QTableWidgetItem

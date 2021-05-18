@@ -5,7 +5,7 @@ from collections import OrderedDict, namedtuple
 from functools import cmp_to_key, reduce
 from itertools import combinations
 
-from atg.tools.pairs_storage import PairsStorage, key
+from tools.pairs_storage import PairsStorage, key
 
 TECH_ID = 'pairwise'
 

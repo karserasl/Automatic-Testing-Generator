@@ -4,13 +4,12 @@ from __future__ import print_function
 import inspect
 import os
 import sys
-import traceback
 
 from collections import defaultdict
 
-from atg import runtime
-from atg.generator.default_generator import DefaultGenerator
-from atg.generator.generator import get_module_name
+import core.runtime
+from generator.default_generator import DefaultGenerator
+from generator.generator import get_module_name
 
 
 class magic(object):

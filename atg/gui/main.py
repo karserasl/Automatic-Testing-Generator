@@ -1,30 +1,13 @@
+# IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-#
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
-# ///////////////////////////////////////////////////////////////
-import ast
-import inspect
 import sys
 import platform
 
-# IMPORT / GUI AND MODULES AND WIDGETS
-# ///////////////////////////////////////////////////////////////
-from PySide6 import QtGui, QtWidgets
+# from PySide6 import QtWidgets
 
-from modules import *
-from widgets import *
-from allpairspy import AllPairs
+from gui.modules import *
+from gui.widgets import *
+from core.core import check
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -68,44 +51,52 @@ class MainWindow(QMainWindow):
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
-
+        enable_right_button = False
+        enable_left_button = True
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
         widgets.btn_widgets.clicked.connect(self.buttonClick)
         widgets.btn_new.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
+        widgets.pushButton_5.clicked.connect(self.open_file_btn)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
 
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+        if enable_left_button:
+            widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
+            widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
 
-        def testFn():
-            sys.exit(app.exec_())
-
-        widgets.btn_exit.clicked.connect(testFn)
+            widgets.btn_exit.clicked.connect(QApplication.quit)
+        else:
+            widgets.toggleLeftBox.hide()
+            widgets.toggleLeftBox.setEnabled(False)
+            widgets.extraCloseColumnBtn.hide()
+            widgets.extraCloseColumnBtn.setEnabled(False)
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
-            UIFunctions.toggleRightBox(self, True)
+            UIFunctions.toggleRightBox(self, False)
 
-        widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
-
+        if enable_right_button:
+            widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
+        else:
+            widgets.settingsTopBtn.hide()
+            widgets.settingsTopBtn.setEnabled(False)
         # SHOW APP
         # ///////////////////////////////////////////////////////////////
         self.show()
 
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
-        useCustomTheme = True
-        themeFile = "themes\py_dracula_light.qss"
+        use_custom_theme = True
+        theme_file = "themes/py_dracula_light.qss"
 
         # SET THEME AND HACKS
-        if useCustomTheme:
+        if use_custom_theme:
             # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
+            UIFunctions.theme(self, theme_file, True)
 
             # SET HACKS
             AppFunctions.setThemeHack(self)
@@ -121,110 +112,63 @@ class MainWindow(QMainWindow):
     def buttonClick(self):
         # GET BUTTON CLICKED
         btn = self.sender()
-        btnName = btn.objectName()
+        btn_name = btn.objectName()
 
         # SHOW HOME PAGE
-        if btnName == "btn_home":
+        if btn_name == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
-            UIFunctions.resetStyle(self, btnName)
+            UIFunctions.resetStyle(self, btn_name)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
-        if btnName == "btn_widgets":
+        if btn_name == "btn_widgets":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
-            UIFunctions.resetStyle(self, btnName)
+            UIFunctions.resetStyle(self, btn_name)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW NEW PAGE
-        if btnName == "btn_new":
+        if btn_name == "btn_new":
             widgets.stackedWidget.setCurrentWidget(widgets.new_page)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            UIFunctions.resetStyle(self, btn_name)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
-        def show_info(functionNode):
-            print("Function name:", functionNode.name)
-            print("Args:")
-            for arg in functionNode.args.args:
-                # import pdb; pdb.set_trace()
-                print("\tParameter name:", arg.arg)
+        if btn_name == "btn_save":
+            print('saved button pressed !')
+            pass
 
-        def is_static_method(klass, attr, value=None):
-            """Test if a value of a class is static method.
-
-            example::
-
-                class MyClass(object):
-                    @staticmethod
-                    def method():
-                        ...
-
-            :param klass: the class
-            :param attr: attribute name
-            :param value: attribute value
-            """
-            if value is None:
-                value = getattr(klass, attr)
-            assert getattr(klass, attr) == value
-
-            for cls in inspect.getmro(klass):
-                if inspect.isroutine(value):
-                    if attr in cls.__dict__:
-                        binded_value = cls.__dict__[attr]
-                        if isinstance(binded_value, staticmethod):
-                            return True
-            return False
-
-        classes = False
-        functions = False
-        if btnName == "btn_save":
-            name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
-            # file = open(name, 'r')
-            try:
-                with open(name[0]) as f:
-                    node = ast.parse(f.read())
-                functions = [n for n in node.body if isinstance(n, ast.FunctionDef)]
-                classes = [n for n in node.body if isinstance(n, ast.ClassDef)]
-            except Exception as e:
-                print(e)
-
-        if classes:
-            for i, cls in enumerate(classes):
-                clsName = cls.name
-                widgets.comboBox.setItemText(i,
-                                             QCoreApplication.translate("MainWindow", u"{}".format(f'{clsName} (Cls)'),
-                                                                        None))
-                methods = [n for n in cls.body if isinstance(n, ast.FunctionDef)]
-                for method in methods:
-                    # is_static_method(cls, method.name)
-                    show_info(method)
-        if functions:
-            classes = [n for n in node.body if isinstance(n, ast.ClassDef)]
-            for i, cls in enumerate(classes):
-                clsName = cls.name
-                widgets.comboBox.setItemText(i,
-                                             QCoreApplication.translate("MainWindow", u"{}".format(f'{clsName} (Cls)'),
-                                                                        None))
-                methods = [n for n in cls.body if isinstance(n, ast.FunctionDef)]
-                for method in methods:
-                    # is_static_method(cls, method.name)
-                    show_info(method)
-            for f in functions:
-                show_info(f)
         # PRINT BTN NAME
-        # print(f'Button "{btnName}" pressed!')
+        # print(f'Button "{btn_name}" pressed!')
 
-    parameters = [
-        ["Brand X", "Brand Y"],
-        ["98", "NT", "2000", "XP"],
-        ["Internal", "Modem"],
-        ["Salaried", "Hourly", "Part-Time", "Contr."],
-        [6, 10, 15, 30, 60],
-    ]
-    pairs = AllPairs(parameters)
+    # OPEN BUTTON
+    # ///////////////////////////////////////////////////////////////
+    def open_file_btn(self):
+        name = QFileDialog.getOpenFileName(self, 'Open File', filter="Python file (*.py)")
+        widgets.lineEdit_5.setText(name[0])
+        widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+        UIFunctions.resetStyle(self, "btn_widgets")
+        widgets.btn_widgets.setStyleSheet(UIFunctions.selectMenu(widgets.btn_widgets.styleSheet()))
+        data = check(name[0], widgets)
+        self.create_combo_box_items(data)
+        print(data)
 
-    numcols = len(pairs[0])  # ( to get number of columns, count number of values in first row( first row is data[0]))
+    def create_combo_box_items(self, data):
+        self.model = QStandardItemModel()
+        widgets.comboBox.setModel(self.model)
+        widgets.comboBox_2.setModel(self.model)
 
-    numrows = len(pairs)
+        for k, v in data.items():
+            cls = QStandardItem(k)
+            self.model.appendRow(cls)
+            for value in v:
+                func = QStandardItem(value)
+                cls.appendRow(func)
+        widgets.comboBox_2.currentIndexChanged.connect(self.update_combo_box)
+        self.update_combo_box(0)
+
+    def update_combo_box(self, index):
+        ind = self.model.index(index, 0, widgets.comboBox_2.rootModelIndex())
+        widgets.comboBox.setRootModelIndex(ind)
+        widgets.comboBox.setCurrentIndex(0)
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
@@ -245,7 +189,7 @@ class MainWindow(QMainWindow):
     #         print('Mouse click: RIGHT CLICK')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()

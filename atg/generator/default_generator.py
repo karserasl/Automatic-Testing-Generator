@@ -6,9 +6,9 @@ import sys
 import traceback
 import types
 
-from atg.generator.generator import Generator
-from atg.generator.generator import get_module_name
-from atg import runtime
+from generator.generator import Generator
+from generator.generator import get_module_name
+from core import runtime
 
 
 def indent(n):

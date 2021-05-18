@@ -7,5 +7,5 @@ extra_imports = [
     ('random', 'random'),
 ]
 
-with atg.magic(test_subjects, extra_imports=extra_imports, verbose=True):
+with magic(test_subjects, extra_imports=extra_imports, verbose=True):
     foo.main()

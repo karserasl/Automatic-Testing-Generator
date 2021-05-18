@@ -2,7 +2,7 @@
 # @Date:   16/11/2020 10:47
 import mockapp.calculator as calc
 # from docstring_parser import parse
-from atg.parse_docstrings import parse_docstring
+from parse_docstrings import parse_docstring
 
 
 def generate_testcase(func):
@@ -119,10 +119,10 @@ if __name__ == '__main__':
     #         yml = yaml.safe_load(stream)
     #     except yaml.YAMLError as exc:
     #         print(exc)
-    # from atg.main import ATG
+    # from main import ATG
     #
     # atg = ATG("./mockapp/config.yml").run()
-    # parseCode(atg.run())
+    # parseCode(run())
     # test_equivalence_partition()
 
     # import yaml
@@ -131,7 +131,7 @@ if __name__ == '__main__':
     #         a = yaml.safe_load(conf)
     #     except yaml.YAMLError as e:
     #         print(e)
-    import atg.loader as l
+    import loader as l
 
     iouts = []
     for i in range(100):

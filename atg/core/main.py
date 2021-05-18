@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from atg.core import dump
+from core import dump
 
 
 # parsed_pairs = {}
@@ -69,5 +69,5 @@ def main():
 
 
 if __name__ == '__main__':
-    os.chdir('../mockapp')
+    os.chdir('../../mockapp')
     main()

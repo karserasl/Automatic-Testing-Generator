@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <author>Wanderson M. Pimenta</author>
+    <author>Lampros Karseras</author>
     <class>MainWindow</class>
     <widget class="QMainWindow" name="MainWindow">
         <property name="geometry">
@@ -689,7 +689,7 @@
                                                         </font>
                                                     </property>
                                                     <property name="text">
-                                                        <string>PyDracula</string>
+                                                        <string>ATG</string>
                                                     </property>
                                                     <property name="alignment">
                                                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -719,7 +719,7 @@
                                                         </font>
                                                     </property>
                                                     <property name="text">
-                                                        <string>Modern GUI / Flat Style</string>
+                                                        <string>For Developers</string>
                                                     </property>
                                                     <property name="alignment">
                                                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -920,7 +920,7 @@
                                                                         </property>
                                                                         <property name="styleSheet">
                                                                             <string notr="true">background-image:
-                                                                                url(:/icons/images/icons/cil-gamepad.png);
+                                                                                url(:/icons/images/icons/cil-layers.png);
                                                                             </string>
                                                                         </property>
                                                                         <property name="text">
@@ -1377,46 +1377,6 @@
                                                                     </widget>
                                                                 </item>
                                                                 <item>
-                                                                    <widget class="QPushButton" name="btn_adjustments">
-                                                                        <property name="sizePolicy">
-                                                                            <sizepolicy hsizetype="Expanding"
-                                                                                        vsizetype="Fixed">
-                                                                                <horstretch>0</horstretch>
-                                                                                <verstretch>0</verstretch>
-                                                                            </sizepolicy>
-                                                                        </property>
-                                                                        <property name="minimumSize">
-                                                                            <size>
-                                                                                <width>0</width>
-                                                                                <height>45</height>
-                                                                            </size>
-                                                                        </property>
-                                                                        <property name="font">
-                                                                            <font>
-                                                                                <family>Segoe UI</family>
-                                                                                <pointsize>10</pointsize>
-                                                                                <italic>false</italic>
-                                                                                <bold>false</bold>
-                                                                            </font>
-                                                                        </property>
-                                                                        <property name="cursor">
-                                                                            <cursorShape>PointingHandCursor
-                                                                            </cursorShape>
-                                                                        </property>
-                                                                        <property name="layoutDirection">
-                                                                            <enum>Qt::LeftToRight</enum>
-                                                                        </property>
-                                                                        <property name="styleSheet">
-                                                                            <string notr="true">background-image:
-                                                                                url(:/icons/images/icons/cil-equalizer.png);
-                                                                            </string>
-                                                                        </property>
-                                                                        <property name="text">
-                                                                            <string>Adjustments</string>
-                                                                        </property>
-                                                                    </widget>
-                                                                </item>
-                                                                <item>
                                                                     <widget class="QPushButton" name="btn_more">
                                                                         <property name="sizePolicy">
                                                                             <sizepolicy hsizetype="Expanding"
@@ -1448,11 +1408,11 @@
                                                                         </property>
                                                                         <property name="styleSheet">
                                                                             <string notr="true">background-image:
-                                                                                url(:/icons/images/icons/cil-layers.png);
+                                                                                url(:/icons/images/icons/cil-external-link.png);
                                                                             </string>
                                                                         </property>
                                                                         <property name="text">
-                                                                            <string>More</string>
+                                                                            <string>GitHub</string>
                                                                         </property>
                                                                     </widget>
                                                                 </item>
@@ -1504,16 +1464,15 @@
                                                                                 margin-left:0px; margin-right:0px;
                                                                                 -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
                                                                                 style=&quot; font-size:12pt;
-                                                                                font-weight:600; color:#ff79c6;&quot;&gt;PyDracula&lt;/span&gt;&lt;/p&gt;
+                                                                                font-weight:600; color:#ff79c6;&quot;&gt;ATG&lt;/span&gt;&lt;/p&gt;
                                                                                 &lt;p align=&quot;center&quot; style=&quot;
                                                                                 margin-top:12px; margin-bottom:12px;
                                                                                 margin-left:0px; margin-right:0px;
                                                                                 -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
-                                                                                style=&quot; color:#ffffff;&quot;&gt;An
-                                                                                interface created using Python and
-                                                                                PySide (support for PyQt), and with
-                                                                                colors based on the Dracula theme
-                                                                                created by Zeno Rocha.&lt;/span&gt;&lt;/p&gt;
+                                                                                style=&quot; color:#ffffff;&quot;&gt;A
+                                                                                module for automatic test cases
+                                                                                generation for Python, colors based on
+                                                                                the Dracula theme created by Zeno Rocha.&lt;/span&gt;&lt;/p&gt;
                                                                                 &lt;p align=&quot;center&quot; style=&quot;
                                                                                 margin-top:12px; margin-bottom:12px;
                                                                                 margin-left:0px; margin-right:0px;
@@ -1525,35 +1484,48 @@
                                                                                 margin-left:0px; margin-right:0px;
                                                                                 -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
                                                                                 style=&quot; color:#bd93f9;&quot;&gt;Created
-                                                                                by: Wanderson M. Pimenta&lt;/span&gt;&lt;/p&gt;
+                                                                                by: Lampros Karseras&lt;/span&gt;&lt;/p&gt;
                                                                                 &lt;p align=&quot;center&quot; style=&quot;
                                                                                 margin-top:12px; margin-bottom:12px;
                                                                                 margin-left:0px; margin-right:0px;
                                                                                 -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
                                                                                 style=&quot; font-size:12pt;
-                                                                                font-weight:600; color:#ff79c6;&quot;&gt;Convert
-                                                                                UI&lt;/span&gt;&lt;/p&gt;
+                                                                                font-weight:600; color:#ff79c6;&quot;&gt;Limitations&lt;/span&gt;&lt;/p&gt;
                                                                                 &lt;p align=&quot;center&quot; style=&quot;
                                                                                 margin-top:12px; margin-bottom:12px;
                                                                                 margin-left:0px; margin-right:0px;
                                                                                 -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
                                                                                 style=&quot; font-size:9pt;
-                                                                                color:#ffffff;&quot;&gt;pyside6-uic
-                                                                                main.ui &amp;gt; ui_main.py&lt;/span&gt;&lt;/p&gt;
+                                                                                color:#ffffff;&quot;&gt;Limited to just
+                                                                                Integers and Strings&lt;/span&gt;&lt;/p&gt;
+                                                                                &lt;p align=&quot;center&quot; style=&quot;
+                                                                                margin-top:12px; margin-bottom:12px;
+                                                                                margin-left:0px; margin-right:0px;
+                                                                                -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
+                                                                                style=&quot; font-size:9pt;
+                                                                                color:#ffffff;&quot;&gt;Single variable
+                                                                                for Boundary Value Analysis&lt;/span&gt;&lt;/p&gt;
                                                                                 &lt;p align=&quot;center&quot; style=&quot;
                                                                                 margin-top:12px; margin-bottom:12px;
                                                                                 margin-left:0px; margin-right:0px;
                                                                                 -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
                                                                                 style=&quot; font-size:12pt;
-                                                                                font-weight:600; color:#ff79c6;&quot;&gt;Convert
-                                                                                QRC&lt;/span&gt;&lt;/p&gt;
+                                                                                font-weight:600; color:#ff79c6;&quot;&gt;GUI
+                                                                                resources&lt;/span&gt;&lt;/p&gt;
                                                                                 &lt;p align=&quot;center&quot; style=&quot;
                                                                                 margin-top:12px; margin-bottom:12px;
                                                                                 margin-left:0px; margin-right:0px;
                                                                                 -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
                                                                                 style=&quot; font-size:9pt;
                                                                                 color:#ffffff;&quot;&gt;pyside6-rcc
-                                                                                resources.qrc -o resources_rc.py&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                                                                resources.qrc -o resources_rc.py&lt;/span&gt;&lt;/p&gt;
+                                                                                &lt;p align=&quot;center&quot; style=&quot;
+                                                                                margin-top:12px; margin-bottom:12px;
+                                                                                margin-left:0px; margin-right:0px;
+                                                                                -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span
+                                                                                style=&quot; font-size:9pt;
+                                                                                color:#ffffff;&quot;&gt;pyside6-uic
+                                                                                main.ui -o ui_main.py&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                             </string>
                                                                         </property>
                                                                     </widget>
@@ -1691,8 +1663,8 @@
                                                                             </font>
                                                                         </property>
                                                                         <property name="text">
-                                                                            <string>PyDracula APP - Theme with colors
-                                                                                based on Dracula for Python.
+                                                                            <string>ATG - Automatic Test Generator for
+                                                                                Python.
                                                                             </string>
                                                                         </property>
                                                                         <property name="alignment">
@@ -1993,48 +1965,14 @@
                                                                                         </string>
                                                                                     </property>
                                                                                     <property name="currentIndex">
-                                                                                        <number>2</number>
+                                                                                        <number>1</number>
                                                                                     </property>
                                                                                     <widget class="QWidget" name="home">
-                                                                                        <property name="styleSheet">
-                                                                                            <string notr="true">
-                                                                                                background-image:
-                                                                                                url(:/images/images/images/PyDracula_vertical.png);
-                                                                                                background-position:
-                                                                                                center;
-                                                                                                background-repeat:
-                                                                                                no-repeat;
-                                                                                            </string>
-                                                                                        </property>
-                                                                                    </widget>
-                                                                                    <widget class="QWidget"
-                                                                                            name="widgets">
-                                                                                        <property name="styleSheet">
-                                                                                            <string notr="true">b
-                                                                                            </string>
-                                                                                        </property>
                                                                                         <layout class="QVBoxLayout"
-                                                                                                name="verticalLayout">
-                                                                                            <property name="spacing">
-                                                                                                <number>10</number>
-                                                                                            </property>
-                                                                                            <property name="leftMargin">
-                                                                                                <number>10</number>
-                                                                                            </property>
-                                                                                            <property name="topMargin">
-                                                                                                <number>10</number>
-                                                                                            </property>
-                                                                                            <property
-                                                                                                    name="rightMargin">
-                                                                                                <number>10</number>
-                                                                                            </property>
-                                                                                            <property
-                                                                                                    name="bottomMargin">
-                                                                                                <number>10</number>
-                                                                                            </property>
+                                                                                                name="verticalLayout_40">
                                                                                             <item>
                                                                                                 <widget class="QFrame"
-                                                                                                        name="row_1">
+                                                                                                        name="row_4">
                                                                                                     <property
                                                                                                             name="frameShape">
                                                                                                         <enum>
@@ -2047,36 +1985,18 @@
                                                                                                             QFrame::Raised
                                                                                                         </enum>
                                                                                                     </property>
-                                                                                                    <layout class="QVBoxLayout"
-                                                                                                            name="verticalLayout_16">
-                                                                                                        <property
-                                                                                                                name="spacing">
-                                                                                                            <number>0
-                                                                                                            </number>
-                                                                                                        </property>
-                                                                                                        <property
-                                                                                                                name="leftMargin">
-                                                                                                            <number>0
-                                                                                                            </number>
-                                                                                                        </property>
-                                                                                                        <property
-                                                                                                                name="topMargin">
-                                                                                                            <number>0
-                                                                                                            </number>
-                                                                                                        </property>
-                                                                                                        <property
-                                                                                                                name="rightMargin">
-                                                                                                            <number>0
-                                                                                                            </number>
-                                                                                                        </property>
+                                                                                                    <layout class="QGridLayout"
+                                                                                                            name="gridLayout_3">
                                                                                                         <property
                                                                                                                 name="bottomMargin">
-                                                                                                            <number>0
+                                                                                                            <number>
+                                                                                                                150
                                                                                                             </number>
                                                                                                         </property>
-                                                                                                        <item>
+                                                                                                        <item row="1"
+                                                                                                              column="0">
                                                                                                             <widget class="QFrame"
-                                                                                                                    name="frame_div_content_1">
+                                                                                                                    name="frame_div_content_4">
                                                                                                                 <property
                                                                                                                         name="minimumSize">
                                                                                                                     <size>
@@ -2112,7 +2032,7 @@
                                                                                                                     </enum>
                                                                                                                 </property>
                                                                                                                 <layout class="QVBoxLayout"
-                                                                                                                        name="verticalLayout_17">
+                                                                                                                        name="verticalLayout_38">
                                                                                                                     <property
                                                                                                                             name="spacing">
                                                                                                                         <number>
@@ -2122,7 +2042,7 @@
                                                                                                                     <property
                                                                                                                             name="leftMargin">
                                                                                                                         <number>
-                                                                                                                            0
+                                                                                                                            50
                                                                                                                         </number>
                                                                                                                     </property>
                                                                                                                     <property
@@ -2134,7 +2054,7 @@
                                                                                                                     <property
                                                                                                                             name="rightMargin">
                                                                                                                         <number>
-                                                                                                                            0
+                                                                                                                            50
                                                                                                                         </number>
                                                                                                                     </property>
                                                                                                                     <property
@@ -2145,7 +2065,7 @@
                                                                                                                     </property>
                                                                                                                     <item>
                                                                                                                         <widget class="QFrame"
-                                                                                                                                name="frame_title_wid_1">
+                                                                                                                                name="frame_title_wid_5">
                                                                                                                             <property
                                                                                                                                     name="maximumSize">
                                                                                                                                 <size>
@@ -2170,10 +2090,10 @@
                                                                                                                                 </enum>
                                                                                                                             </property>
                                                                                                                             <layout class="QVBoxLayout"
-                                                                                                                                    name="verticalLayout_18">
+                                                                                                                                    name="verticalLayout_39">
                                                                                                                                 <item>
                                                                                                                                     <widget class="QLabel"
-                                                                                                                                            name="labelBoxBlenderInstalation">
+                                                                                                                                            name="labelBoxBlenderInstalation_5">
                                                                                                                                         <property
                                                                                                                                                 name="font">
                                                                                                                                             <font>
@@ -2199,8 +2119,10 @@
                                                                                                                                         <property
                                                                                                                                                 name="text">
                                                                                                                                             <string>
+                                                                                                                                                OPEN
+                                                                                                                                                A
+                                                                                                                                                PYTHON
                                                                                                                                                 FILE
-                                                                                                                                                BOX
                                                                                                                                             </string>
                                                                                                                                         </property>
                                                                                                                                     </widget>
@@ -2210,7 +2132,7 @@
                                                                                                                     </item>
                                                                                                                     <item>
                                                                                                                         <widget class="QFrame"
-                                                                                                                                name="frame_content_wid_1">
+                                                                                                                                name="frame_content_wid_5">
                                                                                                                             <property
                                                                                                                                     name="frameShape">
                                                                                                                                 <enum>
@@ -2224,10 +2146,12 @@
                                                                                                                                 </enum>
                                                                                                                             </property>
                                                                                                                             <layout class="QHBoxLayout"
-                                                                                                                                    name="horizontalLayout_9">
+                                                                                                                                    name="horizontalLayout_15">
                                                                                                                                 <item>
                                                                                                                                     <layout class="QGridLayout"
-                                                                                                                                            name="gridLayout">
+                                                                                                                                            name="gridLayout_6"
+                                                                                                                                            rowstretch="0,0"
+                                                                                                                                            columnstretch="0,0">
                                                                                                                                         <property
                                                                                                                                                 name="bottomMargin">
                                                                                                                                             <number>
@@ -2237,7 +2161,7 @@
                                                                                                                                         <item row="0"
                                                                                                                                               column="0">
                                                                                                                                             <widget class="QLineEdit"
-                                                                                                                                                    name="lineEdit">
+                                                                                                                                                    name="lineEdit_5">
                                                                                                                                                 <property
                                                                                                                                                         name="minimumSize">
                                                                                                                                                     <size>
@@ -2265,8 +2189,10 @@
                                                                                                                                                 <property
                                                                                                                                                         name="placeholderText">
                                                                                                                                                     <string>
-                                                                                                                                                        Type
-                                                                                                                                                        here
+                                                                                                                                                        Path
+                                                                                                                                                        to
+                                                                                                                                                        .py
+                                                                                                                                                        file
                                                                                                                                                     </string>
                                                                                                                                                 </property>
                                                                                                                                             </widget>
@@ -2274,7 +2200,7 @@
                                                                                                                                         <item row="0"
                                                                                                                                               column="1">
                                                                                                                                             <widget class="QPushButton"
-                                                                                                                                                    name="pushButton">
+                                                                                                                                                    name="pushButton_5">
                                                                                                                                                 <property
                                                                                                                                                         name="minimumSize">
                                                                                                                                                     <size>
@@ -2340,7 +2266,7 @@
                                                                                                                                               column="0"
                                                                                                                                               colspan="2">
                                                                                                                                             <widget class="QLabel"
-                                                                                                                                                    name="labelVersion_3">
+                                                                                                                                                    name="labelVersion_7">
                                                                                                                                                 <property
                                                                                                                                                         name="styleSheet">
                                                                                                                                                     <string notr="true">
@@ -2379,9 +2305,70 @@
                                                                                                                 </layout>
                                                                                                             </widget>
                                                                                                         </item>
+                                                                                                        <item row="0"
+                                                                                                              column="0">
+                                                                                                            <widget class="QLabel"
+                                                                                                                    name="label_2">
+                                                                                                                <property
+                                                                                                                        name="styleSheet">
+                                                                                                                    <string>
+                                                                                                                        0
+                                                                                                                    </string>
+                                                                                                                </property>
+                                                                                                                <property
+                                                                                                                        name="text">
+                                                                                                                    <string/>
+                                                                                                                </property>
+                                                                                                                <property
+                                                                                                                        name="pixmap">
+                                                                                                                    <pixmap resource="resources.qrc">
+                                                                                                                        :/images/images/images/Python-Logo-PNG.png
+                                                                                                                    </pixmap>
+                                                                                                                </property>
+                                                                                                                <property
+                                                                                                                        name="scaledContents">
+                                                                                                                    <bool>
+                                                                                                                        false
+                                                                                                                    </bool>
+                                                                                                                </property>
+                                                                                                                <property
+                                                                                                                        name="alignment">
+                                                                                                                    <set>
+                                                                                                                        Qt::AlignCenter
+                                                                                                                    </set>
+                                                                                                                </property>
+                                                                                                            </widget>
+                                                                                                        </item>
                                                                                                     </layout>
                                                                                                 </widget>
                                                                                             </item>
+                                                                                        </layout>
+                                                                                    </widget>
+                                                                                    <widget class="QWidget"
+                                                                                            name="widgets">
+                                                                                        <property name="styleSheet">
+                                                                                            <string notr="true">b
+                                                                                            </string>
+                                                                                        </property>
+                                                                                        <layout class="QVBoxLayout"
+                                                                                                name="verticalLayout">
+                                                                                            <property name="spacing">
+                                                                                                <number>10</number>
+                                                                                            </property>
+                                                                                            <property name="leftMargin">
+                                                                                                <number>10</number>
+                                                                                            </property>
+                                                                                            <property name="topMargin">
+                                                                                                <number>10</number>
+                                                                                            </property>
+                                                                                            <property
+                                                                                                    name="rightMargin">
+                                                                                                <number>10</number>
+                                                                                            </property>
+                                                                                            <property
+                                                                                                    name="bottomMargin">
+                                                                                                <number>10</number>
+                                                                                            </property>
                                                                                             <item>
                                                                                                 <widget class="QFrame"
                                                                                                         name="row_2">
@@ -2407,15 +2394,32 @@
                                                                                                             QFrame::Raised
                                                                                                         </enum>
                                                                                                     </property>
-                                                                                                    <layout class="QVBoxLayout"
-                                                                                                            name="verticalLayout_19">
+                                                                                                    <layout class="QHBoxLayout"
+                                                                                                            name="horizontalLayout_7">
                                                                                                         <item>
-                                                                                                            <layout class="QGridLayout"
-                                                                                                                    name="gridLayout_2">
-                                                                                                                <item row="0"
-                                                                                                                      column="0">
-                                                                                                                    <widget class="QCheckBox"
-                                                                                                                            name="checkBox">
+                                                                                                            <layout class="QVBoxLayout"
+                                                                                                                    name="verticalLayout_17">
+                                                                                                                <item>
+                                                                                                                    <widget class="QComboBox"
+                                                                                                                            name="comboBox_2">
+                                                                                                                        <property
+                                                                                                                                name="font">
+                                                                                                                            <font>
+                                                                                                                                <family>
+                                                                                                                                    Segoe
+                                                                                                                                    UI
+                                                                                                                                </family>
+                                                                                                                                <pointsize>
+                                                                                                                                    10
+                                                                                                                                </pointsize>
+                                                                                                                                <italic>
+                                                                                                                                    false
+                                                                                                                                </italic>
+                                                                                                                                <bold>
+                                                                                                                                    false
+                                                                                                                                </bold>
+                                                                                                                            </font>
+                                                                                                                        </property>
                                                                                                                         <property
                                                                                                                                 name="autoFillBackground">
                                                                                                                             <bool>
@@ -2424,205 +2428,60 @@
                                                                                                                         </property>
                                                                                                                         <property
                                                                                                                                 name="styleSheet">
-                                                                                                                            <string notr="true"/>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                CheckBox
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </widget>
-                                                                                                                </item>
-                                                                                                                <item row="0"
-                                                                                                                      column="1">
-                                                                                                                    <widget class="QRadioButton"
-                                                                                                                            name="radioButton">
-                                                                                                                        <property
-                                                                                                                                name="styleSheet">
-                                                                                                                            <string notr="true"/>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                RadioButton
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </widget>
-                                                                                                                </item>
-                                                                                                                <item row="0"
-                                                                                                                      column="2"
-                                                                                                                      rowspan="3">
-                                                                                                                    <widget class="QSlider"
-                                                                                                                            name="verticalSlider">
-                                                                                                                        <property
-                                                                                                                                name="styleSheet">
-                                                                                                                            <string notr="true"/>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="orientation">
-                                                                                                                            <enum>
-                                                                                                                                Qt::Vertical
-                                                                                                                            </enum>
-                                                                                                                        </property>
-                                                                                                                    </widget>
-                                                                                                                </item>
-                                                                                                                <item row="0"
-                                                                                                                      column="4"
-                                                                                                                      rowspan="3">
-                                                                                                                    <widget class="QScrollBar"
-                                                                                                                            name="verticalScrollBar">
-                                                                                                                        <property
-                                                                                                                                name="styleSheet">
                                                                                                                             <string notr="true">
-                                                                                                                                QScrollBar:vertical
-                                                                                                                                {
-                                                                                                                                background:
-                                                                                                                                rgb(52,
-                                                                                                                                59,
-                                                                                                                                72);
-                                                                                                                                }
-                                                                                                                                QScrollBar:horizontal
-                                                                                                                                {
-                                                                                                                                background:
-                                                                                                                                rgb(52,
-                                                                                                                                59,
-                                                                                                                                72);
-                                                                                                                                }
+                                                                                                                                background-color:
+                                                                                                                                rgb(33,
+                                                                                                                                37,
+                                                                                                                                43);
                                                                                                                             </string>
                                                                                                                         </property>
                                                                                                                         <property
-                                                                                                                                name="orientation">
-                                                                                                                            <enum>
-                                                                                                                                Qt::Vertical
-                                                                                                                            </enum>
-                                                                                                                        </property>
-                                                                                                                    </widget>
-                                                                                                                </item>
-                                                                                                                <item row="0"
-                                                                                                                      column="5"
-                                                                                                                      rowspan="3">
-                                                                                                                    <widget class="QScrollArea"
-                                                                                                                            name="scrollArea">
-                                                                                                                        <property
-                                                                                                                                name="styleSheet">
-                                                                                                                            <string notr="true">
-                                                                                                                                QScrollBar:vertical
-                                                                                                                                {
-                                                                                                                                background:
-                                                                                                                                rgb(52,
-                                                                                                                                59,
-                                                                                                                                72);
-                                                                                                                                }
-                                                                                                                                QScrollBar:horizontal
-                                                                                                                                {
-                                                                                                                                background:
-                                                                                                                                rgb(52,
-                                                                                                                                59,
-                                                                                                                                72);
-                                                                                                                                }
-                                                                                                                            </string>
+                                                                                                                                name="iconSize">
+                                                                                                                            <size>
+                                                                                                                                <width>
+                                                                                                                                    16
+                                                                                                                                </width>
+                                                                                                                                <height>
+                                                                                                                                    16
+                                                                                                                                </height>
+                                                                                                                            </size>
                                                                                                                         </property>
                                                                                                                         <property
-                                                                                                                                name="frameShape">
-                                                                                                                            <enum>
-                                                                                                                                QFrame::NoFrame
-                                                                                                                            </enum>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="verticalScrollBarPolicy">
-                                                                                                                            <enum>
-                                                                                                                                Qt::ScrollBarAlwaysOn
-                                                                                                                            </enum>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="horizontalScrollBarPolicy">
-                                                                                                                            <enum>
-                                                                                                                                Qt::ScrollBarAsNeeded
-                                                                                                                            </enum>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="widgetResizable">
+                                                                                                                                name="frame">
                                                                                                                             <bool>
                                                                                                                                 true
                                                                                                                             </bool>
                                                                                                                         </property>
-                                                                                                                        <widget class="QWidget"
-                                                                                                                                name="scrollAreaWidgetContents">
+                                                                                                                        <item>
                                                                                                                             <property
-                                                                                                                                    name="geometry">
-                                                                                                                                <rect>
-                                                                                                                                    <x>
-                                                                                                                                        0
-                                                                                                                                    </x>
-                                                                                                                                    <y>
-                                                                                                                                        0
-                                                                                                                                    </y>
-                                                                                                                                    <width>
-                                                                                                                                        218
-                                                                                                                                    </width>
-                                                                                                                                    <height>
-                                                                                                                                        218
-                                                                                                                                    </height>
-                                                                                                                                </rect>
-                                                                                                                            </property>
-                                                                                                                            <property
-                                                                                                                                    name="styleSheet">
-                                                                                                                                <string notr="true">
-                                                                                                                                    QScrollBar:vertical
-                                                                                                                                    {
-                                                                                                                                    border:
-                                                                                                                                    none;
-                                                                                                                                    background:
-                                                                                                                                    rgb(52,
-                                                                                                                                    59,
-                                                                                                                                    72);
-                                                                                                                                    width:
-                                                                                                                                    14px;
-                                                                                                                                    margin:
-                                                                                                                                    21px
-                                                                                                                                    0
-                                                                                                                                    21px
-                                                                                                                                    0;
-                                                                                                                                    border-radius:
-                                                                                                                                    0px;
-                                                                                                                                    }
+                                                                                                                                    name="text">
+                                                                                                                                <string>
+                                                                                                                                    Test
+                                                                                                                                    1
                                                                                                                                 </string>
                                                                                                                             </property>
-                                                                                                                            <layout class="QHBoxLayout"
-                                                                                                                                    name="horizontalLayout_11">
-                                                                                                                                <item>
-                                                                                                                                    <widget class="QPlainTextEdit"
-                                                                                                                                            name="plainTextEdit">
-                                                                                                                                        <property
-                                                                                                                                                name="minimumSize">
-                                                                                                                                            <size>
-                                                                                                                                                <width>
-                                                                                                                                                    200
-                                                                                                                                                </width>
-                                                                                                                                                <height>
-                                                                                                                                                    200
-                                                                                                                                                </height>
-                                                                                                                                            </size>
-                                                                                                                                        </property>
-                                                                                                                                        <property
-                                                                                                                                                name="styleSheet">
-                                                                                                                                            <string notr="true">
-                                                                                                                                                background-color:
-                                                                                                                                                rgb(33,
-                                                                                                                                                37,
-                                                                                                                                                43);
-                                                                                                                                            </string>
-                                                                                                                                        </property>
-                                                                                                                                    </widget>
-                                                                                                                                </item>
-                                                                                                                            </layout>
-                                                                                                                        </widget>
+                                                                                                                        </item>
+                                                                                                                        <item>
+                                                                                                                            <property
+                                                                                                                                    name="text">
+                                                                                                                                <string>
+                                                                                                                                    Test
+                                                                                                                                    2
+                                                                                                                                </string>
+                                                                                                                            </property>
+                                                                                                                        </item>
+                                                                                                                        <item>
+                                                                                                                            <property
+                                                                                                                                    name="text">
+                                                                                                                                <string>
+                                                                                                                                    Test
+                                                                                                                                    3
+                                                                                                                                </string>
+                                                                                                                            </property>
+                                                                                                                        </item>
                                                                                                                     </widget>
                                                                                                                 </item>
-                                                                                                                <item row="1"
-                                                                                                                      column="0"
-                                                                                                                      colspan="2">
+                                                                                                                <item>
                                                                                                                     <widget class="QComboBox"
                                                                                                                             name="comboBox">
                                                                                                                         <property
@@ -2704,107 +2563,43 @@
                                                                                                                         </item>
                                                                                                                     </widget>
                                                                                                                 </item>
-                                                                                                                <item row="1"
-                                                                                                                      column="3">
-                                                                                                                    <widget class="QScrollBar"
-                                                                                                                            name="horizontalScrollBar">
-                                                                                                                        <property
-                                                                                                                                name="sizePolicy">
-                                                                                                                            <sizepolicy
-                                                                                                                                    hsizetype="Expanding"
-                                                                                                                                    vsizetype="Fixed">
-                                                                                                                                <horstretch>
-                                                                                                                                    0
-                                                                                                                                </horstretch>
-                                                                                                                                <verstretch>
-                                                                                                                                    0
-                                                                                                                                </verstretch>
-                                                                                                                            </sizepolicy>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="styleSheet">
-                                                                                                                            <string notr="true">
-                                                                                                                                QScrollBar:vertical
-                                                                                                                                {
-                                                                                                                                background:
-                                                                                                                                rgb(52,
-                                                                                                                                59,
-                                                                                                                                72);
-                                                                                                                                }
-                                                                                                                                QScrollBar:horizontal
-                                                                                                                                {
-                                                                                                                                background:
-                                                                                                                                rgb(52,
-                                                                                                                                59,
-                                                                                                                                72);
-                                                                                                                                }
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="orientation">
-                                                                                                                            <enum>
-                                                                                                                                Qt::Horizontal
-                                                                                                                            </enum>
-                                                                                                                        </property>
-                                                                                                                    </widget>
-                                                                                                                </item>
-                                                                                                                <item row="1"
-                                                                                                                      column="6">
-                                                                                                                    <widget class="QCommandLinkButton"
-                                                                                                                            name="commandLinkButton">
-                                                                                                                        <property
-                                                                                                                                name="cursor">
-                                                                                                                            <cursorShape>
-                                                                                                                                PointingHandCursor
-                                                                                                                            </cursorShape>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="styleSheet">
-                                                                                                                            <string notr="true"/>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                Link
-                                                                                                                                Button
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="icon">
-                                                                                                                            <iconset
-                                                                                                                                    resource="resources.qrc">
-                                                                                                                                <normaloff>
-                                                                                                                                    :/icons/images/icons/cil-link.png</normaloff>
-                                                                                                                                :/icons/images/icons/cil-link.png
-                                                                                                                            </iconset>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="description">
-                                                                                                                            <string>
-                                                                                                                                Link
-                                                                                                                                description
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </widget>
-                                                                                                                </item>
-                                                                                                                <item row="2"
-                                                                                                                      column="0"
-                                                                                                                      colspan="2">
-                                                                                                                    <widget class="QSlider"
-                                                                                                                            name="horizontalSlider">
-                                                                                                                        <property
-                                                                                                                                name="styleSheet">
-                                                                                                                            <string notr="true"/>
-                                                                                                                        </property>
-                                                                                                                        <property
-                                                                                                                                name="orientation">
-                                                                                                                            <enum>
-                                                                                                                                Qt::Horizontal
-                                                                                                                            </enum>
-                                                                                                                        </property>
-                                                                                                                    </widget>
-                                                                                                                </item>
                                                                                                             </layout>
+                                                                                                        </item>
+                                                                                                        <item>
+                                                                                                            <widget class="QCheckBox"
+                                                                                                                    name="checkBox">
+                                                                                                                <property
+                                                                                                                        name="autoFillBackground">
+                                                                                                                    <bool>
+                                                                                                                        false
+                                                                                                                    </bool>
+                                                                                                                </property>
+                                                                                                                <property
+                                                                                                                        name="styleSheet">
+                                                                                                                    <string notr="true"/>
+                                                                                                                </property>
+                                                                                                                <property
+                                                                                                                        name="text">
+                                                                                                                    <string>
+                                                                                                                        CheckBox
+                                                                                                                    </string>
+                                                                                                                </property>
+                                                                                                            </widget>
+                                                                                                        </item>
+                                                                                                        <item>
+                                                                                                            <widget class="QRadioButton"
+                                                                                                                    name="radioButton">
+                                                                                                                <property
+                                                                                                                        name="styleSheet">
+                                                                                                                    <string notr="true"/>
+                                                                                                                </property>
+                                                                                                                <property
+                                                                                                                        name="text">
+                                                                                                                    <string>
+                                                                                                                        RadioButton
+                                                                                                                    </string>
+                                                                                                                </property>
+                                                                                                            </widget>
                                                                                                         </item>
                                                                                                     </layout>
                                                                                                 </widget>
@@ -3563,19 +3358,37 @@
                                                                                     </widget>
                                                                                     <widget class="QWidget"
                                                                                             name="new_page">
-                                                                                        <layout class="QVBoxLayout"
-                                                                                                name="verticalLayout_20">
+                                                                                        <layout class="QHBoxLayout"
+                                                                                                name="horizontalLayout_6">
                                                                                             <item>
                                                                                                 <layout class="QVBoxLayout"
-                                                                                                        name="verticalLayout_22">
+                                                                                                        name="verticalLayout_16">
                                                                                                     <item>
                                                                                                         <widget class="QLabel"
                                                                                                                 name="label">
                                                                                                             <property
                                                                                                                     name="text">
                                                                                                                 <string>
-                                                                                                                    PAIRWISE
-                                                                                                                    COMBINATIONS
+                                                                                                                    &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span
+                                                                                                                    style=&quot;
+                                                                                                                    font-weight:700;&quot;&gt;Please
+                                                                                                                    check
+                                                                                                                    the
+                                                                                                                    generated
+                                                                                                                    Tests:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span
+                                                                                                                    style=&quot;
+                                                                                                                    font-weight:700;&quot;&gt;If
+                                                                                                                    everything
+                                                                                                                    is
+                                                                                                                    ok,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span
+                                                                                                                    style=&quot;
+                                                                                                                    font-weight:700;&quot;&gt;press
+                                                                                                                    the
+                                                                                                                    save
+                                                                                                                    button
+                                                                                                                    on
+                                                                                                                    the
+                                                                                                                    left&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                                                                 </string>
                                                                                                             </property>
                                                                                                             <property
@@ -3584,154 +3397,38 @@
                                                                                                                     Qt::AlignCenter
                                                                                                                 </set>
                                                                                                             </property>
+                                                                                                            <property
+                                                                                                                    name="margin">
+                                                                                                                <number>
+                                                                                                                    10
+                                                                                                                </number>
+                                                                                                            </property>
                                                                                                         </widget>
                                                                                                     </item>
-                                                                                                    <item>
-                                                                                                        <layout class="QHBoxLayout"
-                                                                                                                name="horizontalLayout_7">
-                                                                                                            <item>
-                                                                                                                <widget class="QTableWidget"
-                                                                                                                        name="pairwise">
-                                                                                                                    <attribute
-                                                                                                                            name="horizontalHeaderVisible">
-                                                                                                                        <bool>
-                                                                                                                            true
-                                                                                                                        </bool>
-                                                                                                                    </attribute>
-                                                                                                                    <attribute
-                                                                                                                            name="horizontalHeaderCascadingSectionResizes">
-                                                                                                                        <bool>
-                                                                                                                            true
-                                                                                                                        </bool>
-                                                                                                                    </attribute>
-                                                                                                                    <attribute
-                                                                                                                            name="horizontalHeaderDefaultSectionSize">
-                                                                                                                        <number>
-                                                                                                                            200
-                                                                                                                        </number>
-                                                                                                                    </attribute>
-                                                                                                                    <attribute
-                                                                                                                            name="horizontalHeaderStretchLastSection">
-                                                                                                                        <bool>
-                                                                                                                            true
-                                                                                                                        </bool>
-                                                                                                                    </attribute>
-                                                                                                                    <attribute
-                                                                                                                            name="verticalHeaderVisible">
-                                                                                                                        <bool>
-                                                                                                                            false
-                                                                                                                        </bool>
-                                                                                                                    </attribute>
-                                                                                                                    <attribute
-                                                                                                                            name="verticalHeaderStretchLastSection">
-                                                                                                                        <bool>
-                                                                                                                            false
-                                                                                                                        </bool>
-                                                                                                                    </attribute>
-                                                                                                                    <row>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Row
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </row>
-                                                                                                                    <row>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Row
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </row>
-                                                                                                                    <row>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Row
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </row>
-                                                                                                                    <row>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Row
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </row>
-                                                                                                                    <row>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Row
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </row>
-                                                                                                                    <row>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Row
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </row>
-                                                                                                                    <row>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Row
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </row>
-                                                                                                                    <column>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Column
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </column>
-                                                                                                                    <column>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Column
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </column>
-                                                                                                                    <column>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Column
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </column>
-                                                                                                                    <column>
-                                                                                                                        <property
-                                                                                                                                name="text">
-                                                                                                                            <string>
-                                                                                                                                New
-                                                                                                                                Column
-                                                                                                                            </string>
-                                                                                                                        </property>
-                                                                                                                    </column>
-                                                                                                                </widget>
-                                                                                                            </item>
-                                                                                                        </layout>
-                                                                                                    </item>
                                                                                                 </layout>
+                                                                                            </item>
+                                                                                            <item>
+                                                                                                <widget class="QPlainTextEdit"
+                                                                                                        name="plainTextEdit">
+                                                                                                    <property
+                                                                                                            name="minimumSize">
+                                                                                                        <size>
+                                                                                                            <width>200
+                                                                                                            </width>
+                                                                                                            <height>
+                                                                                                                200
+                                                                                                            </height>
+                                                                                                        </size>
+                                                                                                    </property>
+                                                                                                    <property
+                                                                                                            name="styleSheet">
+                                                                                                        <string notr="true">
+                                                                                                            background-color:
+                                                                                                            rgb(33, 37,
+                                                                                                            43);
+                                                                                                        </string>
+                                                                                                    </property>
+                                                                                                </widget>
                                                                                             </item>
                                                                                         </layout>
                                                                                     </widget>
@@ -4143,7 +3840,7 @@
                                                                             </font>
                                                                         </property>
                                                                         <property name="text">
-                                                                            <string>By: Wanderson M. Pimenta</string>
+                                                                            <string>By: Lampros Karseras</string>
                                                                         </property>
                                                                         <property name="alignment">
                                                                             <set>
@@ -4155,7 +3852,7 @@
                                                                 <item>
                                                                     <widget class="QLabel" name="version">
                                                                         <property name="text">
-                                                                            <string>v1.0.3</string>
+                                                                            <string>v0.0.4</string>
                                                                         </property>
                                                                         <property name="alignment">
                                                                             <set>

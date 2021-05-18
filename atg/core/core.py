@@ -4,12 +4,76 @@ import ast
 import inspect
 import logging
 
-import initializelogging
-import loader
-from atg.generator.default_generator import DefaultGenerator
+from PySide6.QtCore import QCoreApplication
+
+from core import loader
+from core import initializelogging
+from generator.default_generator import DefaultGenerator
 
 initializelogging.setUpLogging()
 logger = logging.getLogger(__name__)
+
+
+def check(filename, widgets):
+    def show_info(functionNode):
+        print("Function name:", functionNode.name)
+        print("Args:")
+        for arg in functionNode.args.args:
+            # import pdb; pdb.set_trace()
+            print("\tParameter name:", arg.arg)
+
+    def is_static_method(klass, attr, value=None):
+        """Test if a value of a class is static method.
+
+        example::
+
+            class MyClass(object):
+                @staticmethod
+                def method():
+                    ...
+
+        :param klass: the class
+        :param attr: attribute name
+        :param value: attribute value
+        """
+        if value is None:
+            value = getattr(klass, attr)
+        assert getattr(klass, attr) == value
+
+        for cls in inspect.getmro(klass):
+            if inspect.isroutine(value):
+                if attr in cls.__dict__:
+                    binded_value = cls.__dict__[attr]
+                    if isinstance(binded_value, staticmethod):
+                        return True
+        return False
+
+    classes = False
+    functions = False
+
+    try:
+        with open(filename) as f:
+            node = ast.parse(f.read())
+        functions = [n for n in node.body if isinstance(n, ast.FunctionDef)]
+        classes = [n for n in node.body if isinstance(n, ast.ClassDef)]
+    except Exception as e:
+        print(e)
+
+    data = {}
+    import itertools
+    if classes:
+        for i, cls in enumerate(classes):
+            clsName = cls.name
+            methods = [n for n in cls.body if isinstance(n, ast.FunctionDef)]
+            data[f'{clsName}_class'] = [method.name for method in methods if not method.name.startswith('__')]
+            for method in methods:
+                show_info(method)
+
+    if functions:
+        data['Functions'] = [func.name for func in functions]
+        for func in functions:
+            show_info(func)
+    return data
 
 
 class ATG:
@@ -112,146 +176,5 @@ def recursive_lookup(k, d):
             return recursive_lookup(k, v)
     return None
 
-
-def dump():
-    return '''import unittest
-from mockapp import calculator
-
-
-class CalcTest(unittest.TestCase):
-    # -------- uniClassification - method --------#
-    # -------- Equivalence Partitioning --------#
-    def test_uniClassification_1(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(4),
-            'Failed'
-        )
-
-    def test_uniClassification_2(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(45),
-            'Pass'
-        )
-
-    def test_uniClassification_3(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(53),
-            '2:2'
-        )
-
-    def test_uniClassification_4(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(67),
-            '2:1'
-        )
-
-    def test_uniClassification_5(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(79),
-            'First!'
-        )
-
-    # -------- Boundary Analysis --------#
-    def test_uniClassification_6(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(-1),
-            'Wrong grade.'
-        )
-
-    def test_uniClassification_7(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(0),
-            'Failed'
-        )
-
-    def test_uniClassification_8(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(1),
-            'Failed'
-        )
-
-    def test_uniClassification_9(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(99),
-            'First!'
-        )
-
-    def test_uniClassification_10(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(100),
-            'First!'
-        )
-
-    def test_uniClassification_11(self):
-        calc = calculator.Calculator()
-        self.assertEqual(
-            calc.uniClassification(101),
-            'Wrong grade.'
-        )
-
-    # -------- carDeals - static --------#
-    # -------- Pairwise Analysis --------#
-    def test_carDeals_1(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('Ford', 20000, 'New'),
-            'Good Deal'
-        )
-
-    def test_carDeals_2(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('Volvo', 40000, 'New'),
-            'Could be better'
-        )
-
-    def test_carDeals_3(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('BMW', 50000, 'New'),
-            'Could be better'
-        )
-
-    def test_carDeals_4(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('BMW', 40000, 'Used'),
-            'Could be better'
-        )
-
-    def test_carDeals_5(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('Volvo', 20000, 'Used'),
-            'Could be better'
-        )
-
-    def test_carDeals_6(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('Ford', 50000, 'Used'),
-            'Bad Deal'
-        )
-
-    def test_carDeals_7(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('Ford', 40000, 'Used'),
-            'Bad Deal'
-        )
-
-    def test_carDeals_8(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('Volvo', 50000, 'Used'),
-            'Could be better'
-        )
-
-    def test_carDeals_9(self):
-        self.assertEqual(
-            calculator.Calculator.carDeals('BMW', 20000, 'Used'),
-            'Good Deal'
-        )
-'''
+# if __name__ == '__main__':
+#     main()
