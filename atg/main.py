@@ -7,7 +7,7 @@ import platform
 
 from gui.modules import *
 from gui.widgets import *
-from core.core import check
+from core.core import ATG
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -24,6 +24,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
+        self.data = None
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
@@ -91,7 +92,7 @@ class MainWindow(QMainWindow):
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
         use_custom_theme = True
-        theme_file = "themes/py_dracula_light.qss"
+        theme_file = "gui/themes/py_dracula_light.qss"
 
         # SET THEME AND HACKS
         if use_custom_theme:
@@ -139,37 +140,6 @@ class MainWindow(QMainWindow):
         # PRINT BTN NAME
         # print(f'Button "{btn_name}" pressed!')
 
-    # OPEN BUTTON
-    # ///////////////////////////////////////////////////////////////
-    def open_file_btn(self):
-        name = QFileDialog.getOpenFileName(self, 'Open File', filter="Python file (*.py)")
-        widgets.lineEdit_5.setText(name[0])
-        widgets.stackedWidget.setCurrentWidget(widgets.widgets)
-        UIFunctions.resetStyle(self, "btn_widgets")
-        widgets.btn_widgets.setStyleSheet(UIFunctions.selectMenu(widgets.btn_widgets.styleSheet()))
-        data = check(name[0], widgets)
-        self.create_combo_box_items(data)
-        print(data)
-
-    def create_combo_box_items(self, data):
-        self.model = QStandardItemModel()
-        widgets.comboBox.setModel(self.model)
-        widgets.comboBox_2.setModel(self.model)
-
-        for k, v in data.items():
-            cls = QStandardItem(k)
-            self.model.appendRow(cls)
-            for value in v:
-                func = QStandardItem(value)
-                cls.appendRow(func)
-        widgets.comboBox_2.currentIndexChanged.connect(self.update_combo_box)
-        self.update_combo_box(0)
-
-    def update_combo_box(self, index):
-        ind = self.model.index(index, 0, widgets.comboBox_2.rootModelIndex())
-        widgets.comboBox.setRootModelIndex(ind)
-        widgets.comboBox.setCurrentIndex(0)
-
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
@@ -181,6 +151,7 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPos()
+
     #
     #     # PRINT MOUSE EVENTS
     #     if event.buttons() == Qt.LeftButton:
@@ -188,9 +159,49 @@ class MainWindow(QMainWindow):
     #     if event.buttons() == Qt.RightButton:
     #         print('Mouse click: RIGHT CLICK')
 
+    # UI LOGIC
+    # OPEN BUTTON
+    # ///////////////////////////////////////////////////////////////
+
+    def open_file_btn(self):
+
+        name = QFileDialog.getOpenFileName(self, 'Open File', filter="Python file (*.py)")
+        core = ATG(file_path=name[0])
+        self.data = core.get_data
+
+        if self.data and isinstance(self.data, dict):
+            widgets.lineEdit_5.setText(name[0])
+            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+            UIFunctions.resetStyle(self, "btn_widgets")
+            widgets.btn_widgets.setStyleSheet(UIFunctions.selectMenu(widgets.btn_widgets.styleSheet()))
+            self.create_combo_box_items()
+            print(self.data)
+        else:
+            widgets.labelVersion_7.setText('Please select a Python File that contains some code')
+
+    def create_combo_box_items(self):
+        self.model = QStandardItemModel()
+        widgets.combo_functions.setModel(self.model)
+        widgets.combo_classes.setModel(self.model)
+
+        def update_combo_box(index):
+            ind = self.model.index(index, 0, widgets.combo_classes.rootModelIndex())
+            widgets.combo_functions.setRootModelIndex(ind)
+            widgets.combo_functions.setCurrentIndex(0)
+
+        widgets.combo_classes.currentIndexChanged.connect(update_combo_box)
+        update_combo_box(0)
+
+        for k, v in self.data.items():
+            cls = QStandardItem(k)
+            self.model.appendRow(cls)
+            for value in v:
+                func = QStandardItem(value)
+                cls.appendRow(func)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setWindowIcon(QIcon("gui/icon.ico"))
     window = MainWindow()
     sys.exit(app.exec_())

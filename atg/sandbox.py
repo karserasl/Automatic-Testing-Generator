@@ -1,8 +1,7 @@
 # @Author: Lampros.Karseras
 # @Date:   16/11/2020 10:47
-import mockapp.calculator as calc
 # from docstring_parser import parse
-from parse_docstrings import parse_docstring
+# from parse_docstrings import parse_docstring
 
 
 def generate_testcase(func):
@@ -131,15 +130,7 @@ if __name__ == '__main__':
     #         a = yaml.safe_load(conf)
     #     except yaml.YAMLError as e:
     #         print(e)
-    import loader as l
+    import core.loader as l
 
-    iouts = []
-    for i in range(100):
-        if i % 15 == 0:
-            iouts.append(l.parameters(i, '15 mod'))
-        if i % 50 == 0:
-            iouts.append(l.parameters(i, '50 mod'))
-    params = {
-        'grade': iouts
-    }
-    print(params)
+    a = l.get_all_techniques()
+    print(a)

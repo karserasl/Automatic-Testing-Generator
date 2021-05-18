@@ -76,7 +76,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setApplicationName('MyWindow')
 
-    main = MyWindow("main.py")
+    main = MyWindow("../main.py")
     main.show()
 
     sys.exit(app.exec_())

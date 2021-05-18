@@ -4,12 +4,11 @@ import pkgutil
 import techniques
 import logging
 from importlib import import_module
-import attr
 
 logger = logging.getLogger(__name__)
 
 
-def getAllTechniques():
+def get_all_techniques():
     found_techniques = []
     for importer, modname, ispkg in pkgutil.walk_packages(path=techniques.__path__, prefix=techniques.__name__ + '.',
                                                           onerror=lambda x: None):
@@ -26,8 +25,3 @@ def getAllTechniques():
         {technique.TECH_ID: technique for technique in loaded_techniques}
     )
 
-
-@attr.s(frozen=True)
-class parameters:
-    input = attr.ib()
-    output = attr.ib()

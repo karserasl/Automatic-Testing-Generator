@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainGEWkIl.ui'
+## Form generated from reading UI file 'mainZyduaA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
         self.styleSheet.setObjectName(u"styleSheet")
         font = QFont()
         font.setFamily(u"Segoe UI")
-        font.setPointSize(10)
+        font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
         self.styleSheet.setFont(font)
@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
             "\n"
             "QWidget{\n"
             "	color: rgb(221, 221, 221);\n"
-            "	font: 10pt \"Segoe UI\";\n"
+            "	font: 12pt \"Segoe UI\";\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -60,15 +60,15 @@ class Ui_MainWindow(object):
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Bg App */\n"
-            "#bgApp {	\n"
-            "	background"
-            "-color: rgb(40, 44, 52);\n"
+            "#bgApp {\n"
+            "	background-"
+            "color: rgb(40, 44, 52);\n"
             "	border: 1px solid rgb(44, 49, 58);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Left Menu */\n"
-            "#leftMenuBg {	\n"
+            "#leftMenuBg {\n"
             "	background-color: rgb(33, 37, 43);\n"
             "}\n"
             "#topLogo {\n"
@@ -81,7 +81,7 @@ class Ui_MainWindow(object):
             "#titleLeftDescription { font: 8pt \"Segoe UI\"; color: rgb(189, 147, 249); }\n"
             "\n"
             "/* MENUS */\n"
-            "#topMenu .QPushButton {	\n"
+            "#topMenu .QPushButton {\n"
             "	background-position: left center;\n"
             "    background-repeat: no-repeat;\n"
             "	border: none;\n"
@@ -93,12 +93,12 @@ class Ui_MainWindow(object):
             "#topMenu .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#topMenu .QPushButton:pressed {	\n"
-            "	background-color: rgb(18"
-            "9, 147, 249);\n"
+            "#topMenu .QPushButton:pressed {\n"
+            "	background-color: rgb(189, 1"
+            "47, 249);\n"
             "	color: rgb(255, 255, 255);\n"
             "}\n"
-            "#bottomMenu .QPushButton {	\n"
+            "#bottomMenu .QPushButton {\n"
             "	background-position: left center;\n"
             "    background-repeat: no-repeat;\n"
             "	border: none;\n"
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
             "#bottomMenu .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#bottomMenu .QPushButton:pressed {	\n"
+            "#bottomMenu .QPushButton:pressed {\n"
             "	background-color: rgb(189, 147, 249);\n"
             "	color: rgb(255, 255, 255);\n"
             "}\n"
@@ -133,8 +133,8 @@ class Ui_MainWindow(object):
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
             "#toggleButton:pressed {\n"
-            "	background-color: rgb("
-            "189, 147, 249);\n"
+            "	background-color: rgb(189, 1"
+            "47, 249);\n"
             "}\n"
             "\n"
             "/* Title Menu */\n"
@@ -143,10 +143,10 @@ class Ui_MainWindow(object):
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Extra Tab */\n"
-            "#extraLeftBox {	\n"
+            "#extraLeftBox {\n"
             "	background-color: rgb(44, 49, 58);\n"
             "}\n"
-            "#extraTopBg{	\n"
+            "#extraTopBg{\n"
             "	background-color: rgb(189, 147, 249)\n"
             "}\n"
             "\n"
@@ -167,8 +167,8 @@ class Ui_MainWindow(object):
             "\n"
             "/* Extra Content */\n"
             "#extraContent{\n"
-            "	border"
-            "-top: 3px solid rgb(40, 44, 52);\n"
+            "	border-top: 3p"
+            "x solid rgb(40, 44, 52);\n"
             "}\n"
             "\n"
             "/* Extra Top Menus */\n"
@@ -184,14 +184,14 @@ class Ui_MainWindow(object):
             "#extraTopMenu .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#extraTopMenu .QPushButton:pressed {	\n"
+            "#extraTopMenu .QPushButton:pressed {\n"
             "	background-color: rgb(189, 147, 249);\n"
             "	color: rgb(255, 255, 255);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Content App */\n"
-            "#contentTopBg{	\n"
+            "#contentTopBg{\n"
             "	background-color: rgb(33, 37, 43);\n"
             "}\n"
             "#contentBottom{\n"
@@ -200,8 +200,8 @@ class Ui_MainWindow(object):
             "\n"
             "/* Top Buttons */\n"
             "#rightButtons .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }\n"
-            "#rightButtons .QPushButton:hover { background-color: rgb(44, 49, 57); border-sty"
-            "le: solid; border-radius: 4px; }\n"
+            "#rightButtons .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid;"
+            " border-radius: 4px; }\n"
             "#rightButtons .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }\n"
             "\n"
             "/* Theme Settings */\n"
@@ -214,7 +214,7 @@ class Ui_MainWindow(object):
             "\n"
             "/* CONTENT SETTINGS */\n"
             "/* MENUS */\n"
-            "#contentSettings .QPushButton {	\n"
+            "#contentSettings .QPushButton {\n"
             "	background-position: left center;\n"
             "    background-repeat: no-repeat;\n"
             "	border: none;\n"
@@ -226,15 +226,15 @@ class Ui_MainWindow(object):
             "#contentSettings .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#contentSettings .QPushButton:pressed {	\n"
+            "#contentSettings .QPushButton:pressed {\n"
             "	background-color: rgb(189, 147, 249);\n"
-            "	color: rgb"
-            "(255, 255, 255);\n"
+            "	color: rgb(255, 255, 2"
+            "55);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "QTableWidget */\n"
-            "QTableWidget {	\n"
+            "QTableWidget {\n"
             "	background-color: transparent;\n"
             "	padding: 10px;\n"
             "	border-radius: 5px;\n"
@@ -258,14 +258,14 @@ class Ui_MainWindow(object):
             "    border-bottom: 1px solid rgb(44, 49, 60);\n"
             "    border-right: 1px solid rgb(44, 49, 60);\n"
             "}\n"
-            "QTableWidget::horizontalHeader {	\n"
+            "QTableWidget::horizontalHeader {\n"
             "	background-color: rgb(33, 37, 43);\n"
             "}\n"
             "QHeaderView::section:horizontal\n"
             "{\n"
             "    border: 1px solid rgb(33, 37, 43);\n"
-            "	background-co"
-            "lor: rgb(33, 37, 43);\n"
+            "	background-color: rgb(33, 3"
+            "7, 43);\n"
             "	padding: 3px;\n"
             "	border-top-left-radius: 7px;\n"
             "    border-top-right-radius: 7px;\n"
@@ -299,8 +299,8 @@ class Ui_MainWindow(object):
             "	border-radius: 5px;\n"
             "	padding: 10px;\n"
             "	selection-color: rgb(255, 255, 255);\n"
-            "	selection-background-c"
-            "olor: rgb(255, 121, 198);\n"
+            "	selection-background-color: rgb(255,"
+            " 121, 198);\n"
             "}\n"
             "QPlainTextEdit  QScrollBar:vertical {\n"
             "    width: 8px;\n"
@@ -338,8 +338,8 @@ class Ui_MainWindow(object):
             "    subcontrol-position: right;\n"
             "    subcontrol-origin: margin;\n"
             "}\n"
-            ""
-            "QScrollBar::sub-line:horizontal {\n"
+            "QScrollBar::"
+            "sub-line:horizontal {\n"
             "    border: none;\n"
             "    background: rgb(55, 63, 77);\n"
             "    width: 20px;\n"
@@ -363,7 +363,7 @@ class Ui_MainWindow(object):
             "    margin: 21px 0 21px 0;\n"
             "	border-radius: 0px;\n"
             " }\n"
-            " QScrollBar::handle:vertical {	\n"
+            " QScrollBar::handle:vertical {\n"
             "	background: rgb(189, 147, 249);\n"
             "    min-height: 25px;\n"
             "	border-radius: 4px\n"
@@ -375,8 +375,8 @@ class Ui_MainWindow(object):
             "	border-bottom-left-radius: 4px;\n"
             "    border-bottom-right-radius: 4px;\n"
             "     subcontrol-position: bottom;\n"
-            "     su"
-            "bcontrol-origin: margin;\n"
+            "     subcontrol-orig"
+            "in: margin;\n"
             " }\n"
             " QScrollBar::sub-line:vertical {\n"
             "	border: none;\n"
@@ -409,9 +409,9 @@ class Ui_MainWindow(object):
             "}\n"
             "QCheckBox::indicator:checked {\n"
             "    background: 3px solid rgb(52, 59, 72);\n"
-            "	border: 3px solid rgb(52, 59, 72);	\n"
-            "	back"
-            "ground-image: url(:/icons/images/icons/cil-check-alt.png);\n"
+            "	border: 3px solid rgb(52, 59, 72);\n"
+            "	background-image: "
+            "url(:/icons/images/icons/cil-check-alt.png);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -428,7 +428,7 @@ class Ui_MainWindow(object):
             "}\n"
             "QRadioButton::indicator:checked {\n"
             "    background: 3px solid rgb(94, 106, 130);\n"
-            "	border: 3px solid rgb(52, 59, 72);	\n"
+            "	border: 3px solid rgb(52, 59, 72);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -445,20 +445,20 @@ class Ui_MainWindow(object):
             "}\n"
             "QComboBox::drop-down {\n"
             "	subcontrol-origin: padding;\n"
-            "	subco"
-            "ntrol-position: top right;\n"
-            "	width: 25px; \n"
+            "	subcontrol-position:"
+            " top right;\n"
+            "	width: 25px;\n"
             "	border-left-width: 3px;\n"
             "	border-left-color: rgba(39, 44, 54, 150);\n"
             "	border-left-style: solid;\n"
             "	border-top-right-radius: 3px;\n"
-            "	border-bottom-right-radius: 3px;	\n"
+            "	border-bottom-right-radius: 3px;\n"
             "	background-image: url(:/icons/images/icons/cil-arrow-bottom.png);\n"
             "	background-position: center;\n"
             "	background-repeat: no-reperat;\n"
             " }\n"
             "QComboBox QAbstractItemView {\n"
-            "	color: rgb(255, 121, 198);	\n"
+            "	color: rgb(255, 121, 198);\n"
             "	background-color: rgb(33, 37, 43);\n"
             "	padding: 10px;\n"
             "	selection-background-color: rgb(39, 44, 54);\n"
@@ -478,9 +478,9 @@ class Ui_MainWindow(object):
             "QSlider::handle:horizontal {\n"
             "    background-color: rgb(189, 147, 249);\n"
             "    border: none;\n"
-            "    h"
-            "eight: 10px;\n"
-            "    width: 10px;\n"
+            "    height: 10px;\n"
+            " "
+            "   width: 10px;\n"
             "    margin: 0px;\n"
             "	border-radius: 5px;\n"
             "}\n"
@@ -517,18 +517,18 @@ class Ui_MainWindow(object):
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "CommandLinkButton */\n"
-            "QCommandLi"
-            "nkButton {	\n"
-            "	color: rgb(255, 121, 198);\n"
+            "QCommandLinkButton {\n"
+            "	co"
+            "lor: rgb(255, 121, 198);\n"
             "	border-radius: 5px;\n"
             "	padding: 5px;\n"
             "	color: rgb(255, 170, 255);\n"
             "}\n"
-            "QCommandLinkButton:hover {	\n"
+            "QCommandLinkButton:hover {\n"
             "	color: rgb(255, 170, 255);\n"
             "	background-color: rgb(44, 49, 60);\n"
             "}\n"
-            "QCommandLinkButton:pressed {	\n"
+            "QCommandLinkButton:pressed {\n"
             "	color: rgb(189, 147, 249);\n"
             "	background-color: rgb(52, 58, 71);\n"
             "}\n"
@@ -537,14 +537,14 @@ class Ui_MainWindow(object):
             "Button */\n"
             "#pagesContainer QPushButton {\n"
             "	border: 2px solid rgb(52, 59, 72);\n"
-            "	border-radius: 5px;	\n"
+            "	border-radius: 5px;\n"
             "	background-color: rgb(52, 59, 72);\n"
             "}\n"
             "#pagesContainer QPushButton:hover {\n"
             "	background-color: rgb(57, 65, 80);\n"
             "	border: 2px solid rgb(61, 70, 86);\n"
             "}\n"
-            "#pagesContainer QPushButton:pressed {	\n"
+            "#pagesContainer QPushButton:pressed {\n"
             "	background-color: rgb(35, 40, 49);\n"
             "	border: 2px solid rgb(43, 50, 61);\n"
             "}\n"
@@ -921,6 +921,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.titleRightInfo)
 
+
         self.horizontalLayout.addWidget(self.leftBox)
 
         self.rightButtons = QFrame(self.contentTopBg)
@@ -962,7 +963,7 @@ class Ui_MainWindow(object):
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
         font3 = QFont()
         font3.setFamily(u"Segoe UI")
-        font3.setPointSize(10)
+        font3.setPointSize(12)
         font3.setBold(False)
         font3.setItalic(False)
         font3.setStyleStrategy(QFont.PreferDefault)
@@ -985,7 +986,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.closeAppBtn)
 
+
         self.horizontalLayout.addWidget(self.rightButtons, 0, Qt.AlignRight)
+
 
         self.verticalLayout_2.addWidget(self.contentTopBg)
 
@@ -1052,6 +1055,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_39.addWidget(self.labelBoxBlenderInstalation_5)
 
+
         self.verticalLayout_38.addWidget(self.frame_title_wid_5)
 
         self.frame_content_wid_5 = QFrame(self.frame_div_content_4)
@@ -1090,9 +1094,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.labelVersion_7, 1, 0, 1, 2)
 
+
         self.horizontalLayout_15.addLayout(self.gridLayout_6)
 
+
         self.verticalLayout_38.addWidget(self.frame_content_wid_5)
+
 
         self.gridLayout_3.addWidget(self.frame_div_content_4, 1, 0, 1, 1)
 
@@ -1104,50 +1111,75 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.label_2, 0, 0, 1, 1)
 
+
         self.verticalLayout_40.addWidget(self.row_4)
 
         self.stackedWidget.addWidget(self.home)
         self.widgets = QWidget()
         self.widgets.setObjectName(u"widgets")
+        self.widgets.setFont(font)
         self.widgets.setStyleSheet(u"b")
         self.verticalLayout = QVBoxLayout(self.widgets)
-        self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(10, 10, 10, 10)
         self.row_2 = QFrame(self.widgets)
         self.row_2.setObjectName(u"row_2")
-        self.row_2.setMinimumSize(QSize(0, 150))
+        self.row_2.setMinimumSize(QSize(0, 180))
+        self.row_2.setFont(font)
         self.row_2.setFrameShape(QFrame.StyledPanel)
         self.row_2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.row_2)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.verticalLayout_17 = QVBoxLayout()
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.comboBox_2 = QComboBox(self.row_2)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
-        self.comboBox_2.setFont(font)
-        self.comboBox_2.setAutoFillBackground(False)
-        self.comboBox_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.comboBox_2.setIconSize(QSize(16, 16))
-        self.comboBox_2.setFrame(True)
+        self.label_3 = QLabel(self.row_2)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_17.addWidget(self.comboBox_2)
+        self.verticalLayout_17.addWidget(self.label_3)
 
-        self.comboBox = QComboBox(self.row_2)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setFont(font)
-        self.comboBox.setAutoFillBackground(False)
-        self.comboBox.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.comboBox.setIconSize(QSize(16, 16))
-        self.comboBox.setFrame(True)
+        self.combo_classes = QComboBox(self.row_2)
+        self.combo_classes.addItem("")
+        self.combo_classes.addItem("")
+        self.combo_classes.addItem("")
+        self.combo_classes.setObjectName(u"combo_classes")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.combo_classes.sizePolicy().hasHeightForWidth())
+        self.combo_classes.setSizePolicy(sizePolicy3)
+        self.combo_classes.setMinimumSize(QSize(250, 40))
+        self.combo_classes.setFont(font)
+        self.combo_classes.setAutoFillBackground(False)
+        self.combo_classes.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.combo_classes.setMaxVisibleItems(15)
+        self.combo_classes.setIconSize(QSize(16, 16))
+        self.combo_classes.setFrame(True)
 
-        self.verticalLayout_17.addWidget(self.comboBox)
+        self.verticalLayout_17.addWidget(self.combo_classes, 0, Qt.AlignHCenter)
+
+        self.label_4 = QLabel(self.row_2)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_17.addWidget(self.label_4)
+
+        self.combo_functions = QComboBox(self.row_2)
+        self.combo_functions.addItem("")
+        self.combo_functions.addItem("")
+        self.combo_functions.addItem("")
+        self.combo_functions.setObjectName(u"combo_functions")
+        sizePolicy3.setHeightForWidth(self.combo_functions.sizePolicy().hasHeightForWidth())
+        self.combo_functions.setSizePolicy(sizePolicy3)
+        self.combo_functions.setMinimumSize(QSize(250, 40))
+        self.combo_functions.setFont(font)
+        self.combo_functions.setAutoFillBackground(False)
+        self.combo_functions.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.combo_functions.setMaxVisibleItems(15)
+        self.combo_functions.setIconSize(QSize(16, 16))
+        self.combo_functions.setFrame(True)
+
+        self.verticalLayout_17.addWidget(self.combo_functions, 0, Qt.AlignHCenter)
 
         self.horizontalLayout_7.addLayout(self.verticalLayout_17)
 
@@ -1164,6 +1196,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.radioButton)
 
+
         self.verticalLayout.addWidget(self.row_2)
 
         self.row_3 = QFrame(self.widgets)
@@ -1176,12 +1209,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.tableWidget = QTableWidget(self.row_3)
-        if (self.tableWidget.columnCount() < 1):
-            self.tableWidget.setColumnCount(1)
+        if (self.tableWidget.columnCount() < 4):
+            self.tableWidget.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        if (self.tableWidget.rowCount() < 4):
-            self.tableWidget.setRowCount(4)
+        if (self.tableWidget.rowCount() < 10):
+            self.tableWidget.setRowCount(10)
         font4 = QFont()
         font4.setFamily(u"Segoe UI")
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -1196,11 +1229,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem5 = QTableWidgetItem()
         self.tableWidget.setItem(0, 0, __qtablewidgetitem5)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy4)
         palette = QPalette()
         brush = QBrush(QColor(221, 221, 221, 255))
         brush.setStyle(Qt.SolidPattern)
@@ -1236,21 +1269,21 @@ class Ui_MainWindow(object):
         brush4.setStyle(Qt.NoBrush)
         palette.setBrush(QPalette.Disabled, QPalette.Base, brush4)
         palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
-        # endif
+        #endif
         self.tableWidget.setPalette(palette)
         self.tableWidget.setFrameShape(QFrame.NoFrame)
         self.tableWidget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.tableWidget.setEditTriggers(QAbstractItemView.AllEditTriggers)
-        self.tableWidget.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.tableWidget.setSelectionMode(QAbstractItemView.SingleSelection)
         self.tableWidget.setSelectionBehavior(QAbstractItemView.SelectItems)
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setGridStyle(Qt.SolidLine)
         self.tableWidget.setSortingEnabled(False)
-        self.tableWidget.setRowCount(4)
-        self.tableWidget.setColumnCount(1)
+        self.tableWidget.setRowCount(10)
+        self.tableWidget.setColumnCount(4)
         self.tableWidget.horizontalHeader().setVisible(True)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(True)
         self.tableWidget.horizontalHeader().setDefaultSectionSize(200)
@@ -1263,6 +1296,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.addWidget(self.tableWidget)
 
         self.verticalLayout.addWidget(self.row_3)
+
+        self.pushButton_6 = QPushButton(self.widgets)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        sizePolicy3.setHeightForWidth(self.pushButton_6.sizePolicy().hasHeightForWidth())
+        self.pushButton_6.setSizePolicy(sizePolicy3)
+        self.pushButton_6.setMinimumSize(QSize(150, 33))
+        self.pushButton_6.setFont(font)
+        self.pushButton_6.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushButton_6.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/images/icons/cil-caret-right.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_6.setIcon(icon5)
+
+        self.verticalLayout.addWidget(self.pushButton_6, 0, Qt.AlignHCenter)
 
         self.stackedWidget.addWidget(self.widgets)
         self.new_page = QWidget()
@@ -1278,6 +1325,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16.addWidget(self.label)
 
+
         self.horizontalLayout_6.addLayout(self.verticalLayout_16)
 
         self.plainTextEdit = QPlainTextEdit(self.new_page)
@@ -1290,6 +1338,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.new_page)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
+
 
         self.horizontalLayout_4.addWidget(self.pagesContainer)
 
@@ -1418,7 +1467,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.contentBottom)
 
+
         self.appLayout.addWidget(self.contentBox)
+
 
         self.appMargins.addWidget(self.bgApp)
 
@@ -1427,6 +1478,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.stackedWidget.setCurrentIndex(1)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -1453,17 +1505,17 @@ class Ui_MainWindow(object):
                                                          u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                                          "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
                                                          "p, li { white-space: pre-wrap; }\n"
-                                                         "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">ATG</span></p>\n"
-                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">A module for automatic test cases generation for Python, colors based on the Dracula theme created by Zeno Rocha.</span></p>\n"
+                                                         "</style></head><body style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ff79c6;\">ATG</span></p>\n"
+                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#ffffff;\">A module for automatic test cases generation for Python, colors based on the Dracula theme created by Zeno Rocha.</span></p>\n"
                                                          "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\""
-                                                         "><span style=\" color:#ffffff;\">MIT License</span></p>\n"
-                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: Lampros Karseras</span></p>\n"
-                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Limitations</span></p>\n"
+                                                         "><span style=\" font-size:10pt; color:#ffffff;\">MIT License</span></p>\n"
+                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#bd93f9;\">Created by: Lampros Karseras</span></p>\n"
+                                                         "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ff79c6;\">Limitations</span></p>\n"
                                                          "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">Limited to just Integers and Strings</span></p>\n"
                                                          "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">Single variable for Boundary Value Analysis</span></p>\n"
-                                                         "<p align=\"center\" style=\" mar"
-                                                         "gin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">GUI resources</span></p>\n"
+                                                         "<p align=\"cente"
+                                                         "r\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ff79c6;\">GUI resources</span></p>\n"
                                                          "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p>\n"
                                                          "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-uic main.ui -o ui_main.py</span></p></body></html>",
                                                          None))
@@ -1479,7 +1531,7 @@ class Ui_MainWindow(object):
         self.minimizeAppBtn.setText("")
         # if QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Maximize", None))
-        # endif // QT_CONFIG(tooltip)
+        #endif // QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setText("")
         # if QT_CONFIG(tooltip)
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
@@ -1489,17 +1541,20 @@ class Ui_MainWindow(object):
         self.lineEdit_5.setText("")
         self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Path to .py file", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Open", None))
-        self.labelVersion_7.setText(QCoreApplication.translate("MainWindow", u"Label description", None))
         self.label_2.setStyleSheet(QCoreApplication.translate("MainWindow", u"0", None))
         self.label_2.setText("")
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Test 1", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Test 2", None))
-        self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"Test 3", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Classes:", None))
+        self.combo_classes.setItemText(0, QCoreApplication.translate("MainWindow", u"Test 1", None))
+        self.combo_classes.setItemText(1, QCoreApplication.translate("MainWindow", u"Test 2", None))
+        self.combo_classes.setItemText(2, QCoreApplication.translate("MainWindow", u"Test 3", None))
 
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Test 1", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Test 2", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Test 3", None))
+        self.combo_classes.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Classes", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Functions:", None))
+        self.combo_functions.setItemText(0, QCoreApplication.translate("MainWindow", u"Test 1", None))
+        self.combo_functions.setItemText(1, QCoreApplication.translate("MainWindow", u"Test 2", None))
+        self.combo_functions.setItemText(2, QCoreApplication.translate("MainWindow", u"Test 3", None))
 
+        self.combo_functions.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Functions", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
         self.radioButton.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
@@ -1517,6 +1572,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(False)
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.label.setText(QCoreApplication.translate("MainWindow",
                                                       u"<html><head/><body><p><span style=\" font-weight:700;\">Please check the generated Tests:</span></p><p><span style=\" font-weight:700;\">If everything is ok,</span></p><p><span style=\" font-weight:700;\">press the save button on the left</span></p></body></html>",
                                                       None))
