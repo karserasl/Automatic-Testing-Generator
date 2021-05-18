@@ -2,11 +2,11 @@
 # @Date:   10/01/2021 00:43
 import ast
 import inspect
-from collections import OrderedDict
-from atg.generator.default_generator import DefaultGenerator
-import loader
-import initializelogging
 import logging
+
+import initializelogging
+import loader
+from atg.generator.default_generator import DefaultGenerator
 
 initializelogging.setUpLogging()
 logger = logging.getLogger(__name__)
@@ -111,3 +111,147 @@ def recursive_lookup(k, d):
         if isinstance(v, dict):
             return recursive_lookup(k, v)
     return None
+
+
+def dump():
+    return '''import unittest
+from mockapp import calculator
+
+
+class CalcTest(unittest.TestCase):
+    # -------- uniClassification - method --------#
+    # -------- Equivalence Partitioning --------#
+    def test_uniClassification_1(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(4),
+            'Failed'
+        )
+
+    def test_uniClassification_2(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(45),
+            'Pass'
+        )
+
+    def test_uniClassification_3(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(53),
+            '2:2'
+        )
+
+    def test_uniClassification_4(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(67),
+            '2:1'
+        )
+
+    def test_uniClassification_5(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(79),
+            'First!'
+        )
+
+    # -------- Boundary Analysis --------#
+    def test_uniClassification_6(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(-1),
+            'Wrong grade.'
+        )
+
+    def test_uniClassification_7(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(0),
+            'Failed'
+        )
+
+    def test_uniClassification_8(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(1),
+            'Failed'
+        )
+
+    def test_uniClassification_9(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(99),
+            'First!'
+        )
+
+    def test_uniClassification_10(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(100),
+            'First!'
+        )
+
+    def test_uniClassification_11(self):
+        calc = calculator.Calculator()
+        self.assertEqual(
+            calc.uniClassification(101),
+            'Wrong grade.'
+        )
+
+    # -------- carDeals - static --------#
+    # -------- Pairwise Analysis --------#
+    def test_carDeals_1(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('Ford', 20000, 'New'),
+            'Good Deal'
+        )
+
+    def test_carDeals_2(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('Volvo', 40000, 'New'),
+            'Could be better'
+        )
+
+    def test_carDeals_3(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('BMW', 50000, 'New'),
+            'Could be better'
+        )
+
+    def test_carDeals_4(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('BMW', 40000, 'Used'),
+            'Could be better'
+        )
+
+    def test_carDeals_5(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('Volvo', 20000, 'Used'),
+            'Could be better'
+        )
+
+    def test_carDeals_6(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('Ford', 50000, 'Used'),
+            'Bad Deal'
+        )
+
+    def test_carDeals_7(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('Ford', 40000, 'Used'),
+            'Bad Deal'
+        )
+
+    def test_carDeals_8(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('Volvo', 50000, 'Used'),
+            'Could be better'
+        )
+
+    def test_carDeals_9(self):
+        self.assertEqual(
+            calculator.Calculator.carDeals('BMW', 20000, 'Used'),
+            'Good Deal'
+        )
+'''

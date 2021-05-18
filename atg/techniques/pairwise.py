@@ -4,6 +4,7 @@ import sys
 from collections import OrderedDict, namedtuple
 from functools import cmp_to_key, reduce
 from itertools import combinations
+
 from atg.tools.pairs_storage import PairsStorage, key
 
 TECH_ID = 'pairwise'
@@ -160,7 +161,8 @@ class Pairwise:
         # replace returned array elements with real values and return it
         return self.__get_iteration_value(chosen_item_list)
 
-    def __validate_parameter(self, value):
+    @staticmethod
+    def __validate_parameter(value):
         if isinstance(value, OrderedDict):
             for parameter_list in value.values():
                 if not parameter_list:
@@ -206,7 +208,8 @@ class Pairwise:
 
         self.__working_item_matrix[num].sort(key=cmp_to_key(cmp_item))
 
-    def __get_working_item_matrix(self, parameter_matrix):
+    @staticmethod
+    def __get_working_item_matrix(parameter_matrix):
         return [
             [
                 Item("a{:d}v{:d}".format(param_idx, value_idx), value)

@@ -2,18 +2,13 @@
 # @Date:   16/11/2020 10:25
 from __future__ import absolute_import
 
-import atg
-from atg.core import ATG
-import random
-import yaml
-import inspect
-import os
-import atg.loader as loader
-from collections import OrderedDict
-from atg.generator.default_generator import DefaultGenerator
-from atg.generator.alt_generator import Alt_Generator
-from pathlib import Path
 import ast
+import os
+from pathlib import Path
+
+import yaml
+
+from atg.core import dump
 
 
 # parsed_pairs = {}
@@ -44,14 +39,14 @@ def main():
         if not isinstance(atg_config, dict):
             return "Couldn't load configuration :: config.yml"
 
-        print(atg_config)
+        # print(atg_config)
 
         if 'file_path' not in atg_config:
             return 'Filepath to module must be provided!'
         file_path = atg_config.pop('file_path')
         os.chdir(Path(file_path).parent)
         print(file_path)
-        print(atg_config)
+        # print(atg_config)
 
         with open(file_path) as file:
             node = ast.parse(file.read())
@@ -59,8 +54,12 @@ def main():
         functions = [n for n in node.body if isinstance(n, ast.FunctionDef)]
         classes = [n for n in node.body if isinstance(n, ast.ClassDef)]
 
-        ATG(config=atg_config, file_path=file_path, classes=classes, functions=functions,
-            generator=Alt_Generator()).run()
+        print(f'Generating tests for class {[cls.name for cls in classes]}')
+        with open('./tests/test_calculator.py', 'w') as f:
+            f.write(dump())
+
+        # ATG(config=atg_config, file_path=file_path, classes=classes, functions=functions,
+        #     generator=Alt_Generator()).run()
 
 
 # def _getModule(mod):

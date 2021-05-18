@@ -7,8 +7,6 @@ import sys
 import traceback
 import types
 
-from atg import runtime
-
 
 def indent(n):
     return '    ' * n
@@ -18,7 +16,6 @@ class Alt_Generator:
     def __init__(self):
         self.output_ = []
         self.imports_ = {('unittest',)}
-        self.instances = {}
 
     def set_extra_imports(self, imports):
         for imp in imports:

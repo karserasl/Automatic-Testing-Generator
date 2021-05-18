@@ -1,71 +1,67 @@
 # @Author: Lampros.Karseras
 # @Date:   16/11/2020 10:36
-import os
-from pathlib import Path
 
 
 class Calculator:
-    # @staticmethod
-    # def add(a: int, b: int) -> int:
-    #     """
-    #     Adding numbers
-    #     :param a: Number 1
-    #     :param b: Number 2
-    #     :return: Result of addition
-    #     :eq: 4-35
-    #     """
-    #     return a + b
 
-    @staticmethod
-    def uniClassification(a: int):
+    def __init__(self):
+        self.statement = "Completed init"
+
+    def uniClassification(self, grade: int):
         """
         University grade calculator
-        :param a: grade of student
+        :param grade: grade of student
         :return: str
-        :eq: 0-39: 'Failed', 40-100: 'Pass', 'Wrong grade.'
         """
-        if 0 <= a < 39:
+        print(self.statement)
+
+        if 0 <= grade < 39:
             return 'Failed'
-        elif 40 <= a < 50:
+        elif 40 <= grade < 50:
             return 'Pass'
-        elif 50 <= a < 60:
+        elif 50 <= grade < 60:
             return '2:2'
-        elif 60 <= a < 70:
+        elif 60 <= grade < 70:
             return '2:1'
-        elif 70 <= a <= 100:
+        elif 70 <= grade <= 100:
             return 'First!'
         else:
             return 'Wrong grade.'
 
     @staticmethod
-    def pairwiseTest(a: str, b: str, c: str):
-        if a == 'Brand 1':
-            if b == 'a_test1':
-                return 'Brand 1, in a_test1'
-            if c == 'c_test2':
-                return 'Brand 1, in c_test2'
+    def carDeals(brand: str, price: int, cond: str):
+        if brand == "Ford":
+            if price <= 20000 and cond == "New":
+                return "Good Deal"
+            elif price >= 20000 and cond == 'Used':
+                return 'Bad Deal'
             else:
-                return 'Brand 1, not in test1'
-        elif a == 'Brand 2':
-            if b == 'b_test1':
-                if c == 'c_test1':
-                    return 'Brand 2, in c_test1'
-                return 'Brand 2, in b_test1'
-            elif b == 'b_test2':
-                return 'Brand 2, in b_test2'
-            elif b == 'b_test3':
-                return 'Brand 2, in b_test3'
+                return 'Could be better'
+        if brand == "BMW":
+            if price >= 50000 and cond == "Used":
+                return 'Bad Deal'
+            elif price >= 40000 and (cond == 'New' or cond == 'Used'):
+                return 'Could be better'
             else:
-                return 'Brand 2, not in b_test1-2-3'
-        else:
-            return 'outside of ranges'
+                return 'Good Deal'
+        if brand == 'Volvo':
+            if cond == 'New' and price < 40000:
+                return 'Good Deal'
+            else:
+                return 'Could be better'
 
 
-def test():
-    pass
+def test(a: str, b: int) -> str:
+    if a == 't' and 1 <= b <= 10:
+        return 'inside'
+    elif a == 'a' and 100 >= b >= 10:
+        return 'test'
 
+    if b > 10:
+        return 'int'
+    if a == 't':
+        return 'single'
+    elif a == 'a':
+        return 'hey'
 
-if __name__ == '__main__':
-    calc = Calculator()
-    print(calc.uniClassification(34))
-    print('.'.join(__name__.split('.')[:-1]))
+    return 'error'

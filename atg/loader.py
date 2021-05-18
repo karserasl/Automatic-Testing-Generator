@@ -4,6 +4,7 @@ import pkgutil
 import techniques
 import logging
 from importlib import import_module
+import attr
 
 logger = logging.getLogger(__name__)
 
@@ -24,3 +25,9 @@ def getAllTechniques():
     return (
         {technique.TECH_ID: technique for technique in loaded_techniques}
     )
+
+
+@attr.s(frozen=True)
+class parameters:
+    input = attr.ib()
+    output = attr.ib()

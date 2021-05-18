@@ -48,3 +48,7 @@ def run(partitions: dict, inv_choices: dict) -> dict:
 
         'Boundaries': getBoundaries(partitions, inv_choices)
     }
+
+
+def test(a: int) -> int:
+    pass
