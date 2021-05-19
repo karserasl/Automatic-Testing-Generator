@@ -13,10 +13,13 @@ class AppFunctions(main.MainWindow):
         """
 
         # SET MANUAL STYLES
-        self.ui.lineEdit_5.setStyleSheet("background-color: #6272a4;")
-        self.ui.pushButton_5.setStyleSheet("background-color: #6272a4;")
-        self.ui.plainTextEdit.setStyleSheet("background-color: #6272a4;")
-        self.ui.tableWidget.setStyleSheet(
+        self.ui.path_line.setStyleSheet("background-color: #6272a4;")
+        self.ui.open_btn.setStyleSheet("background-color: #6272a4;")
+        self.ui.process_next_btn.setStyleSheet("background-color: #6272a4;")
+        self.ui.new_row_btn.setStyleSheet("background-color: #6272a4;")
+        self.ui.remove_a_row.setStyleSheet("background-color: #6272a4;")
+        self.ui.output_text.setStyleSheet("background-color: #6272a4;")
+        self.ui.process_user_input_table.setStyleSheet(
             "QScrollBar:vertical { background: #6272a4; } QScrollBar:horizontal { background: #6272a4; }")
         self.ui.combo_functions.setStyleSheet("background-color: #6272a4;")
         self.ui.combo_classes.setStyleSheet("background-color: #6272a4;")

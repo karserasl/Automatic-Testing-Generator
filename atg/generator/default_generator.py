@@ -8,7 +8,7 @@ import types
 
 from generator.generator import Generator
 from generator.generator import get_module_name
-from core import runtime
+from middleware import runtime
 
 
 def indent(n):

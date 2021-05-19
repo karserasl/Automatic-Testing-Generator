@@ -40,7 +40,7 @@ QToolTip {
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Bg App */
-#bgApp {	
+#bgApp {
 	background-color: #f8f8f2;
 	border: 1px solid #CCC;
     color: #44475a;
@@ -48,7 +48,7 @@ Bg App */
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Left Menu */
-#leftMenuBg {	
+#leftMenuBg {
 	background-color: #6272a4;
 }
 #topLogo {
@@ -61,7 +61,7 @@ Left Menu */
 #titleLeftDescription { font: 8pt "Segoe UI"; color: #bd93f9; }
 
 /* MENUS */
-#topMenu .QPushButton {	
+#topMenu .QPushButton {
 	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
@@ -74,11 +74,11 @@ Left Menu */
 #topMenu .QPushButton:hover {
 	background-color: #bd93f9;
 }
-#topMenu .QPushButton:pressed {	
+#topMenu .QPushButton:pressed {
 	background-color: #ff79c6;
 	color: rgb(255, 255, 255);
 }
-#bottomMenu .QPushButton {	
+#bottomMenu .QPushButton {
 	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
@@ -91,7 +91,7 @@ Left Menu */
 #bottomMenu .QPushButton:hover {
 	background-color: #bd93f9;
 }
-#bottomMenu .QPushButton:pressed {	
+#bottomMenu .QPushButton:pressed {
 	background-color: #ff79c6;
 	color: rgb(255, 255, 255);
 }
@@ -113,7 +113,7 @@ Left Menu */
 #toggleButton:hover {
 	background-color: #bd93f9;
 }
-#toggleButton:pressed {	
+#toggleButton:pressed {
 	background-color: #ff79c6;
 	color: rgb(255, 255, 255);
 }
@@ -124,11 +124,11 @@ Left Menu */
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Extra Tab */
-#extraLeftBox {	
+#extraLeftBox {
 	background-color: #495474;
     color: #f8f8f2;
 }
-#extraTopBg{	
+#extraTopBg{
 	background-color: rgb(189, 147, 249)
 }
 
@@ -166,14 +166,14 @@ Extra Tab */
 #extraTopMenu .QPushButton:hover {
 	background-color: #5d6c99;
 }
-#extraTopMenu .QPushButton:pressed {	
+#extraTopMenu .QPushButton:pressed {
 	background-color: rgb(189, 147, 249);
 	color: rgb(255, 255, 255);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Content App */
-#contentTopBg{	
+#contentTopBg{
 	background-color: #6272a4;
 }
 #contentBottom{
@@ -211,13 +211,13 @@ Content App */
 #contentSettings .QPushButton:hover {
 	background-color: #5d6c99;
 }
-#contentSettings .QPushButton:pressed {	
+#contentSettings .QPushButton:pressed {
 	background-color: rgb(189, 147, 249);
 	color: rgb(255, 255, 255);
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 QTableWidget */
-QTableWidget {	
+QTableWidget {
 	background-color: transparent;
 	padding: 10px;
 	border-radius: 5px;
@@ -240,7 +240,7 @@ QHeaderView::section{
 	border: none;
 	border-style: none;
 }
-QTableWidget::horizontalHeader {	
+QTableWidget::horizontalHeader {
 	background-color: #6272a4;
 }
 QHeaderView::section:horizontal
@@ -345,7 +345,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
     margin: 21px 0 21px 0;
 	border-radius: 0px;
  }
- QScrollBar::handle:vertical {	
+ QScrollBar::handle:vertical {
 	background: rgb(189, 147, 249);
     min-height: 25px;
 	border-radius: 4px
@@ -390,7 +390,7 @@ QCheckBox::indicator:hover {
 }
 QCheckBox::indicator:checked {
     background: 3px solid #bd93f9;
-	border: 3px solid #bd93f9;	
+	border: 3px solid #bd93f9;
 	background-image: url(:/icons/images/icons/cil-check-alt.png);
 }
 
@@ -408,7 +408,7 @@ QRadioButton::indicator:hover {
 }
 QRadioButton::indicator:checked {
     background: 3px solid #bd93f9;
-	border: 3px solid #bd93f9;	
+	border: 3px solid #bd93f9;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -427,18 +427,18 @@ QComboBox:hover{
 QComboBox::drop-down {
 	subcontrol-origin: padding;
 	subcontrol-position: top right;
-	width: 25px; 
+	width: 25px;
 	border-left-width: 3px;
 	border-left-color: #6272a4;
 	border-left-style: solid;
 	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;	
+	border-bottom-right-radius: 3px;
 	background-image: url(:/icons/images/icons/cil-arrow-bottom.png);
 	background-position: center;
 	background-repeat: no-reperat;
  }
 QComboBox QAbstractItemView {
-	color: rgb(255, 121, 198);	
+	color: rgb(255, 121, 198);
 	background-color: #6272a4;
 	padding: 10px;
 	selection-background-color: #6272a4;
@@ -496,18 +496,18 @@ QSlider::handle:vertical:pressed {
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 CommandLinkButton */
-#pagesContainer QCommandLinkButton {	
+#pagesContainer QCommandLinkButton {
 	color: rgb(255, 121, 198);
 	border-radius: 5px;
 	padding: 5px;
     border: 2px solid #ff79c6;
     color: #ff79c6;
 }
-#pagesContainer QCommandLinkButton:hover {	
+#pagesContainer QCommandLinkButton:hover {
 	color: rgb(255, 170, 255);
 	background-color: #6272a4;
 }
-#pagesContainer QCommandLinkButton:pressed {	
+#pagesContainer QCommandLinkButton:pressed {
 	color: rgb(189, 147, 249);
 	background-color: #586796;
 }
@@ -516,7 +516,7 @@ CommandLinkButton */
 Button */
 #pagesContainer QPushButton {
 	border: 2px solid #6272a4;
-	border-radius: 5px;	
+	border-radius: 5px;
 	background-color: #6272a4;
     color: #f8f8f2;
 }
@@ -524,7 +524,7 @@ Button */
 	background-color: #7082b6;
 	border: 2px solid #7082b6;
 }
-#pagesContainer QPushButton:pressed {	
+#pagesContainer QPushButton:pressed {
 	background-color: #546391;
 	border: 2px solid #ff79c6;
 }

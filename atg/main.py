@@ -6,8 +6,9 @@ import platform
 # from PySide6 import QtWidgets
 
 from gui.modules import *
+from gui.modules import validator
 from gui.widgets import *
-from core.core import ATG
+from middleware.core import ATG
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -25,8 +26,9 @@ class MainWindow(QMainWindow):
         global widgets
         widgets = self.ui
         self.data = None
+        self.core = ATG()
 
-        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+        # USE CUSTOM TITLE BAR
         # ///////////////////////////////////////////////////////////////
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
 
@@ -45,10 +47,10 @@ class MainWindow(QMainWindow):
         # SET UI DEFINITIONS
         # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
-
+        # widgets.process_user_input_table.setItemDelegate(validator.TableValidator())
         # QTableWidget PARAMETERS
         # ///////////////////////////////////////////////////////////////
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        widgets.process_user_input_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
@@ -56,10 +58,18 @@ class MainWindow(QMainWindow):
         enable_left_button = True
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_widgets.clicked.connect(self.buttonClick)
-        widgets.btn_new.clicked.connect(self.buttonClick)
+        widgets.btn_processing.clicked.connect(self.buttonClick)
+        widgets.btn_output.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
-        widgets.pushButton_5.clicked.connect(self.open_file_btn)
+        # OPEN BUTTON
+        widgets.open_btn.clicked.connect(self.open_file_btn)
+        # TABLE BUTTONS
+        widgets.new_row_btn.clicked.connect(self._add_row)
+        widgets.remove_a_row.clicked.connect(self._remove_row)
+        widgets.combo_functions.currentIndexChanged.connect(self.create_table_input)
+
+        # NEXT BUTTON
+        widgets.process_next_btn.clicked.connect(self.process_input_table)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -77,11 +87,11 @@ class MainWindow(QMainWindow):
             widgets.extraCloseColumnBtn.setEnabled(False)
 
         # EXTRA RIGHT BOX
-        def openCloseRightBox():
+        def open_close_right_box():
             UIFunctions.toggleRightBox(self, False)
 
         if enable_right_button:
-            widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
+            widgets.settingsTopBtn.clicked.connect(open_close_right_box)
         else:
             widgets.settingsTopBtn.hide()
             widgets.settingsTopBtn.setEnabled(False)
@@ -122,14 +132,14 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
-        if btn_name == "btn_widgets":
-            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+        if btn_name == "btn_processing":
+            widgets.stackedWidget.setCurrentWidget(widgets.processing)
             UIFunctions.resetStyle(self, btn_name)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW NEW PAGE
-        if btn_name == "btn_new":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page)  # SET PAGE
+        if btn_name == "btn_output":
+            widgets.stackedWidget.setCurrentWidget(widgets.finalize)  # SET PAGE
             UIFunctions.resetStyle(self, btn_name)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
@@ -139,6 +149,15 @@ class MainWindow(QMainWindow):
 
         # PRINT BTN NAME
         # print(f'Button "{btn_name}" pressed!')
+
+    # TABLE ADD/REMOVE BUTTONS
+    def _add_row(self):
+        rowCount = widgets.process_user_input_table.rowCount()
+        widgets.process_user_input_table.insertRow(rowCount)
+
+    def _remove_row(self):
+        if widgets.process_user_input_table.rowCount() > 0:
+            widgets.process_user_input_table.removeRow(widgets.process_user_input_table.rowCount() - 1)
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
@@ -160,44 +179,22 @@ class MainWindow(QMainWindow):
     #         print('Mouse click: RIGHT CLICK')
 
     # UI LOGIC
-    # OPEN BUTTON
     # ///////////////////////////////////////////////////////////////
 
     def open_file_btn(self):
-
-        name = QFileDialog.getOpenFileName(self, 'Open File', filter="Python file (*.py)")
-        core = ATG(file_path=name[0])
-        self.data = core.get_data
-
-        if self.data and isinstance(self.data, dict):
-            widgets.lineEdit_5.setText(name[0])
-            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
-            UIFunctions.resetStyle(self, "btn_widgets")
-            widgets.btn_widgets.setStyleSheet(UIFunctions.selectMenu(widgets.btn_widgets.styleSheet()))
-            self.create_combo_box_items()
-            print(self.data)
-        else:
-            widgets.labelVersion_7.setText('Please select a Python File that contains some code')
+        UiLogic.open_file_btn(self)
 
     def create_combo_box_items(self):
-        self.model = QStandardItemModel()
-        widgets.combo_functions.setModel(self.model)
-        widgets.combo_classes.setModel(self.model)
+        UiLogic.create_combo_box_items(self)
 
-        def update_combo_box(index):
-            ind = self.model.index(index, 0, widgets.combo_classes.rootModelIndex())
-            widgets.combo_functions.setRootModelIndex(ind)
-            widgets.combo_functions.setCurrentIndex(0)
+    def create_table_input(self):
+        UiLogic.create_table_input(self)
 
-        widgets.combo_classes.currentIndexChanged.connect(update_combo_box)
-        update_combo_box(0)
+    def populate_table(self, func_params_columns, pairwise_choices=None):
+        UiLogic.populate_table(self, func_params_columns, pairwise_choices=None)
 
-        for k, v in self.data.items():
-            cls = QStandardItem(k)
-            self.model.appendRow(cls)
-            for value in v:
-                func = QStandardItem(value)
-                cls.appendRow(func)
+    def process_input_table(self):
+        UiLogic.process_input_table(self)
 
 
 if __name__ == '__main__':

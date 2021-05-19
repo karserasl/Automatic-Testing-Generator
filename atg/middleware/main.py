@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from core import dump
+from middleware import dump
 
 
 # parsed_pairs = {}

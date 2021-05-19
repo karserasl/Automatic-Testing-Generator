@@ -7,7 +7,7 @@ import sys
 
 from collections import defaultdict
 
-import core.runtime
+import middleware.runtime
 from generator.default_generator import DefaultGenerator
 from generator.generator import get_module_name
 

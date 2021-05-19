@@ -24,4 +24,3 @@ def get_all_techniques():
     return (
         {technique.TECH_ID: technique for technique in loaded_techniques}
     )
-

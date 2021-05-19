@@ -6,8 +6,8 @@ import logging
 
 from PySide6.QtCore import QCoreApplication
 
-from core import loader
-from core import initializelogging
+from middleware import loader
+from middleware import initializelogging
 from generator.default_generator import DefaultGenerator
 
 initializelogging.setup_logging()
@@ -16,15 +16,15 @@ logger = logging.getLogger(__name__)
 
 class ATG:
 
-    def __init__(self, file_path, generator=None):
+    def __init__(self, generator=None):
 
-        self._data = {}
-        self._file_path = file_path
+        self._analyzed_data = {}
+        self._func_params = {}
+        self._file_path = None
         self._caller = inspect.stack()[1][1]
         logger.info(self._caller)
         logger.info('Initialized ATG')
         self._file_node = None
-        self.analyse_file()
         self._techniques = loader.get_all_techniques()
         self._generator = generator or DefaultGenerator()
 
@@ -77,10 +77,11 @@ class ATG:
         # functions = self._config[cls]['function']
         # test = self.dump(filename=module, functions=functions)
 
-    def check(self):
-        pass
+    def check_if_exists(self):
+        return False
 
-    def analyse_file(self):
+    def analyse_file(self, filepath):
+        self._file_path = filepath
         try:
             with open(self._file_path) as f:
                 self._file_node = ast.parse(f.read())
@@ -93,19 +94,41 @@ class ATG:
             for i, cls in enumerate(classes):
                 cls_name = cls.name
                 methods = [n for n in cls.body if isinstance(n, ast.FunctionDef)]
-                self._data[f'{cls_name}'] = [method.name for method in methods if not method.name.startswith('__')]
+                self._analyzed_data[f'{cls_name}'] = [method.name for method in methods if
+                                                      not method.name.startswith('__init')]
                 for method in methods:
-                    show_info(method)
+                    if not method.name.startswith('__init'):
+                        self._func_params[method.name] = self.get_functions_parameters(method)
+                        # show_info(method)
 
         if functions:
-            self._data['Functions'] = [func.name for func in functions if not func.name.startswith('__')]
+            self._analyzed_data['Functions'] = [func.name for func in functions if not func.name.startswith('__init')]
             for func in functions:
-                show_info(func)
-        return self._data
+                if not func.name.startswith('__init'):
+                    self._func_params[func.name] = self.get_functions_parameters(func)
+                    # show_info(func)
+
+    @staticmethod
+    def get_functions_parameters(function):
+        return [arg.arg for arg in function.args.args if not arg.arg.startswith('self')]
 
     @property
     def get_data(self):
-        return self._data
+        self.clean_analyzed_data()
+        print(self._func_params)
+
+        check = bool({k: v for k, v in self._analyzed_data.items() if v})
+        return self._analyzed_data if check else None
+
+    @property
+    def get_params(self):
+        self.clean_analyzed_data()
+        return self._func_params
+
+    def clean_analyzed_data(self):
+        self._func_params = {k: v for k, v in self._func_params.items() if v}
+        self._analyzed_data = {k: list(set(v).intersection(self._func_params.keys())) for k, v in
+                               self._analyzed_data.items()}
 
     def findValues(self, func):
         for s in find(func, self._config):
