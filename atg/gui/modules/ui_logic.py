@@ -12,6 +12,7 @@ class UiLogic(main.MainWindow):
     def open_file_btn(self):
         name = QFileDialog.getOpenFileName(self, 'Open File', dir=QDir("../mockapp").absolutePath(),
                                            filter="Python file (*.py)")
+        if not name[0]: return
         self.core.analyse_file(name[0])
 
         # TODO: Handle the case that .atg_config file exists (Re-running the app)
@@ -55,6 +56,7 @@ class UiLogic(main.MainWindow):
     def create_table_input(self):
         func_selected = str(self.ui.combo_functions.currentText())
         sel_func_params = self.core.get_params[func_selected]
+        self.ui.process_user_input_table.clear()
         print(sel_func_params)  # TODO: Remove this
         if len(sel_func_params) > 2:
             # TODO: PAIRWISE
@@ -70,4 +72,23 @@ class UiLogic(main.MainWindow):
              'Expected Output'])  # generator comprehensions
 
     def process_input_table(self):
-        pass
+        answers = self.ui.process_user_input_table.columnCount() - 1
+        cols = self.ui.process_user_input_table.columnCount()
+        rows = self.ui.process_user_input_table.rowCount()
+        outputs = []
+        for row in range(rows):
+            list_of_ans = []
+            for col in range(cols):
+                item = self.ui.process_user_input_table.item(row, col)
+                if item and item.text():
+                    list_of_ans.append(item.text())
+            if list_of_ans:
+                outputs.append(list_of_ans)
+
+        print(outputs)  # TODO: Remove this
+        result = self.core.run(outputs=outputs)
+
+        if result:
+            self.ui.stackedWidget.setCurrentWidget(self.ui.finalize)
+            UIFunctions.resetStyle(self, "btn_output")
+            self.ui.btn_processing.setStyleSheet(UIFunctions.selectMenu(self.ui.finalize.styleSheet()))

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainOiZafO.ui'
+## Form generated from reading UI file 'mainItvDnv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -19,13 +19,13 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1133, 690)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
         font = QFont()
         font.setFamily(u"Segoe UI")
-        font.setPointSize(12)
+        font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
         self.styleSheet.setFont(font)
@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
             "\n"
             "QWidget{\n"
             "	color: rgb(221, 221, 221);\n"
-            "	font: 12pt \"Segoe UI\";\n"
+            "	font: 10pt \"Segoe UI\";\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -60,15 +60,15 @@ class Ui_MainWindow(object):
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Bg App */\n"
-            "#bgApp {\n"
-            "	background-"
-            "color: rgb(40, 44, 52);\n"
+            "#bgApp {	\n"
+            "	background"
+            "-color: rgb(40, 44, 52);\n"
             "	border: 1px solid rgb(44, 49, 58);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Left Menu */\n"
-            "#leftMenuBg {\n"
+            "#leftMenuBg {	\n"
             "	background-color: rgb(33, 37, 43);\n"
             "}\n"
             "#topLogo {\n"
@@ -81,7 +81,7 @@ class Ui_MainWindow(object):
             "#titleLeftDescription { font: 8pt \"Segoe UI\"; color: rgb(189, 147, 249); }\n"
             "\n"
             "/* MENUS */\n"
-            "#topMenu .QPushButton {\n"
+            "#topMenu .QPushButton {	\n"
             "	background-position: left center;\n"
             "    background-repeat: no-repeat;\n"
             "	border: none;\n"
@@ -93,12 +93,12 @@ class Ui_MainWindow(object):
             "#topMenu .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#topMenu .QPushButton:pressed {\n"
-            "	background-color: rgb(189, 1"
-            "47, 249);\n"
+            "#topMenu .QPushButton:pressed {	\n"
+            "	background-color: rgb(18"
+            "9, 147, 249);\n"
             "	color: rgb(255, 255, 255);\n"
             "}\n"
-            "#bottomMenu .QPushButton {\n"
+            "#bottomMenu .QPushButton {	\n"
             "	background-position: left center;\n"
             "    background-repeat: no-repeat;\n"
             "	border: none;\n"
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
             "#bottomMenu .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#bottomMenu .QPushButton:pressed {\n"
+            "#bottomMenu .QPushButton:pressed {	\n"
             "	background-color: rgb(189, 147, 249);\n"
             "	color: rgb(255, 255, 255);\n"
             "}\n"
@@ -133,8 +133,8 @@ class Ui_MainWindow(object):
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
             "#toggleButton:pressed {\n"
-            "	background-color: rgb(189, 1"
-            "47, 249);\n"
+            "	background-color: rgb("
+            "189, 147, 249);\n"
             "}\n"
             "\n"
             "/* Title Menu */\n"
@@ -143,10 +143,10 @@ class Ui_MainWindow(object):
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Extra Tab */\n"
-            "#extraLeftBox {\n"
+            "#extraLeftBox {	\n"
             "	background-color: rgb(44, 49, 58);\n"
             "}\n"
-            "#extraTopBg{\n"
+            "#extraTopBg{	\n"
             "	background-color: rgb(189, 147, 249)\n"
             "}\n"
             "\n"
@@ -167,8 +167,8 @@ class Ui_MainWindow(object):
             "\n"
             "/* Extra Content */\n"
             "#extraContent{\n"
-            "	border-top: 3p"
-            "x solid rgb(40, 44, 52);\n"
+            "	border"
+            "-top: 3px solid rgb(40, 44, 52);\n"
             "}\n"
             "\n"
             "/* Extra Top Menus */\n"
@@ -184,14 +184,14 @@ class Ui_MainWindow(object):
             "#extraTopMenu .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#extraTopMenu .QPushButton:pressed {\n"
+            "#extraTopMenu .QPushButton:pressed {	\n"
             "	background-color: rgb(189, 147, 249);\n"
             "	color: rgb(255, 255, 255);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "Content App */\n"
-            "#contentTopBg{\n"
+            "#contentTopBg{	\n"
             "	background-color: rgb(33, 37, 43);\n"
             "}\n"
             "#contentBottom{\n"
@@ -200,8 +200,8 @@ class Ui_MainWindow(object):
             "\n"
             "/* Top Buttons */\n"
             "#rightButtons .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }\n"
-            "#rightButtons .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid;"
-            " border-radius: 4px; }\n"
+            "#rightButtons .QPushButton:hover { background-color: rgb(44, 49, 57); border-sty"
+            "le: solid; border-radius: 4px; }\n"
             "#rightButtons .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }\n"
             "\n"
             "/* Theme Settings */\n"
@@ -214,7 +214,7 @@ class Ui_MainWindow(object):
             "\n"
             "/* CONTENT SETTINGS */\n"
             "/* MENUS */\n"
-            "#contentSettings .QPushButton {\n"
+            "#contentSettings .QPushButton {	\n"
             "	background-position: left center;\n"
             "    background-repeat: no-repeat;\n"
             "	border: none;\n"
@@ -226,15 +226,15 @@ class Ui_MainWindow(object):
             "#contentSettings .QPushButton:hover {\n"
             "	background-color: rgb(40, 44, 52);\n"
             "}\n"
-            "#contentSettings .QPushButton:pressed {\n"
+            "#contentSettings .QPushButton:pressed {	\n"
             "	background-color: rgb(189, 147, 249);\n"
-            "	color: rgb(255, 255, 2"
-            "55);\n"
+            "	color: rgb"
+            "(255, 255, 255);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "QTableWidget */\n"
-            "QTableWidget {\n"
+            "QTableWidget {	\n"
             "	background-color: transparent;\n"
             "	padding: 10px;\n"
             "	border-radius: 5px;\n"
@@ -258,14 +258,14 @@ class Ui_MainWindow(object):
             "    border-bottom: 1px solid rgb(44, 49, 60);\n"
             "    border-right: 1px solid rgb(44, 49, 60);\n"
             "}\n"
-            "QTableWidget::horizontalHeader {\n"
+            "QTableWidget::horizontalHeader {	\n"
             "	background-color: rgb(33, 37, 43);\n"
             "}\n"
             "QHeaderView::section:horizontal\n"
             "{\n"
             "    border: 1px solid rgb(33, 37, 43);\n"
-            "	background-color: rgb(33, 3"
-            "7, 43);\n"
+            "	background-co"
+            "lor: rgb(33, 37, 43);\n"
             "	padding: 3px;\n"
             "	border-top-left-radius: 7px;\n"
             "    border-top-right-radius: 7px;\n"
@@ -299,8 +299,8 @@ class Ui_MainWindow(object):
             "	border-radius: 5px;\n"
             "	padding: 10px;\n"
             "	selection-color: rgb(255, 255, 255);\n"
-            "	selection-background-color: rgb(255,"
-            " 121, 198);\n"
+            "	selection-background-c"
+            "olor: rgb(255, 121, 198);\n"
             "}\n"
             "QPlainTextEdit  QScrollBar:vertical {\n"
             "    width: 8px;\n"
@@ -338,8 +338,8 @@ class Ui_MainWindow(object):
             "    subcontrol-position: right;\n"
             "    subcontrol-origin: margin;\n"
             "}\n"
-            "QScrollBar::"
-            "sub-line:horizontal {\n"
+            ""
+            "QScrollBar::sub-line:horizontal {\n"
             "    border: none;\n"
             "    background: rgb(55, 63, 77);\n"
             "    width: 20px;\n"
@@ -363,7 +363,7 @@ class Ui_MainWindow(object):
             "    margin: 21px 0 21px 0;\n"
             "	border-radius: 0px;\n"
             " }\n"
-            " QScrollBar::handle:vertical {\n"
+            " QScrollBar::handle:vertical {	\n"
             "	background: rgb(189, 147, 249);\n"
             "    min-height: 25px;\n"
             "	border-radius: 4px\n"
@@ -375,8 +375,8 @@ class Ui_MainWindow(object):
             "	border-bottom-left-radius: 4px;\n"
             "    border-bottom-right-radius: 4px;\n"
             "     subcontrol-position: bottom;\n"
-            "     subcontrol-orig"
-            "in: margin;\n"
+            "     su"
+            "bcontrol-origin: margin;\n"
             " }\n"
             " QScrollBar::sub-line:vertical {\n"
             "	border: none;\n"
@@ -409,9 +409,9 @@ class Ui_MainWindow(object):
             "}\n"
             "QCheckBox::indicator:checked {\n"
             "    background: 3px solid rgb(52, 59, 72);\n"
-            "	border: 3px solid rgb(52, 59, 72);\n"
-            "	background-image: "
-            "url(:/icons/images/icons/cil-check-alt.png);\n"
+            "	border: 3px solid rgb(52, 59, 72);	\n"
+            "	back"
+            "ground-image: url(:/icons/images/icons/cil-check-alt.png);\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -428,7 +428,7 @@ class Ui_MainWindow(object):
             "}\n"
             "QRadioButton::indicator:checked {\n"
             "    background: 3px solid rgb(94, 106, 130);\n"
-            "	border: 3px solid rgb(52, 59, 72);\n"
+            "	border: 3px solid rgb(52, 59, 72);	\n"
             "}\n"
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -445,20 +445,20 @@ class Ui_MainWindow(object):
             "}\n"
             "QComboBox::drop-down {\n"
             "	subcontrol-origin: padding;\n"
-            "	subcontrol-position:"
-            " top right;\n"
-            "	width: 25px;\n"
+            "	subco"
+            "ntrol-position: top right;\n"
+            "	width: 25px; \n"
             "	border-left-width: 3px;\n"
             "	border-left-color: rgba(39, 44, 54, 150);\n"
             "	border-left-style: solid;\n"
             "	border-top-right-radius: 3px;\n"
-            "	border-bottom-right-radius: 3px;\n"
+            "	border-bottom-right-radius: 3px;	\n"
             "	background-image: url(:/icons/images/icons/cil-arrow-bottom.png);\n"
             "	background-position: center;\n"
             "	background-repeat: no-reperat;\n"
             " }\n"
             "QComboBox QAbstractItemView {\n"
-            "	color: rgb(255, 121, 198);\n"
+            "	color: rgb(255, 121, 198);	\n"
             "	background-color: rgb(33, 37, 43);\n"
             "	padding: 10px;\n"
             "	selection-background-color: rgb(39, 44, 54);\n"
@@ -478,9 +478,9 @@ class Ui_MainWindow(object):
             "QSlider::handle:horizontal {\n"
             "    background-color: rgb(189, 147, 249);\n"
             "    border: none;\n"
-            "    height: 10px;\n"
-            " "
-            "   width: 10px;\n"
+            "    h"
+            "eight: 10px;\n"
+            "    width: 10px;\n"
             "    margin: 0px;\n"
             "	border-radius: 5px;\n"
             "}\n"
@@ -517,18 +517,18 @@ class Ui_MainWindow(object):
             "\n"
             "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
             "CommandLinkButton */\n"
-            "QCommandLinkButton {\n"
-            "	co"
-            "lor: rgb(255, 121, 198);\n"
+            "QCommandLi"
+            "nkButton {	\n"
+            "	color: rgb(255, 121, 198);\n"
             "	border-radius: 5px;\n"
             "	padding: 5px;\n"
             "	color: rgb(255, 170, 255);\n"
             "}\n"
-            "QCommandLinkButton:hover {\n"
+            "QCommandLinkButton:hover {	\n"
             "	color: rgb(255, 170, 255);\n"
             "	background-color: rgb(44, 49, 60);\n"
             "}\n"
-            "QCommandLinkButton:pressed {\n"
+            "QCommandLinkButton:pressed {	\n"
             "	color: rgb(189, 147, 249);\n"
             "	background-color: rgb(52, 58, 71);\n"
             "}\n"
@@ -537,19 +537,17 @@ class Ui_MainWindow(object):
             "Button */\n"
             "#pagesContainer QPushButton {\n"
             "	border: 2px solid rgb(52, 59, 72);\n"
-            "	border-radius: 5px;\n"
+            "	border-radius: 5px;	\n"
             "	background-color: rgb(52, 59, 72);\n"
             "}\n"
             "#pagesContainer QPushButton:hover {\n"
             "	background-color: rgb(57, 65, 80);\n"
             "	border: 2px solid rgb(61, 70, 86);\n"
             "}\n"
-            "#pagesContainer QPushButton:pressed {\n"
+            "#pagesContainer QPushButton:pressed {	\n"
             "	background-color: rgb(35, 40, 49);\n"
             "	border: 2px solid rgb(43, 50, 61);\n"
-            "}\n"
-            "\n"
-            "")
+            "}")
         self.appMargins = QVBoxLayout(self.styleSheet)
         self.appMargins.setSpacing(0)
         self.appMargins.setObjectName(u"appMargins")
@@ -638,10 +636,10 @@ class Ui_MainWindow(object):
         self.toggleButton.setFont(font)
         self.toggleButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.toggleButton.setLayoutDirection(Qt.LeftToRight)
-        self.toggleButton.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_menu.png);")
+        self.toggleButton.setStyleSheet(u"background-image:\n"
+                                        "                                                                                url(:/icons/images/icons/icon_menu.png);")
 
         self.verticalLayout_4.addWidget(self.toggleButton)
-
 
         self.verticalMenuLayout.addWidget(self.toggleBox)
 
@@ -661,7 +659,8 @@ class Ui_MainWindow(object):
         self.btn_home.setFont(font)
         self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setLayoutDirection(Qt.LeftToRight)
-        self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
+        self.btn_home.setStyleSheet(u"background-image:\n"
+                                    "                                                                                url(:/icons/images/icons/cil-home.png);")
 
         self.verticalLayout_8.addWidget(self.btn_home)
 
@@ -685,7 +684,8 @@ class Ui_MainWindow(object):
         self.btn_output.setFont(font)
         self.btn_output.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_output.setLayoutDirection(Qt.LeftToRight)
-        self.btn_output.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-file.png);")
+        self.btn_output.setStyleSheet(u"background-image:\n"
+                                      "                                                                                url(:/icons/images/icons/cil-file.png);")
 
         self.verticalLayout_8.addWidget(self.btn_output)
 
@@ -697,7 +697,8 @@ class Ui_MainWindow(object):
         self.btn_save.setFont(font)
         self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_save.setLayoutDirection(Qt.LeftToRight)
-        self.btn_save.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-save.png)")
+        self.btn_save.setStyleSheet(u"background-image:\n"
+                                    "                                                                                url(:/icons/images/icons/cil-save.png)")
 
         self.verticalLayout_8.addWidget(self.btn_save)
 
@@ -709,10 +710,10 @@ class Ui_MainWindow(object):
         self.btn_exit.setFont(font)
         self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_exit.setLayoutDirection(Qt.LeftToRight)
-        self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
+        self.btn_exit.setStyleSheet(u"background-image:\n"
+                                    "                                                                                url(:/icons/images/icons/cil-x.png);")
 
         self.verticalLayout_8.addWidget(self.btn_exit)
-
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
 
@@ -732,13 +733,12 @@ class Ui_MainWindow(object):
         self.toggleLeftBox.setFont(font)
         self.toggleLeftBox.setCursor(QCursor(Qt.PointingHandCursor))
         self.toggleLeftBox.setLayoutDirection(Qt.LeftToRight)
-        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_settings.png);")
+        self.toggleLeftBox.setStyleSheet(u"background-image:\n"
+                                         "                                                                                url(:/icons/images/icons/icon_settings.png);")
 
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
 
-
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, Qt.AlignBottom)
-
 
         self.verticalLayout_3.addWidget(self.leftMenuFrame)
 
@@ -827,7 +827,8 @@ class Ui_MainWindow(object):
         self.share_btn.setFont(font)
         self.share_btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.share_btn.setLayoutDirection(Qt.LeftToRight)
-        self.share_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-share-boxed.png);")
+        self.share_btn.setStyleSheet(u"background-image:\n"
+                                     "                                                                                url(:/icons/images/icons/cil-share-boxed.png);")
 
         self.verticalLayout_11.addWidget(self.share_btn)
 
@@ -839,7 +840,8 @@ class Ui_MainWindow(object):
         self.github_btn.setFont(font)
         self.github_btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.github_btn.setLayoutDirection(Qt.LeftToRight)
-        self.github_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-external-link.png);")
+        self.github_btn.setStyleSheet(u"background-image:\n"
+                                      "                                                                                url(:/icons/images/icons/cil-external-link.png);")
 
         self.verticalLayout_11.addWidget(self.github_btn)
 
@@ -854,7 +856,8 @@ class Ui_MainWindow(object):
         self.information_text = QTextEdit(self.extraCenter)
         self.information_text.setObjectName(u"information_text")
         self.information_text.setMinimumSize(QSize(222, 0))
-        self.information_text.setStyleSheet(u"background: transparent;")
+        self.information_text.setStyleSheet(u"background:\n"
+                                            "                                                                                transparent;")
         self.information_text.setFrameShape(QFrame.NoFrame)
         self.information_text.setReadOnly(True)
 
@@ -961,7 +964,7 @@ class Ui_MainWindow(object):
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
         font3 = QFont()
         font3.setFamily(u"Segoe UI")
-        font3.setPointSize(12)
+        font3.setPointSize(10)
         font3.setBold(False)
         font3.setItalic(False)
         font3.setStyleStrategy(QFont.PreferDefault)
@@ -1017,7 +1020,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setContentsMargins(10, 10, 10, 10)
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setStyleSheet(u"background: transparent;")
         self.home = QWidget()
         self.home.setObjectName(u"home")
         self.verticalLayout_40 = QVBoxLayout(self.home)
@@ -1053,6 +1055,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_39.addWidget(self.info_label)
 
+
         self.verticalLayout_38.addWidget(self.info_layout)
 
         self.input_layout = QFrame(self.input_content)
@@ -1067,7 +1070,10 @@ class Ui_MainWindow(object):
         self.path_line = QLineEdit(self.input_layout)
         self.path_line.setObjectName(u"path_line")
         self.path_line.setMinimumSize(QSize(0, 30))
-        self.path_line.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.path_line.setStyleSheet(u"background-color:\n"
+                                     "                                                                                                                                                        rgb(33,\n"
+                                     "                                                                                                                                                        37,\n"
+                                     "                                                                                                                                                        43);")
 
         self.input_grid.addWidget(self.path_line, 0, 0, 1, 1)
 
@@ -1076,7 +1082,10 @@ class Ui_MainWindow(object):
         self.open_btn.setMinimumSize(QSize(150, 30))
         self.open_btn.setFont(font)
         self.open_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.open_btn.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.open_btn.setStyleSheet(u"background-color:\n"
+                                    "                                                                                                                                                        rgb(52,\n"
+                                    "                                                                                                                                                        59,\n"
+                                    "                                                                                                                                                        72);")
         icon4 = QIcon()
         icon4.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
         self.open_btn.setIcon(icon4)
@@ -1085,7 +1094,10 @@ class Ui_MainWindow(object):
 
         self.error_msg_label = QLabel(self.input_layout)
         self.error_msg_label.setObjectName(u"error_msg_label")
-        self.error_msg_label.setStyleSheet(u"color: rgb(113, 126, 149);")
+        self.error_msg_label.setStyleSheet(u"color:\n"
+                                           "                                                                                                                                                        rgb(113,\n"
+                                           "                                                                                                                                                        126,\n"
+                                           "                                                                                                                                                        149);")
         self.error_msg_label.setLineWidth(1)
         self.error_msg_label.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
 
@@ -1094,6 +1106,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.addLayout(self.input_grid)
 
         self.verticalLayout_38.addWidget(self.input_layout)
+
 
         self.gridLayout_3.addWidget(self.input_content, 1, 0, 1, 1)
 
@@ -1104,6 +1117,7 @@ class Ui_MainWindow(object):
         self.logo_label.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_3.addWidget(self.logo_label, 0, 0, 1, 1)
+
 
         self.verticalLayout_40.addWidget(self.home_row)
 
@@ -1141,7 +1155,10 @@ class Ui_MainWindow(object):
         self.combo_classes.setMinimumSize(QSize(250, 40))
         self.combo_classes.setFont(font)
         self.combo_classes.setAutoFillBackground(False)
-        self.combo_classes.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.combo_classes.setStyleSheet(u"background-color:\n"
+                                         "                                                                                                                                rgb(33,\n"
+                                         "                                                                                                                                37,\n"
+                                         "                                                                                                                                43);")
         self.combo_classes.setMaxVisibleItems(15)
         self.combo_classes.setIconSize(QSize(16, 16))
         self.combo_classes.setFrame(True)
@@ -1161,7 +1178,10 @@ class Ui_MainWindow(object):
         self.combo_functions.setMinimumSize(QSize(250, 40))
         self.combo_functions.setFont(font)
         self.combo_functions.setAutoFillBackground(False)
-        self.combo_functions.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.combo_functions.setStyleSheet(u"background-color:\n"
+                                           "                                                                                                                                rgb(33,\n"
+                                           "                                                                                                                                37,\n"
+                                           "                                                                                                                                43);")
         self.combo_functions.setMaxVisibleItems(15)
         self.combo_functions.setIconSize(QSize(16, 16))
         self.combo_functions.setFrame(True)
@@ -1182,6 +1202,7 @@ class Ui_MainWindow(object):
         self.radioButton.setStyleSheet(u"")
 
         self.horizontalLayout_7.addWidget(self.radioButton)
+
 
         self.verticalLayout.addWidget(self.selection_row)
 
@@ -1241,14 +1262,13 @@ class Ui_MainWindow(object):
         brush4.setStyle(Qt.NoBrush)
         palette.setBrush(QPalette.Disabled, QPalette.Base, brush4)
         palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
-        # endif
+        #endif
         self.process_user_input_table.setPalette(palette)
         self.process_user_input_table.setFrameShape(QFrame.NoFrame)
         self.process_user_input_table.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.process_user_input_table.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.process_user_input_table.setEditTriggers(QAbstractItemView.AllEditTriggers)
         self.process_user_input_table.setSelectionMode(QAbstractItemView.SingleSelection)
         self.process_user_input_table.setSelectionBehavior(QAbstractItemView.SelectItems)
         self.process_user_input_table.setShowGrid(True)
@@ -1288,6 +1308,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_17.addWidget(self.remove_a_row)
 
+
         self.horizontalLayout_8.addLayout(self.verticalLayout_17)
 
         self.verticalLayout.addWidget(self.table_row)
@@ -1299,7 +1320,9 @@ class Ui_MainWindow(object):
         self.process_next_btn.setMinimumSize(QSize(150, 33))
         self.process_next_btn.setFont(font)
         self.process_next_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.process_next_btn.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.process_next_btn.setStyleSheet(u"background-color:\n"
+                                            "                                                                                                            rgb(52, 59,\n"
+                                            "                                                                                                            72);")
         icon7 = QIcon()
         icon7.addFile(u":/icons/images/icons/cil-caret-right.png", QSize(), QIcon.Normal, QIcon.Off)
         self.process_next_btn.setIcon(icon7)
@@ -1325,7 +1348,9 @@ class Ui_MainWindow(object):
         self.output_text = QPlainTextEdit(self.finalize)
         self.output_text.setObjectName(u"output_text")
         self.output_text.setMinimumSize(QSize(200, 200))
-        self.output_text.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.output_text.setStyleSheet(u"background-color:\n"
+                                       "                                                                                                            rgb(33, 37,\n"
+                                       "                                                                                                            43);")
 
         self.horizontalLayout_6.addWidget(self.output_text)
 
@@ -1377,7 +1402,8 @@ class Ui_MainWindow(object):
         self.btn_message.setFont(font)
         self.btn_message.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_message.setLayoutDirection(Qt.LeftToRight)
-        self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
+        self.btn_message.setStyleSheet(u"background-image:\n"
+                                       "                                                                                                                    url(:/icons/images/icons/cil-envelope-open.png);")
 
         self.verticalLayout_14.addWidget(self.btn_message)
 
@@ -1389,7 +1415,7 @@ class Ui_MainWindow(object):
         self.btn_print.setFont(font)
         self.btn_print.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_print.setLayoutDirection(Qt.LeftToRight)
-        self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-print.png);")
+        self.btn_print.setStyleSheet(u"background-image:url(:/icons/images/icons/cil-print.png);")
 
         self.verticalLayout_14.addWidget(self.btn_print)
 
@@ -1401,7 +1427,7 @@ class Ui_MainWindow(object):
         self.btn_logout.setFont(font)
         self.btn_logout.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_logout.setLayoutDirection(Qt.LeftToRight)
-        self.btn_logout.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-account-logout.png);")
+        self.btn_logout.setStyleSheet(u"background-image:url(:/icons/images/icons/cil-account-logout.png);")
 
         self.verticalLayout_14.addWidget(self.btn_logout)
 
@@ -1498,22 +1524,26 @@ class Ui_MainWindow(object):
                                                                  u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                                                  "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
                                                                  "p, li { white-space: pre-wrap; }\n"
-                                                                 "</style></head><body style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ff79c6;\">ATG</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#ffffff;\">A module for automatic test cases generation for Python, colors based on the Dracula theme created by Zeno Rocha.</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\""
-                                                                 "><span style=\" font-size:10pt; color:#ffffff;\">MIT License</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#bd93f9;\">Created by: Lampros Karseras</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ff79c6;\">Limitations</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">Limited to just Integers and Strings</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">Single variable for Boundary Value Analysis</span></p>\n"
-                                                                 "<p align=\"cente"
-                                                                 "r\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ff79c6;\">GUI resources</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p>\n"
-                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-uic main.ui -o ui_main.py</span></p></body></html>",
+                                                                 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+                                                                 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">ATG</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; mar"
+                                                                 "gin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">A module for                                                                                automatic test cases generation for                                                                                Python, colors based on the Dracula                                                                                theme created by Zeno Rocha.</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">MIT License</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent"
+                                                                 ":0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by:                                                                                Lampros Karseras</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Limitations</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">Limited to just                                                                                Integers and Strings</span><span style=\" font-size:12pt;\">                                 "
+                                                                 "                                               </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">Single variable                                                                                for Boundary Value Analysis</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">GUI resources</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-siz"
+                                                                 "e:9pt; color:#ffffff;\">pyside6-rcc                                                                                resources.qrc -o resources_rc.py</span><span style=\" font-size:12pt;\">                                                                                </span></p>\n"
+                                                                 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-uic                                                                                main.ui -o ui_main.py</span></p></body></html>",
                                                                  None))
-        self.titleRightInfo.setText(
-            QCoreApplication.translate("MainWindow", u"ATG - Automatic Test Generator for Python.", None))
+        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"ATG - Automatic Test Generator for\n"
+                                                                             "                                                                                Python.",
+                                                               None))
         # if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
         # endif // QT_CONFIG(tooltip)
@@ -1524,13 +1554,15 @@ class Ui_MainWindow(object):
         self.minimizeAppBtn.setText("")
         # if QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Maximize", None))
-        # endif // QT_CONFIG(tooltip)
+        #endif // QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setText("")
-        # if QT_CONFIG(tooltip)
+        #if QT_CONFIG(tooltip)
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
-        # endif // QT_CONFIG(tooltip)
+        #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.info_label.setText(QCoreApplication.translate("MainWindow", u"OPEN A PYTHON FILE", None))
+        self.info_label.setText(
+            QCoreApplication.translate("MainWindow", u"<html><head/><body><p>OPEN A PYTHON FILE</p></body></html>",
+                                       None))
         self.path_line.setText("")
         self.path_line.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Path to .py file", None))
         self.open_btn.setText(QCoreApplication.translate("MainWindow", u"Open", None))
@@ -1544,16 +1576,48 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem = self.process_user_input_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Empty", None));
         # if QT_CONFIG(statustip)
-        self.new_row_btn.setStatusTip(QCoreApplication.translate("MainWindow", u"Add a new row to table", None))
+        self.new_row_btn.setStatusTip(QCoreApplication.translate("MainWindow", u"Add\n"
+                                                                               "                                                                                                                                a\n"
+                                                                               "                                                                                                                                new\n"
+                                                                               "                                                                                                                                row\n"
+                                                                               "                                                                                                                                to\n"
+                                                                               "                                                                                                                                table",
+                                                                 None))
         # endif // QT_CONFIG(statustip)
         self.new_row_btn.setText(QCoreApplication.translate("MainWindow", u"New Row", None))
         # if QT_CONFIG(statustip)
-        self.remove_a_row.setStatusTip(QCoreApplication.translate("MainWindow", u"Add a new row to table", None))
+        self.remove_a_row.setStatusTip(QCoreApplication.translate("MainWindow", u"Add\n"
+                                                                                "                                                                                                                                a\n"
+                                                                                "                                                                                                                                new\n"
+                                                                                "                                                                                                                                row\n"
+                                                                                "                                                                                                                                to\n"
+                                                                                "                                                                                                                                table",
+                                                                  None))
         # endif // QT_CONFIG(statustip)
         self.remove_a_row.setText(QCoreApplication.translate("MainWindow", u"Remove Row", None))
         self.process_next_btn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
-        self.final_label.setText(QCoreApplication.translate("MainWindow",
-                                                            u"<html><head/><body><p><span style=\" font-weight:700;\">Please check the generated Tests:</span></p><p><span style=\" font-weight:700;\">If everything is ok,</span></p><p><span style=\" font-weight:700;\">press the save button on the left</span></p></body></html>",
+        self.final_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
+                                                                          "                                                                                                                    style=\"\n"
+                                                                          "                                                                                                                    font-weight:700;\">Please\n"
+                                                                          "                                                                                                                    check\n"
+                                                                          "                                                                                                                    the\n"
+                                                                          "                                                                                                                    generated\n"
+                                                                          "                                                                                                                    Tests:</span></p><p><span\n"
+                                                                          "                                                                                                                    style=\"\n"
+                                                                          "                                                               "
+                                                                          "                                                     font-weight:700;\">If\n"
+                                                                          "                                                                                                                    everything\n"
+                                                                          "                                                                                                                    is\n"
+                                                                          "                                                                                                                    ok,</span></p><p><span\n"
+                                                                          "                                                                                                                    style=\"\n"
+                                                                          "                                                                                                                    font-weight:700;\">press\n"
+                                                                          "                                                                                                                    the\n"
+                                                                          "                                                                                                                    save\n"
+                                                                          "                          "
+                                                                          "                                                                                          button\n"
+                                                                          "                                                                                                                    on\n"
+                                                                          "                                                                                                                    the\n"
+                                                                          "                                                                                                                    left</span></p></body></html>",
                                                             None))
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))

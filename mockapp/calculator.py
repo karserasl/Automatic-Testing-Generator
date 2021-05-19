@@ -29,7 +29,7 @@ class Calculator:
             return 'Wrong grade.'
 
     @staticmethod
-    def carDeals(brand: str, price: int, cond: str):
+    def carDeals(brand: str, price: int = 4, cond: str = 'test3'):
         if brand == "Ford":
             if price <= 20000 and cond == "New":
                 return "Good Deal"

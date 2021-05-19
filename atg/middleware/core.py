@@ -4,8 +4,6 @@ import ast
 import inspect
 import logging
 
-from PySide6.QtCore import QCoreApplication
-
 from middleware import loader
 from middleware import initializelogging
 from generator.default_generator import DefaultGenerator
@@ -46,36 +44,9 @@ class ATG:
                                                                            value['invalid_choices'])
         return partitions
 
-    def run(self):
-        # TODO: Apply BlackBox techniques. Seperate file
-        # TODO: Get the return and push it to test generator
-        # for f in self._functions:
-        #     variables_values = self.findValues(f.name)
+    def run(self, outputs: list):
 
-        for cls in self._classes:
-            methods = [n for n in cls.body if isinstance(n, ast.FunctionDef)]
-            for method in methods:
-                # show_info(method)
-                variables_values = self.findValues(method.name)
-                if variables_values:
-                    if recursive_lookup('partitions', variables_values):
-                        # TODO: Pass partitions to generator to dump partition tests to new file
-                        partitions = self.getPartitions(variables_values)
-                        print(partitions)
-                    if recursive_lookup('combinations', variables_values):
-                        # TODO: Ask for results of each pairwise combination
-                        pass
-                    if recursive_lookup('value', variables_values):
-                        # TODO: Pass variables_values to generator
-                        pass
-                test = self._generator.dump(self._file_path, method, cls, partitions)
-                print(test)
-        # if 'combinations' in self._config[cls]:
-        #     pairwise = self._techniques['pairwise']
-        #     for i, pairs in enumerate(pairwise.Pairwise(OrderedDict(self._config[cls]['combinations']))):
-        #         print("{:2d}: {}".format(i, pairs))
-        # functions = self._config[cls]['function']
-        # test = self.dump(filename=module, functions=functions)
+        return True
 
     def check_if_exists(self):
         return False
@@ -129,6 +100,15 @@ class ATG:
         self._func_params = {k: v for k, v in self._func_params.items() if v}
         self._analyzed_data = {k: list(set(v).intersection(self._func_params.keys())) for k, v in
                                self._analyzed_data.items()}
+
+    @staticmethod
+    def get_default_args(func):
+        signature = inspect.signature(func)
+        return {
+            k: v.default
+            if v.default is not inspect.Parameter.empty else None
+            for k, v in signature.parameters.items()
+        }
 
     def findValues(self, func):
         for s in find(func, self._config):
