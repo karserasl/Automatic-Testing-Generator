@@ -20,8 +20,12 @@ def car_deals(brand: str, price: int = 4, cond: str = 'test3'):
             return 'Could be better'
 
 
-import middleware.core
+# import middleware.core
+#
+# a = middleware.core.ATG()
+# a.analyse_file(
+#     'C:/Users/Administrator/Uni-3rd_Year/CTEC3451 - Development Project/Development/Code/Automatic Testing Generator/mockapp/calculator.py')
 
-a = middleware.core.ATG()
-a.analyse_file(
-    'C:/Users/Administrator/Uni-3rd_Year/CTEC3451 - Development Project/Development/Code/Automatic Testing Generator/mockapp/calculator.py')
+
+from techniques.boundary_analysis import run
+print(run([['11-95', 'f'], ['777-2222', 'q']], 'aaaa'))

@@ -18,9 +18,9 @@ class ATG:
 
         self._analyzed_data = {}
         self._func_params = {}
+        self._processed_output = {}
+        self._selected_function = None
         self._file_path = None
-        self._caller = inspect.stack()[1][1]
-        logger.info(self._caller)
         logger.info('Initialized ATG')
         self._file_node = None
         self._techniques = loader.get_all_techniques()
@@ -44,8 +44,11 @@ class ATG:
                                                                            value['invalid_choices'])
         return partitions
 
-    def run(self, outputs: list):
-
+    def run(self, outputs: list, inv_choice, pairwise):
+        print(outputs, inv_choice)  # TODO: Remove this
+        if not pairwise:
+            for tech_id, technique in self._techniques.items():
+                self._processed_output[tech_id] = technique.run(outputs, inv_choice)
         return True
 
     def check_if_exists(self):
@@ -95,6 +98,10 @@ class ATG:
     def get_params(self):
         self.clean_analyzed_data()
         return self._func_params
+
+    def set_sel_function(self, value):
+        if value:
+            self._selected_function = value
 
     def clean_analyzed_data(self):
         self._func_params = {k: v for k, v in self._func_params.items() if v}

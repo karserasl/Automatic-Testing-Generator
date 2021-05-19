@@ -15,7 +15,7 @@ class Calculator:
         """
         print(self.statement)
 
-        if 0 <= grade < 39:
+        if 0 <= grade < 40:
             return 'Failed'
         elif 40 <= grade < 50:
             return 'Pass'

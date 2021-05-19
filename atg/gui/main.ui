@@ -2461,7 +2461,7 @@ p, li { white-space: pre-wrap; }
                              <bool>false</bool>
                             </property>
                             <property name="rowCount">
-                             <number>6</number>
+                             <number>2</number>
                             </property>
                             <property name="columnCount">
                              <number>1</number>
@@ -2478,10 +2478,12 @@ p, li { white-space: pre-wrap; }
                             <attribute name="horizontalHeaderHighlightSections">
                              <bool>true</bool>
                             </attribute>
-                            <row/>
-                            <row/>
-                            <row/>
-                            <row/>
+                            <attribute name="verticalHeaderVisible">
+                             <bool>false</bool>
+                            </attribute>
+                            <attribute name="verticalHeaderCascadingSectionResizes">
+                             <bool>true</bool>
+                            </attribute>
                             <row/>
                             <row/>
                             <column>
@@ -2553,6 +2555,55 @@ p, li { white-space: pre-wrap; }
                           </item>
                          </layout>
                         </widget>
+                       </item>
+                       <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout_9">
+                         <property name="leftMargin">
+                          <number>600</number>
+                         </property>
+                         <property name="rightMargin">
+                          <number>0</number>
+                         </property>
+                         <item>
+                          <widget class="QLineEdit" name="invalid_choice">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>300</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Segoe UI</family>
+                             <pointsize>10</pointsize>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Enter the Invalid Choice for the rest</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </item>
                        <item alignment="Qt::AlignHCenter">
                         <widget class="QPushButton" name="process_next_btn">

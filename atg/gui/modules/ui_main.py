@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainxWbjvE.ui'
+## Form generated from reading UI file 'maineiFPua.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -1213,8 +1213,8 @@ class Ui_MainWindow(object):
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setTextAlignment(Qt.AlignCenter);
         self.process_user_input_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        if (self.process_user_input_table.rowCount() < 6):
-            self.process_user_input_table.setRowCount(6)
+        if (self.process_user_input_table.rowCount() < 2):
+            self.process_user_input_table.setRowCount(2)
         self.process_user_input_table.setObjectName(u"process_user_input_table")
         sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy4.setHorizontalStretch(0)
@@ -1268,12 +1268,14 @@ class Ui_MainWindow(object):
         self.process_user_input_table.setShowGrid(True)
         self.process_user_input_table.setGridStyle(Qt.SolidLine)
         self.process_user_input_table.setSortingEnabled(False)
-        self.process_user_input_table.setRowCount(6)
+        self.process_user_input_table.setRowCount(2)
         self.process_user_input_table.setColumnCount(1)
         self.process_user_input_table.horizontalHeader().setVisible(True)
         self.process_user_input_table.horizontalHeader().setCascadingSectionResizes(True)
         self.process_user_input_table.horizontalHeader().setDefaultSectionSize(200)
         self.process_user_input_table.horizontalHeader().setHighlightSections(True)
+        self.process_user_input_table.verticalHeader().setVisible(False)
+        self.process_user_input_table.verticalHeader().setCascadingSectionResizes(True)
 
         self.horizontalLayout_8.addWidget(self.process_user_input_table)
 
@@ -1303,6 +1305,26 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout.addWidget(self.table_row)
+
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.horizontalLayout_9.setContentsMargins(600, -1, 0, -1)
+        self.invalid_choice = QLineEdit(self.processing)
+        self.invalid_choice.setObjectName(u"invalid_choice")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.invalid_choice.sizePolicy().hasHeightForWidth())
+        self.invalid_choice.setSizePolicy(sizePolicy5)
+        self.invalid_choice.setMinimumSize(QSize(0, 40))
+        self.invalid_choice.setMaximumSize(QSize(300, 40))
+        self.invalid_choice.setFont(font)
+        self.invalid_choice.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_9.addWidget(self.invalid_choice)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_9)
 
         self.process_next_btn = QPushButton(self.processing)
         self.process_next_btn.setObjectName(u"process_next_btn")
@@ -1578,6 +1600,8 @@ class Ui_MainWindow(object):
 "                                                                                                                                table", None))
 #endif // QT_CONFIG(statustip)
         self.remove_a_row.setText(QCoreApplication.translate("MainWindow", u"Remove Row", None))
+        self.invalid_choice.setText("")
+        self.invalid_choice.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter the Invalid Choice for the rest", None))
         self.process_next_btn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.final_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
 "                                                                                                                    style=\"\n"

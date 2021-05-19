@@ -3,7 +3,7 @@
 import random
 import sys
 
-TECH_ID = 'eqv_part'
+TECH_ID = 'eqv'
 
 MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
 PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
@@ -18,3 +18,4 @@ def get_eq_partitions(partitions: dict) -> dict:
         else:
             result[part] = res
     return result
+

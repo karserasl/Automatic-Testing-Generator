@@ -210,6 +210,8 @@ QTableWidget::item{
 	padding-left: 5px;
 	padding-right: 5px;
 	gridline-color: #9faeda;
+    border-right: 1px solid #6272a4;
+    border-left: 1px solid #6272a4;
 }
 QTableWidget::item:selected{
 	background-color: rgb(189, 147, 249);
@@ -220,12 +222,12 @@ QHeaderView::section{
 	max-width: 30px;
 	border: none;
 	border-style: none;
+
 }
 QTableWidget::horizontalHeader {
 	background-color: #6272a4;
 }
-QHeaderView::section:horizontal
-{
+QHeaderView::section:horizontal {
     border: 1px solid #6272a4;
 	background-color: #6272a4;
 	padding: 3px;

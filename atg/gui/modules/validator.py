@@ -8,7 +8,7 @@ from PySide6.QtCore import QRegularExpression
 class Delegate(QStyledItemDelegate):
     def createEditor(self, parent, option, index):
         w = QLineEdit(parent)
-        regExp = QRegularExpression("[A-Za-z0-9\-\_\:""]+")
+        regExp = QRegularExpression("[A-Za-z0-9\-\_\:\.]+")
         validator = QRegularExpressionValidator(regExp)
         w.setValidator(validator)
         return w

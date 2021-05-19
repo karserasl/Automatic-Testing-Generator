@@ -191,8 +191,8 @@ class MainWindow(QMainWindow):
     def create_table_input(self):
         UiLogic.create_table_input(self)
 
-    def populate_table(self, func_params_columns, pairwise_choices=None):
-        UiLogic.populate_table(self, func_params_columns, pairwise_choices=None)
+    def populate_table(self, func_params_columns, pairwise=None):
+        UiLogic.populate_table(self, func_params_columns, pairwise=pairwise)
 
     def process_input_table(self):
         UiLogic.process_input_table(self)

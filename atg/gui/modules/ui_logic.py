@@ -63,7 +63,7 @@ class UiLogic(main.MainWindow):
             pass
         self.populate_table(func_params_columns=sel_func_params)
 
-    def populate_table(self, func_params_columns, pairwise_choices=None):
+    def populate_table(self, func_params_columns, pairwise=False):
         # numrows = len(func_params)
         numcols = len(func_params_columns)
         self.ui.process_user_input_table.setColumnCount(numcols + 1)
@@ -71,8 +71,9 @@ class UiLogic(main.MainWindow):
             [*(f'Input for "{f}" Variable' for f in func_params_columns),
              'Expected Output'])  # generator comprehensions
 
-    def process_input_table(self):
-        answers = self.ui.process_user_input_table.columnCount() - 1
+    def process_input_table(self, pairwise=False):
+        answers_column = self.ui.process_user_input_table.columnCount() - 1
+        inv_choice = self.ui.invalid_choice.text()
         cols = self.ui.process_user_input_table.columnCount()
         rows = self.ui.process_user_input_table.rowCount()
         outputs = []
@@ -85,10 +86,9 @@ class UiLogic(main.MainWindow):
             if list_of_ans:
                 outputs.append(list_of_ans)
 
-        print(outputs)  # TODO: Remove this
-        result = self.core.run(outputs=outputs)
+        result = self.core.run(outputs=outputs, inv_choice=inv_choice, pairwise=pairwise)
 
         if result:
             self.ui.stackedWidget.setCurrentWidget(self.ui.finalize)
             UIFunctions.resetStyle(self, "btn_output")
-            self.ui.btn_processing.setStyleSheet(UIFunctions.selectMenu(self.ui.finalize.styleSheet()))
+            self.ui.btn_output.setStyleSheet(UIFunctions.selectMenu(self.ui.btn_output.styleSheet()))
