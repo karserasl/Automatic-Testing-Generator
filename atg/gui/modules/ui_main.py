@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maingUJXYN.ui'
+## Form generated from reading UI file 'mainecArBh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -1026,6 +1026,16 @@ class Ui_MainWindow(object):
         self.gridLayout_3 = QGridLayout(self.home_row)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(-1, -1, -1, 150)
+        self.logo_label = QLabel(self.home_row)
+        self.logo_label.setObjectName(u"logo_label")
+        self.logo_label.setAutoFillBackground(False)
+        self.logo_label.setTextFormat(Qt.AutoText)
+        self.logo_label.setPixmap(QPixmap(u":/images/images/images/PythonLogoPNG.png"))
+        self.logo_label.setScaledContents(False)
+        self.logo_label.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.logo_label, 1, 0, 1, 1)
+
         self.input_content = QFrame(self.home_row)
         self.input_content.setObjectName(u"input_content")
         self.input_content.setMinimumSize(QSize(0, 110))
@@ -1106,17 +1116,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_38.addWidget(self.input_layout)
 
 
-        self.gridLayout_3.addWidget(self.input_content, 1, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.input_content, 2, 0, 1, 1)
 
-        self.logo_label = QLabel(self.home_row)
-        self.logo_label.setObjectName(u"logo_label")
-        self.logo_label.setAutoFillBackground(False)
-        self.logo_label.setTextFormat(Qt.AutoText)
-        self.logo_label.setPixmap(QPixmap(u":/images/images/images/Python-Logo-PNG.png"))
-        self.logo_label.setScaledContents(False)
-        self.logo_label.setAlignment(Qt.AlignCenter)
+        self.title_label = QLabel(self.home_row)
+        self.title_label.setObjectName(u"title_label")
+        self.title_label.setStyleSheet(u"font: 50pt \"Segoe UI\";\n"
+"")
+        self.title_label.setScaledContents(False)
+        self.title_label.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_3.addWidget(self.logo_label, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.title_label, 0, 0, 1, 1)
 
 
         self.verticalLayout_40.addWidget(self.home_row)
@@ -1617,11 +1626,12 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
+        self.logo_label.setText("")
         self.info_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>OPEN A PYTHON FILE</p></body></html>", None))
         self.path_line.setText("")
         self.path_line.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Path to .py file", None))
         self.open_btn.setText(QCoreApplication.translate("MainWindow", u"Open", None))
-        self.logo_label.setText("")
+        self.title_label.setText(QCoreApplication.translate("MainWindow", u"Automatic Test Generator", None))
         self.cls_label.setText(QCoreApplication.translate("MainWindow", u"Classes:", None))
         self.combo_classes.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Classes", None))
         self.func_label.setText(QCoreApplication.translate("MainWindow", u"Functions:", None))
