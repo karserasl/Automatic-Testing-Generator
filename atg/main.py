@@ -1,5 +1,5 @@
 # IMPORT / GUI AND MODULES AND WIDGETS
-# ///////////////////////////////////////////////////////////////
+
 import sys
 import platform
 
@@ -11,7 +11,7 @@ from gui.widgets import *
 from middleware.core import ATG
 
 # SET AS GLOBAL WIDGETS
-# ///////////////////////////////////////////////////////////////
+
 widgets = None
 
 
@@ -20,20 +20,20 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         # SET AS GLOBAL WIDGETS
-        # ///////////////////////////////////////////////////////////////
+
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
         self.data = None
         self.core = ATG()
-
+        self._pairwise = False
         # USE CUSTOM TITLE BAR
-        # ///////////////////////////////////////////////////////////////
+
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
 
         # APP NAME
-        # ///////////////////////////////////////////////////////////////
+
         title = "ATG - Automatic Test Generator"
         description = "Automatic Test Generator for Python code."
         # APPLY TEXTS
@@ -41,24 +41,24 @@ class MainWindow(QMainWindow):
         widgets.titleRightInfo.setText(description)
 
         # TOGGLE MENU
-        # ///////////////////////////////////////////////////////////////
-        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
+
+        widgets.toggleButton.clicked.connect(lambda: FunctionsUi.toggle_menu(self, True))
 
         # SET UI DEFINITIONS
-        # ///////////////////////////////////////////////////////////////
-        UIFunctions.uiDefinitions(self)
+
+        FunctionsUi.funcs_ui_define(self)
 
         # SET UP VALIDATOR
-        # ///////////////////////////////////////////////////////////////
+
         delegate = validator.Delegate(widgets.process_user_input_table)
         widgets.process_user_input_table.setItemDelegate(delegate)
         widgets.process_user_input_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         # QTableWidget PARAMETERS
-        # ///////////////////////////////////////////////////////////////
+
         widgets.process_user_input_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # BUTTONS CLICK
-        # ///////////////////////////////////////////////////////////////
+
         enable_right_button = False
         enable_left_button = True
         # LEFT MENUS
@@ -72,17 +72,18 @@ class MainWindow(QMainWindow):
         widgets.new_row_btn.clicked.connect(self._add_row)
         widgets.remove_a_row.clicked.connect(self._remove_row)
         widgets.combo_functions.currentIndexChanged.connect(self.create_table_input)
-
+        # INFO BUTTON
+        widgets.processing_info_btn.clicked.connect(self._information_btn)
         # NEXT BUTTON
         widgets.process_next_btn.clicked.connect(self.process_input_table)
 
         # EXTRA LEFT BOX
-        def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
+        def left_slide_open_close():
+            FunctionsUi.toggle_left_slide(self, True)
 
         if enable_left_button:
-            widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-            widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+            widgets.toggleLeftBox.clicked.connect(left_slide_open_close)
+            widgets.extraCloseColumnBtn.clicked.connect(left_slide_open_close)
 
             widgets.btn_exit.clicked.connect(QApplication.quit)
         else:
@@ -92,39 +93,37 @@ class MainWindow(QMainWindow):
             widgets.extraCloseColumnBtn.setEnabled(False)
 
         # EXTRA RIGHT BOX
-        def open_close_right_box():
-            UIFunctions.toggleRightBox(self, False)
+        def right_slide_open_close():
+            FunctionsUi.toggle_right_slide(self, False)
 
         if enable_right_button:
-            widgets.settingsTopBtn.clicked.connect(open_close_right_box)
+            widgets.settingsTopBtn.clicked.connect(right_slide_open_close)
         else:
             widgets.settingsTopBtn.hide()
             widgets.settingsTopBtn.setEnabled(False)
         # SHOW APP
-        # ///////////////////////////////////////////////////////////////
+
         self.show()
 
         # SET CUSTOM THEME
-        # ///////////////////////////////////////////////////////////////
+
         use_custom_theme = True
         theme_file = "gui/themes/py_dracula_light.qss"
 
         # SET THEME AND HACKS
         if use_custom_theme:
             # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, theme_file, True)
+            FunctionsUi.theme(self, theme_file, True)
 
             # SET HACKS
             AppFunctions.setThemeHack(self)
 
         # SET HOME PAGE AND SELECT MENU
-        # ///////////////////////////////////////////////////////////////
+
         widgets.stackedWidget.setCurrentWidget(widgets.home)
-        widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
+        widgets.btn_home.setStyleSheet(FunctionsUi.select_menu(widgets.btn_home.styleSheet()))
 
     # BUTTONS CLICK
-    # Post here your functions for clicked buttons
-    # ///////////////////////////////////////////////////////////////
     def buttonClick(self):
         # GET BUTTON CLICKED
         btn = self.sender()
@@ -133,27 +132,24 @@ class MainWindow(QMainWindow):
         # SHOW HOME PAGE
         if btn_name == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
-            UIFunctions.resetStyle(self, btn_name)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            FunctionsUi.reset_styling(self, btn_name)
+            btn.setStyleSheet(FunctionsUi.select_menu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
         if btn_name == "btn_processing":
             widgets.stackedWidget.setCurrentWidget(widgets.processing)
-            UIFunctions.resetStyle(self, btn_name)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            FunctionsUi.reset_styling(self, btn_name)
+            btn.setStyleSheet(FunctionsUi.select_menu(btn.styleSheet()))
 
         # SHOW NEW PAGE
         if btn_name == "btn_output":
             widgets.stackedWidget.setCurrentWidget(widgets.finalize)  # SET PAGE
-            UIFunctions.resetStyle(self, btn_name)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            FunctionsUi.reset_styling(self, btn_name)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(FunctionsUi.select_menu(btn.styleSheet()))  # SELECT MENU
 
         if btn_name == "btn_save":
             print('saved button pressed !')
             pass
-
-        # PRINT BTN NAME
-        # print(f'Button "{btn_name}" pressed!')
 
     # TABLE ADD/REMOVE BUTTONS
     def _add_row(self):
@@ -164,14 +160,35 @@ class MainWindow(QMainWindow):
         if widgets.process_user_input_table.rowCount() > 0:
             widgets.process_user_input_table.removeRow(widgets.process_user_input_table.rowCount() - 1)
 
+    def _information_btn(self):
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle('Information')
+        msg.setText("""
+        * The table below is populated with the names of variables from
+            the selected function as its headers.
+        * The columns are the inputs to that specific variable.
+        * If the ATG detects that the selected function has 3 or more variables, 
+            it will enable the pairwise algorithm.
+        * Special symbols allowed are: " . : - ". Only 1 symbol per input allowed.
+        """)
+        msg.setInformativeText("""
+        LIMITATIONS:
+        1. Accepting only strings or integers.
+        2. Boundary Value Analysis is happening only
+            when the selected function has a single variable.
+        3. Pairwise is happening only on 3 or more variables.
+        """)
+        msg.exec_()
+
     # RESIZE EVENTS
-    # ///////////////////////////////////////////////////////////////
+
     def resizeEvent(self, event):
         # Update Size Grips
-        UIFunctions.resize_grips(self)
+        FunctionsUi.resize_edges(self)
 
     # MOUSE CLICK EVENTS
-    # ///////////////////////////////////////////////////////////////
+
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPos()
@@ -184,7 +201,6 @@ class MainWindow(QMainWindow):
     #         print('Mouse click: RIGHT CLICK')
 
     # UI LOGIC
-    # ///////////////////////////////////////////////////////////////
 
     def open_file_btn(self):
         UiLogic.open_file_btn(self)
@@ -195,8 +211,8 @@ class MainWindow(QMainWindow):
     def create_table_input(self):
         UiLogic.create_table_input(self)
 
-    def populate_table(self, func_params_columns, pairwise=None):
-        UiLogic.populate_table(self, func_params_columns, pairwise=pairwise)
+    def populate_table(self, func_params_columns):
+        UiLogic.populate_table(self, func_params_columns)
 
     def process_input_table(self):
         UiLogic.process_input_table(self)

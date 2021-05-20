@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainCshPVD.ui'
+## Form generated from reading UI file 'maingUJXYN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1276, 796)
+        MainWindow.resize(1182, 739)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1075,12 +1075,15 @@ class Ui_MainWindow(object):
         self.open_btn = QPushButton(self.input_layout)
         self.open_btn.setObjectName(u"open_btn")
         self.open_btn.setMinimumSize(QSize(150, 30))
-        self.open_btn.setFont(font)
+        font4 = QFont()
+        font4.setFamily(u"Segoe UI")
+        font4.setPointSize(14)
+        font4.setBold(False)
+        font4.setItalic(False)
+        self.open_btn.setFont(font4)
         self.open_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.open_btn.setStyleSheet(u"background-color:\n"
-"                                                                                                                                                        rgb(52,\n"
-"                                                                                                                                                        59,\n"
-"                                                                                                                                                        72);")
+        self.open_btn.setStyleSheet(u"background-color: rgb(52,  59, 72);\n"
+"font: 14pt \"Segoe UI\";")
         icon4 = QIcon()
         icon4.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
         self.open_btn.setIcon(icon4)
@@ -1150,11 +1153,6 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.combo_classes.sizePolicy().hasHeightForWidth())
         self.combo_classes.setSizePolicy(sizePolicy3)
         self.combo_classes.setMinimumSize(QSize(250, 40))
-        font4 = QFont()
-        font4.setFamily(u"Segoe UI")
-        font4.setPointSize(14)
-        font4.setBold(False)
-        font4.setItalic(False)
         self.combo_classes.setFont(font4)
         self.combo_classes.setAutoFillBackground(False)
         self.combo_classes.setStyleSheet(u"background-color: rgb(33, 37, 43);\n"
@@ -1191,19 +1189,34 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16 = QVBoxLayout()
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.verticalLayout_16.setContentsMargins(-1, 20, -1, -1)
-        self.label = QLabel(self.selection_row)
-        self.label.setObjectName(u"label")
+        self.verticalLayout_16.setContentsMargins(-1, 50, -1, -1)
+        self.information_label = QLabel(self.selection_row)
+        self.information_label.setObjectName(u"information_label")
         sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy4)
-        self.label.setMinimumSize(QSize(0, 150))
-        self.label.setBaseSize(QSize(0, 150))
-        self.label.setAlignment(Qt.AlignCenter)
+        sizePolicy4.setHeightForWidth(self.information_label.sizePolicy().hasHeightForWidth())
+        self.information_label.setSizePolicy(sizePolicy4)
+        self.information_label.setMinimumSize(QSize(0, 150))
+        self.information_label.setBaseSize(QSize(0, 150))
+        self.information_label.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_16.addWidget(self.label)
+        self.verticalLayout_16.addWidget(self.information_label)
+
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setContentsMargins(-1, -1, -1, 0)
+        self.processing_info_btn = QPushButton(self.selection_row)
+        self.processing_info_btn.setObjectName(u"processing_info_btn")
+        sizePolicy3.setHeightForWidth(self.processing_info_btn.sizePolicy().hasHeightForWidth())
+        self.processing_info_btn.setSizePolicy(sizePolicy3)
+        self.processing_info_btn.setMinimumSize(QSize(150, 50))
+        self.processing_info_btn.setStyleSheet(u"font: 14pt \"Segoe UI\";")
+
+        self.horizontalLayout_10.addWidget(self.processing_info_btn)
+
+
+        self.verticalLayout_16.addLayout(self.horizontalLayout_10)
 
 
         self.horizontalLayout_7.addLayout(self.verticalLayout_16)
@@ -1275,6 +1288,7 @@ class Ui_MainWindow(object):
         self.process_user_input_table.setFrameShape(QFrame.NoFrame)
         self.process_user_input_table.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.process_user_input_table.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.process_user_input_table.setEditTriggers(QAbstractItemView.AnyKeyPressed|QAbstractItemView.DoubleClicked|QAbstractItemView.EditKeyPressed)
         self.process_user_input_table.setSelectionMode(QAbstractItemView.SingleSelection)
         self.process_user_input_table.setSelectionBehavior(QAbstractItemView.SelectItems)
         self.process_user_input_table.setShowGrid(True)
@@ -1295,12 +1309,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_17 = QVBoxLayout()
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(0, -1, -1, -1)
-        self.pairwise_check = QCheckBox(self.table_row)
+        self.pairwise_check = QRadioButton(self.table_row)
         self.pairwise_check.setObjectName(u"pairwise_check")
-        sizePolicy3.setHeightForWidth(self.pairwise_check.sizePolicy().hasHeightForWidth())
-        self.pairwise_check.setSizePolicy(sizePolicy3)
-        self.pairwise_check.setAutoFillBackground(False)
-        self.pairwise_check.setStyleSheet(u"")
+        self.pairwise_check.setEnabled(False)
+        self.pairwise_check.setStyleSheet(u"font: 16pt \"Segoe UI\";")
 
         self.verticalLayout_17.addWidget(self.pairwise_check)
 
@@ -1335,13 +1347,11 @@ class Ui_MainWindow(object):
         self.proc_error_label.setObjectName(u"proc_error_label")
         font5 = QFont()
         font5.setFamily(u"Segoe UI")
-        font5.setPointSize(16)
+        font5.setPointSize(13)
         font5.setBold(False)
         font5.setItalic(False)
         self.proc_error_label.setFont(font5)
-        self.proc_error_label.setStyleSheet(u"color: rgb(255, 0, 0);\n"
-"font: 16pt \"Segoe UI\";\n"
-"")
+        self.proc_error_label.setStyleSheet(u"font: 13pt \"Segoe UI\";")
         self.proc_error_label.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_9.addWidget(self.proc_error_label)
@@ -1354,7 +1364,7 @@ class Ui_MainWindow(object):
         sizePolicy6.setHeightForWidth(self.invalid_choice.sizePolicy().hasHeightForWidth())
         self.invalid_choice.setSizePolicy(sizePolicy6)
         self.invalid_choice.setMinimumSize(QSize(0, 40))
-        self.invalid_choice.setMaximumSize(QSize(300, 40))
+        self.invalid_choice.setMaximumSize(QSize(200, 40))
         self.invalid_choice.setFont(font)
         self.invalid_choice.setAlignment(Qt.AlignCenter)
 
@@ -1368,9 +1378,10 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.process_next_btn.sizePolicy().hasHeightForWidth())
         self.process_next_btn.setSizePolicy(sizePolicy3)
         self.process_next_btn.setMinimumSize(QSize(150, 33))
-        self.process_next_btn.setFont(font)
+        self.process_next_btn.setFont(font4)
         self.process_next_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.process_next_btn.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.process_next_btn.setStyleSheet(u"background-color: rgb(52, 59, 72);\n"
+"font: 14pt \"Segoe UI\";")
         icon7 = QIcon()
         icon7.addFile(u":/icons/images/icons/cil-caret-right.png", QSize(), QIcon.Normal, QIcon.Off)
         self.process_next_btn.setIcon(icon7)
@@ -1615,7 +1626,8 @@ class Ui_MainWindow(object):
         self.combo_classes.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Classes", None))
         self.func_label.setText(QCoreApplication.translate("MainWindow", u"Functions:", None))
         self.combo_functions.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Functions", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt;\">Select from the dropboxes your class or function.</span></p><p><span style=\" font-size:10pt;\">The table will autofill the parameters found for the selected function in columns.</span></p><p><span style=\" font-size:10pt;\">Fill the inputs for each parameter.</span></p><p><span style=\" font-size:10pt;\">LIMITATIONS:</span></p><p><span style=\" font-size:10pt;\">1. Boundary Value Analysis is limited to a single parameter per function.</span></p><p><br/></p></body></html>", None))
+        self.information_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Select from the dropboxes your class or function.</p><p>The table will autofill the parameters found for the selected function in columns.</p><p>Fill the inputs for each parameter.</p></body></html>", None))
+        self.processing_info_btn.setText(QCoreApplication.translate("MainWindow", u"Information", None))
         ___qtablewidgetitem = self.process_user_input_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Empty", None));
         self.pairwise_check.setText(QCoreApplication.translate("MainWindow", u"Pairwise", None))
@@ -1639,7 +1651,7 @@ class Ui_MainWindow(object):
         self.remove_a_row.setText(QCoreApplication.translate("MainWindow", u"Remove Row", None))
         self.proc_error_label.setText("")
         self.invalid_choice.setText("")
-        self.invalid_choice.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter the Invalid Choice for the rest", None))
+        self.invalid_choice.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Invalid Choice for the rest", None))
         self.process_next_btn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.final_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
 "                                                                                                                    style=\"\n"

@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1276</width>
-    <height>796</height>
+    <width>1182</width>
+    <height>739</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1956,7 +1956,7 @@ p, li { white-space: pre-wrap; }
                                     <property name="font">
                                      <font>
                                       <family>Segoe UI</family>
-                                      <pointsize>10</pointsize>
+                                      <pointsize>14</pointsize>
                                       <italic>false</italic>
                                       <bold>false</bold>
                                      </font>
@@ -1965,10 +1965,8 @@ p, li { white-space: pre-wrap; }
                                      <cursorShape>PointingHandCursor</cursorShape>
                                     </property>
                                     <property name="styleSheet">
-                                     <string notr="true">background-color:
-                                                                                                                                                        rgb(52,
-                                                                                                                                                        59,
-                                                                                                                                                        72);</string>
+                                     <string notr="true">background-color: rgb(52,  59, 72);
+font: 14pt &quot;Segoe UI&quot;;</string>
                                     </property>
                                     <property name="text">
                                      <string>Open</string>
@@ -2013,7 +2011,7 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                              <enum>Qt::AutoText</enum>
                             </property>
                             <property name="pixmap">
-                             <pixmap resource="resources.qrc">:/images/images/images/Python-Logo-PNG.png</pixmap>
+                             <pixmap>:/images/images/images/Python-Logo-PNG.png</pixmap>
                             </property>
                             <property name="scaledContents">
                              <bool>false</bool>
@@ -2191,10 +2189,10 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                           <item>
                            <layout class="QVBoxLayout" name="verticalLayout_16">
                             <property name="topMargin">
-                             <number>20</number>
+                             <number>50</number>
                             </property>
                             <item>
-                             <widget class="QLabel" name="label">
+                             <widget class="QLabel" name="information_label">
                               <property name="sizePolicy">
                                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                                 <horstretch>0</horstretch>
@@ -2214,12 +2212,41 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                                </size>
                               </property>
                               <property name="text">
-                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Select from the dropboxes your class or function.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The table will autofill the parameters found for the selected function in columns.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Fill the inputs for each parameter.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;LIMITATIONS:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;1. Boundary Value Analysis is limited to a single parameter per function.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select from the dropboxes your class or function.&lt;/p&gt;&lt;p&gt;The table will autofill the parameters found for the selected function in columns.&lt;/p&gt;&lt;p&gt;Fill the inputs for each parameter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
+                            </item>
+                            <item>
+                             <layout class="QHBoxLayout" name="horizontalLayout_10">
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <item>
+                               <widget class="QPushButton" name="processing_info_btn">
+                                <property name="sizePolicy">
+                                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                                  <horstretch>0</horstretch>
+                                  <verstretch>0</verstretch>
+                                 </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>150</width>
+                                  <height>50</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">font: 14pt &quot;Segoe UI&quot;;</string>
+                                </property>
+                                <property name="text">
+                                 <string>Information</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
                             </item>
                            </layout>
                           </item>
@@ -2469,6 +2496,9 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                             <property name="sizeAdjustPolicy">
                              <enum>QAbstractScrollArea::AdjustToContents</enum>
                             </property>
+                            <property name="editTriggers">
+                             <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+                            </property>
                             <property name="selectionMode">
                              <enum>QAbstractItemView::SingleSelection</enum>
                             </property>
@@ -2531,18 +2561,12 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                              <number>0</number>
                             </property>
                             <item>
-                             <widget class="QCheckBox" name="pairwise_check">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="autoFillBackground">
+                             <widget class="QRadioButton" name="pairwise_check">
+                              <property name="enabled">
                                <bool>false</bool>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true"/>
+                               <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
                               </property>
                               <property name="text">
                                <string>Pairwise</string>
@@ -2617,15 +2641,13 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                            <property name="font">
                             <font>
                              <family>Segoe UI</family>
-                             <pointsize>16</pointsize>
+                             <pointsize>13</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">color: rgb(255, 0, 0);
-font: 16pt &quot;Segoe UI&quot;;
-</string>
+                            <string notr="true">font: 13pt &quot;Segoe UI&quot;;</string>
                            </property>
                            <property name="text">
                             <string/>
@@ -2651,7 +2673,7 @@ font: 16pt &quot;Segoe UI&quot;;
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
+                             <width>200</width>
                              <height>40</height>
                             </size>
                            </property>
@@ -2670,7 +2692,7 @@ font: 16pt &quot;Segoe UI&quot;;
                             <set>Qt::AlignCenter</set>
                            </property>
                            <property name="placeholderText">
-                            <string>Enter the Invalid Choice for the rest</string>
+                            <string>Invalid Choice for the rest</string>
                            </property>
                           </widget>
                          </item>
@@ -2693,7 +2715,7 @@ font: 16pt &quot;Segoe UI&quot;;
                          <property name="font">
                           <font>
                            <family>Segoe UI</family>
-                           <pointsize>10</pointsize>
+                           <pointsize>14</pointsize>
                            <italic>false</italic>
                            <bold>false</bold>
                           </font>
@@ -2702,7 +2724,8 @@ font: 16pt &quot;Segoe UI&quot;;
                           <cursorShape>PointingHandCursor</cursorShape>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">background-color: rgb(52, 59, 72);</string>
+                          <string notr="true">background-color: rgb(52, 59, 72);
+font: 14pt &quot;Segoe UI&quot;;</string>
                          </property>
                          <property name="text">
                           <string>Next</string>

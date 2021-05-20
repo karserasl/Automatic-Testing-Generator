@@ -5,6 +5,7 @@ import sys
 from copy import deepcopy
 from typing import Optional
 import logging
+import inspect
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +15,7 @@ MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
 PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
 
 
-def get_eq_partitions(outputs: list) -> list:
+def get_eq_partitions(outputs: list, inv_choices: str) -> list:
     process_output = []
 
     def process_partitions(partition):
@@ -30,9 +31,11 @@ def get_eq_partitions(outputs: list) -> list:
 
     for part in outputs:
         result = []
-
-        output_answer = part.pop()
-        if len(part) == 1:
+        if not inv_choices == 'pairwise':
+            output_answer = part.pop()
+        else:
+            output_answer = None
+        if len(part) == 1 and isinstance(part, str):
             part = ''.join(part)
             if '-' in part:
                 process_partitions(part)
@@ -40,7 +43,7 @@ def get_eq_partitions(outputs: list) -> list:
                 process_output.append(result)
         else:  # Support multiple inputs but limited by BVA
             for choice in part:
-                if '-' in choice:
+                if isinstance(choice, str) and '-' in choice:
                     process_partitions(choice)
                 else:
                     result.append(choice)
@@ -52,10 +55,10 @@ def get_eq_partitions(outputs: list) -> list:
 
 def run(outputs: list, inv_choices: str) -> Optional[list]:
     copy_outputs = deepcopy(outputs)
-    for lst in copy_outputs:
-        print(lst)
-        if len(lst) < 2:
-            logger.critical('Did not provide all the inputs/answers for the function.')
-            return
+    if not inv_choices == 'pairwise':
+        for lst in copy_outputs:
+            if len(lst) < 2:
+                logger.critical('Did not provide all the inputs/answers for the function.')
+                return
 
-    return get_eq_partitions(copy_outputs)
+    return get_eq_partitions(copy_outputs, inv_choices)

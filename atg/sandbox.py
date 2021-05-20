@@ -27,5 +27,5 @@ def car_deals(brand: str, price: int = 4, cond: str = 'test3'):
 #     'C:/Users/Administrator/Uni-3rd_Year/CTEC3451 - Development Project/Development/Code/Automatic Testing Generator/mockapp/calculator.py')
 
 
-from techniques.equivalance_partitioning import run
-print(run([['20-122', '30', 'ghjhk']], 'Wrong'))
+from techniques.pairwise import run
+print(run([['20-122', 'ghjhk'], [432,1234,432], ['4321','4321234','14123'], ['4321']]))

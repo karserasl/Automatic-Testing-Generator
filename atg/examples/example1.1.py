@@ -5,9 +5,9 @@ parameters = [
     [20000, 40000, 50000],
     ["New", "Used"],
     [0, 1, 2, 7, 8, 9],
-    [0, 1, 2, 7, 8, 9]
-    # ["Salaried", "Hourly", "Part-Time", "Contr."],
-    # [6, 10, 15, 30, 60],
+    [0],
+    ["Salaried"],
+    [6],
 ]
 # sample parameters are is taken from
 # http://www.stsc.hill.af.mil/consulting/sw_testing/improvement/cst.html

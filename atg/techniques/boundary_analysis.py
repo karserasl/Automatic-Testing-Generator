@@ -54,12 +54,12 @@ def get_boundaries(outputs: list, inv_choices: str) -> list:
 
     for part in outputs:
         output_answer = part.pop()
-        if len(part) == 1:
+        if len(part) == 1 and isinstance(part, str):
             part = ''.join(part)
             process_partition(part)
         else:
-
             logger.critical('LIMITATION: Not able to process more than 1 BVA variable per function!')
+            break
 
     return process_output
 

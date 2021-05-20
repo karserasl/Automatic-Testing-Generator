@@ -1,8 +1,13 @@
+import os
+
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QPixmap
+
 import main
 
 
 # WITH ACCESS TO MAIN WINDOW WIDGETS
-# ///////////////////////////////////////////////////////////////
+
 class AppFunctions(main.MainWindow):
     def setThemeHack(self):
         main.Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
@@ -12,7 +17,12 @@ class AppFunctions(main.MainWindow):
         background-color: #566388;
         """
 
+        cwd = os.getcwd()
+        print(cwd)
         # SET MANUAL STYLES
+        self.ui.logo_label.setPixmap(QPixmap(f"{cwd}/gui/images/images/PythonLogoPNG.png"))
+        self.ui.proc_error_label.setStyleSheet("color: #6272A4; font: 13pt 'Segoe UI';")
+        self.ui.proc_error_label.setAlignment(Qt.AlignCenter)
         self.ui.path_line.setStyleSheet("background-color: #6272a4;")
         self.ui.open_btn.setStyleSheet("background-color: #6272a4;")
         self.ui.process_next_btn.setStyleSheet("background-color: #6272a4;")

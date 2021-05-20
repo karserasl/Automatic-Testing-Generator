@@ -3,15 +3,27 @@ from __future__ import absolute_import
 import logging
 import sys
 from collections import namedtuple
+from copy import deepcopy
 from functools import cmp_to_key, reduce
 from itertools import combinations
-
+from techniques.equivalance_partitioning import run as eqv_run
 logger = logging.getLogger(__name__)
 
 TECH_ID = 'pairwise'
 
 MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
 PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
+
+
+def run(outputs: list) -> list:
+    copy_outputs = deepcopy(outputs)
+    process_output = []
+    if any('-' in x for j in copy_outputs for x in j):
+        eqv_output = eqv_run(copy_outputs, 'pairwise')
+        copy_outputs = [[elem for elem in sublist if elem is not None] for sublist in eqv_output]
+    for i, pairs in enumerate(Pairwise(copy_outputs)):
+        process_output.append(pairs)
+    return process_output
 
 
 def max_comb_number(matrix, n):
@@ -53,23 +65,16 @@ class Pairwise:
         for arr in previously_tested:
             if not arr:
                 continue
-
             if len(arr) != len(self._working_item_matrix):
-                raise RuntimeError("previously tested combination is not complete")
-
+                logger.error("previously tested combination is not complete")
             if not self._filter_func(arr):
-                raise ValueError("invalid tested combination is provided")
-
+                logger.error("invalid tested combination is provided")
             tested = []
             for i, val in enumerate(arr):
-                idxs = [
-                    Element(item.id, 0) for item in self._working_item_matrix[i] if item.value == val
-                ]
-
+                idxs = [Element(item.id, 0) for item in self._working_item_matrix[i] if item.value == val]
                 if len(idxs) != 1:
-                    raise ValueError(
-                        "value from previously tested combination is not "
-                        "found in the parameters or found more than "
+                    logger.error(
+                        "value from previously tested combination is not found in the parameters or found more than "
                         "once"
                     )
 
@@ -113,7 +118,7 @@ class Pairwise:
                     continue
                 direction = 0
             else:
-                raise ValueError("next(): unknown 'direction' code '{}'".format(direction))
+                logger.error(f"next(): unknown 'direction' code '{direction}'")
 
             chosen_item_list[i] = self._working_item_matrix[i][indexes[i]]
 
@@ -139,11 +144,11 @@ class Pairwise:
     @staticmethod
     def _validate_parameter(value):
         if len(value) < 2:
-            raise ValueError("must provide more than one option")
+            logger.error("must provide more than one option")
 
         for parameter_list in value:
             if not parameter_list:
-                raise ValueError("each parameter arrays must have at least one item")
+                logger.error("each parameter arrays must have at least one item")
 
     def _resort_working_array(self, chosen_item_list, num):
         for item in self._working_item_matrix[num]:

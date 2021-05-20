@@ -39,8 +39,12 @@ class ATG:
         print(outputs, inv_choice)  # TODO: Remove this
         if not pairwise:
             for tech_id, technique in self._techniques.items():
-                self._processed_output[tech_id] = technique.run(outputs, inv_choice)
-                print(self._processed_output)
+                if not tech_id == 'pairwise':
+                    self._processed_output[tech_id] = technique.run(outputs, inv_choice)
+                    print(self._processed_output)
+        else:
+            return self._techniques['pairwise'].run(outputs)
+
         return True
 
     def check_if_exists(self):
@@ -52,7 +56,8 @@ class ATG:
             with open(self._file_path) as f:
                 self._file_node = ast.parse(f.read())
         except Exception as e:
-            print(e)
+            logger.error(f'Error reading py file :: {e}')
+
         logger.info(self._file_path)
         functions = [n for n in self._file_node.body if isinstance(n, ast.FunctionDef)]
         classes = [n for n in self._file_node.body if isinstance(n, ast.ClassDef)]
