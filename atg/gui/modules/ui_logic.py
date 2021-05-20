@@ -1,8 +1,8 @@
 # @Author: Administrator
 # @Date:   19/05/2021 06:11
-from PySide6.QtCore import QDir
+from PySide6.QtCore import QDir, QTimer
 from PySide6.QtGui import QStandardItemModel, QStandardItem
-from PySide6.QtWidgets import QFileDialog
+from PySide6 import QtWidgets, QtCore
 
 import main
 from gui.modules import UIFunctions
@@ -10,8 +10,8 @@ from gui.modules import UIFunctions
 
 class UiLogic(main.MainWindow):
     def open_file_btn(self):
-        name = QFileDialog.getOpenFileName(self, 'Open File', dir=QDir("../mockapp").absolutePath(),
-                                           filter="Python file (*.py)")
+        name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', dir=QDir("../mockapp").absolutePath(),
+                                                     filter="Python file (*.py)")
         if not name[0]: return
         self.core.analyse_file(name[0])
 
@@ -54,6 +54,9 @@ class UiLogic(main.MainWindow):
                 cls.appendRow(func)
 
     def create_table_input(self):
+        # Enable the edit on the table
+        self.ui.process_user_input_table.setEditTriggers(
+            QtWidgets.QAbstractItemView.DoubleClicked | QtWidgets.QAbstractItemView.EditKeyPressed | QtWidgets.QAbstractItemView.AnyKeyPressed)
         func_selected = str(self.ui.combo_functions.currentText())
         sel_func_params = self.core.get_params[func_selected]
         self.ui.process_user_input_table.clear()
@@ -72,6 +75,28 @@ class UiLogic(main.MainWindow):
              'Expected Output'])  # generator comprehensions
 
     def process_input_table(self, pairwise=False):
+        self.ui.proc_error_label.setText('')
+
+        def error_dialog(msg):
+            dlg = QtWidgets.QMessageBox(self)
+            dlg.setIcon(QtWidgets.QMessageBox.Critical)
+            dlg.setWindowModality(QtCore.Qt.WindowModal)
+            dlg.setWindowTitle("ERROR")
+            dlg.setText(msg)
+            dlg.exec()
+
+        def validator(text):
+            if '-' in text:
+                print(text)
+                t = list(map(int, text.split('-')))
+                if t[0] > t[1]:
+                    error_dialog('Please correct the ranges. It should be in ascending order!')
+                    return True
+
+                if not inv_choice:
+                    error_dialog('Range input detected but did not provide an invalid choice!')
+                    return
+
         answers_column = self.ui.process_user_input_table.columnCount() - 1
         inv_choice = self.ui.invalid_choice.text()
         cols = self.ui.process_user_input_table.columnCount()
@@ -79,12 +104,28 @@ class UiLogic(main.MainWindow):
         outputs = []
         for row in range(rows):
             list_of_ans = []
+            range_ans = False
+
             for col in range(cols):
                 item = self.ui.process_user_input_table.item(row, col)
                 if item and item.text():
                     list_of_ans.append(item.text())
+                    if validator(item.text()):
+                        return
+                    if '-' in item.text():
+                        range_ans = True
+
             if list_of_ans:
+                if len(list_of_ans) != cols:
+                    error_dialog('Please fill all the inputs and answer in a row!')
+                    return
+                if len(list_of_ans) > 2 and range_ans:
+                    error_dialog('LIMITATION: Not able to process more than 1 BVA variable per function!')
+                    return
                 outputs.append(list_of_ans)
+        if not outputs:
+            self.ui.proc_error_label.setText('Please Fill at least 1 row!')
+            return
 
         result = self.core.run(outputs=outputs, inv_choice=inv_choice, pairwise=pairwise)
 

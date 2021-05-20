@@ -1982,10 +1982,8 @@ p, li { white-space: pre-wrap; }
                                   <item row="1" column="0" colspan="2">
                                    <widget class="QLabel" name="error_msg_label">
                                     <property name="styleSheet">
-                                     <string notr="true">color:
-                                                                                                                                                        rgb(113,
-                                                                                                                                                        126,
-                                                                                                                                                        149);</string>
+                                     <string notr="true">color:rgb(220,100,100);
+font: 14pt &quot;Segoe UI&quot;;</string>
                                     </property>
                                     <property name="lineWidth">
                                      <number>1</number>
@@ -2086,7 +2084,7 @@ p, li { white-space: pre-wrap; }
                               </property>
                              </widget>
                             </item>
-                            <item alignment="Qt::AlignHCenter">
+                            <item>
                              <widget class="QComboBox" name="combo_classes">
                               <property name="sizePolicy">
                                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -2103,7 +2101,7 @@ p, li { white-space: pre-wrap; }
                               <property name="font">
                                <font>
                                 <family>Segoe UI</family>
-                                <pointsize>10</pointsize>
+                                <pointsize>14</pointsize>
                                 <italic>false</italic>
                                 <bold>false</bold>
                                </font>
@@ -2112,7 +2110,8 @@ p, li { white-space: pre-wrap; }
                                <bool>false</bool>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                               <string notr="true">background-color: rgb(33, 37, 43);
+font: 14pt &quot;Segoe UI&quot;;</string>
                               </property>
                               <property name="maxVisibleItems">
                                <number>15</number>
@@ -2141,7 +2140,7 @@ p, li { white-space: pre-wrap; }
                               </property>
                              </widget>
                             </item>
-                            <item alignment="Qt::AlignHCenter">
+                            <item>
                              <widget class="QComboBox" name="combo_functions">
                               <property name="sizePolicy">
                                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -2158,7 +2157,7 @@ p, li { white-space: pre-wrap; }
                               <property name="font">
                                <font>
                                 <family>Segoe UI</family>
-                                <pointsize>10</pointsize>
+                                <pointsize>14</pointsize>
                                 <italic>false</italic>
                                 <bold>false</bold>
                                </font>
@@ -2167,7 +2166,8 @@ p, li { white-space: pre-wrap; }
                                <bool>false</bool>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">background-color:rgb(33,37,43);</string>
+                               <string notr="true">background-color:rgb(33,37,43);
+font: 14pt &quot;Segoe UI&quot;;</string>
                               </property>
                               <property name="maxVisibleItems">
                                <number>15</number>
@@ -2189,27 +2189,39 @@ p, li { white-space: pre-wrap; }
                            </layout>
                           </item>
                           <item>
-                           <widget class="QCheckBox" name="pairwise_check">
-                            <property name="autoFillBackground">
-                             <bool>false</bool>
+                           <layout class="QVBoxLayout" name="verticalLayout_16">
+                            <property name="topMargin">
+                             <number>20</number>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string>CheckBox</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QRadioButton" name="radioButton">
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string>RadioButton</string>
-                            </property>
-                           </widget>
+                            <item>
+                             <widget class="QLabel" name="label">
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>150</height>
+                               </size>
+                              </property>
+                              <property name="baseSize">
+                               <size>
+                                <width>0</width>
+                                <height>150</height>
+                               </size>
+                              </property>
+                              <property name="text">
+                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Select from the dropboxes your class or function.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The table will autofill the parameters found for the selected function in columns.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Fill the inputs for each parameter.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;LIMITATIONS:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;1. Boundary Value Analysis is limited to a single parameter per function.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
                           </item>
                          </layout>
                         </widget>
@@ -2228,7 +2240,19 @@ p, li { white-space: pre-wrap; }
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_8">
+                         <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,0">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
                           <item>
                            <widget class="QTableWidget" name="process_user_input_table">
                             <property name="sizePolicy">
@@ -2461,7 +2485,7 @@ p, li { white-space: pre-wrap; }
                              <bool>false</bool>
                             </property>
                             <property name="rowCount">
-                             <number>2</number>
+                             <number>4</number>
                             </property>
                             <property name="columnCount">
                              <number>1</number>
@@ -2484,6 +2508,11 @@ p, li { white-space: pre-wrap; }
                             <attribute name="verticalHeaderCascadingSectionResizes">
                              <bool>true</bool>
                             </attribute>
+                            <attribute name="verticalHeaderHighlightSections">
+                             <bool>true</bool>
+                            </attribute>
+                            <row/>
+                            <row/>
                             <row/>
                             <row/>
                             <column>
@@ -2501,6 +2530,25 @@ p, li { white-space: pre-wrap; }
                             <property name="leftMargin">
                              <number>0</number>
                             </property>
+                            <item>
+                             <widget class="QCheckBox" name="pairwise_check">
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="autoFillBackground">
+                               <bool>false</bool>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="text">
+                               <string>Pairwise</string>
+                              </property>
+                             </widget>
+                            </item>
                             <item>
                              <widget class="QPushButton" name="new_row_btn">
                               <property name="minimumSize">
@@ -2559,11 +2607,34 @@ p, li { white-space: pre-wrap; }
                        <item>
                         <layout class="QHBoxLayout" name="horizontalLayout_9">
                          <property name="leftMargin">
-                          <number>600</number>
-                         </property>
-                         <property name="rightMargin">
                           <number>0</number>
                          </property>
+                         <property name="rightMargin">
+                          <number>125</number>
+                         </property>
+                         <item>
+                          <widget class="QLabel" name="proc_error_label">
+                           <property name="font">
+                            <font>
+                             <family>Segoe UI</family>
+                             <pointsize>16</pointsize>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">color: rgb(255, 0, 0);
+font: 16pt &quot;Segoe UI&quot;;
+</string>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </item>
                          <item>
                           <widget class="QLineEdit" name="invalid_choice">
                            <property name="sizePolicy">

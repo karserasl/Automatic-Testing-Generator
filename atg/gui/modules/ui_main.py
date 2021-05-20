@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maineiFPua.ui'
+## Form generated from reading UI file 'mainCshPVD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -1089,10 +1089,8 @@ class Ui_MainWindow(object):
 
         self.error_msg_label = QLabel(self.input_layout)
         self.error_msg_label.setObjectName(u"error_msg_label")
-        self.error_msg_label.setStyleSheet(u"color:\n"
-"                                                                                                                                                        rgb(113,\n"
-"                                                                                                                                                        126,\n"
-"                                                                                                                                                        149);")
+        self.error_msg_label.setStyleSheet(u"color:rgb(220,100,100);\n"
+"font: 14pt \"Segoe UI\";")
         self.error_msg_label.setLineWidth(1)
         self.error_msg_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -1152,14 +1150,20 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.combo_classes.sizePolicy().hasHeightForWidth())
         self.combo_classes.setSizePolicy(sizePolicy3)
         self.combo_classes.setMinimumSize(QSize(250, 40))
-        self.combo_classes.setFont(font)
+        font4 = QFont()
+        font4.setFamily(u"Segoe UI")
+        font4.setPointSize(14)
+        font4.setBold(False)
+        font4.setItalic(False)
+        self.combo_classes.setFont(font4)
         self.combo_classes.setAutoFillBackground(False)
-        self.combo_classes.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.combo_classes.setStyleSheet(u"background-color: rgb(33, 37, 43);\n"
+"font: 14pt \"Segoe UI\";")
         self.combo_classes.setMaxVisibleItems(15)
         self.combo_classes.setIconSize(QSize(16, 16))
         self.combo_classes.setFrame(True)
 
-        self.processing_layout.addWidget(self.combo_classes, 0, Qt.AlignHCenter)
+        self.processing_layout.addWidget(self.combo_classes)
 
         self.func_label = QLabel(self.selection_row)
         self.func_label.setObjectName(u"func_label")
@@ -1172,30 +1176,37 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.combo_functions.sizePolicy().hasHeightForWidth())
         self.combo_functions.setSizePolicy(sizePolicy3)
         self.combo_functions.setMinimumSize(QSize(250, 40))
-        self.combo_functions.setFont(font)
+        self.combo_functions.setFont(font4)
         self.combo_functions.setAutoFillBackground(False)
-        self.combo_functions.setStyleSheet(u"background-color:rgb(33,37,43);")
+        self.combo_functions.setStyleSheet(u"background-color:rgb(33,37,43);\n"
+"font: 14pt \"Segoe UI\";")
         self.combo_functions.setMaxVisibleItems(15)
         self.combo_functions.setIconSize(QSize(16, 16))
         self.combo_functions.setFrame(True)
 
-        self.processing_layout.addWidget(self.combo_functions, 0, Qt.AlignHCenter)
+        self.processing_layout.addWidget(self.combo_functions)
 
 
         self.horizontalLayout_7.addLayout(self.processing_layout)
 
-        self.pairwise_check = QCheckBox(self.selection_row)
-        self.pairwise_check.setObjectName(u"pairwise_check")
-        self.pairwise_check.setAutoFillBackground(False)
-        self.pairwise_check.setStyleSheet(u"")
+        self.verticalLayout_16 = QVBoxLayout()
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setContentsMargins(-1, 20, -1, -1)
+        self.label = QLabel(self.selection_row)
+        self.label.setObjectName(u"label")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy4)
+        self.label.setMinimumSize(QSize(0, 150))
+        self.label.setBaseSize(QSize(0, 150))
+        self.label.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_7.addWidget(self.pairwise_check)
+        self.verticalLayout_16.addWidget(self.label)
 
-        self.radioButton = QRadioButton(self.selection_row)
-        self.radioButton.setObjectName(u"radioButton")
-        self.radioButton.setStyleSheet(u"")
 
-        self.horizontalLayout_7.addWidget(self.radioButton)
+        self.horizontalLayout_7.addLayout(self.verticalLayout_16)
 
 
         self.verticalLayout.addWidget(self.selection_row)
@@ -1207,20 +1218,21 @@ class Ui_MainWindow(object):
         self.table_row.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_8 = QHBoxLayout(self.table_row)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.process_user_input_table = QTableWidget(self.table_row)
         if (self.process_user_input_table.columnCount() < 1):
             self.process_user_input_table.setColumnCount(1)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setTextAlignment(Qt.AlignCenter);
         self.process_user_input_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        if (self.process_user_input_table.rowCount() < 2):
-            self.process_user_input_table.setRowCount(2)
+        if (self.process_user_input_table.rowCount() < 4):
+            self.process_user_input_table.setRowCount(4)
         self.process_user_input_table.setObjectName(u"process_user_input_table")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.process_user_input_table.sizePolicy().hasHeightForWidth())
-        self.process_user_input_table.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.process_user_input_table.sizePolicy().hasHeightForWidth())
+        self.process_user_input_table.setSizePolicy(sizePolicy5)
         palette = QPalette()
         brush = QBrush(QColor(221, 221, 221, 255))
         brush.setStyle(Qt.SolidPattern)
@@ -1268,7 +1280,7 @@ class Ui_MainWindow(object):
         self.process_user_input_table.setShowGrid(True)
         self.process_user_input_table.setGridStyle(Qt.SolidLine)
         self.process_user_input_table.setSortingEnabled(False)
-        self.process_user_input_table.setRowCount(2)
+        self.process_user_input_table.setRowCount(4)
         self.process_user_input_table.setColumnCount(1)
         self.process_user_input_table.horizontalHeader().setVisible(True)
         self.process_user_input_table.horizontalHeader().setCascadingSectionResizes(True)
@@ -1276,12 +1288,22 @@ class Ui_MainWindow(object):
         self.process_user_input_table.horizontalHeader().setHighlightSections(True)
         self.process_user_input_table.verticalHeader().setVisible(False)
         self.process_user_input_table.verticalHeader().setCascadingSectionResizes(True)
+        self.process_user_input_table.verticalHeader().setHighlightSections(True)
 
         self.horizontalLayout_8.addWidget(self.process_user_input_table)
 
         self.verticalLayout_17 = QVBoxLayout()
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(0, -1, -1, -1)
+        self.pairwise_check = QCheckBox(self.table_row)
+        self.pairwise_check.setObjectName(u"pairwise_check")
+        sizePolicy3.setHeightForWidth(self.pairwise_check.sizePolicy().hasHeightForWidth())
+        self.pairwise_check.setSizePolicy(sizePolicy3)
+        self.pairwise_check.setAutoFillBackground(False)
+        self.pairwise_check.setStyleSheet(u"")
+
+        self.verticalLayout_17.addWidget(self.pairwise_check)
+
         self.new_row_btn = QPushButton(self.table_row)
         self.new_row_btn.setObjectName(u"new_row_btn")
         self.new_row_btn.setMinimumSize(QSize(0, 50))
@@ -1308,14 +1330,29 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(600, -1, 0, -1)
+        self.horizontalLayout_9.setContentsMargins(0, -1, 125, -1)
+        self.proc_error_label = QLabel(self.processing)
+        self.proc_error_label.setObjectName(u"proc_error_label")
+        font5 = QFont()
+        font5.setFamily(u"Segoe UI")
+        font5.setPointSize(16)
+        font5.setBold(False)
+        font5.setItalic(False)
+        self.proc_error_label.setFont(font5)
+        self.proc_error_label.setStyleSheet(u"color: rgb(255, 0, 0);\n"
+"font: 16pt \"Segoe UI\";\n"
+"")
+        self.proc_error_label.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_9.addWidget(self.proc_error_label)
+
         self.invalid_choice = QLineEdit(self.processing)
         self.invalid_choice.setObjectName(u"invalid_choice")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.invalid_choice.sizePolicy().hasHeightForWidth())
-        self.invalid_choice.setSizePolicy(sizePolicy5)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.invalid_choice.sizePolicy().hasHeightForWidth())
+        self.invalid_choice.setSizePolicy(sizePolicy6)
         self.invalid_choice.setMinimumSize(QSize(0, 40))
         self.invalid_choice.setMaximumSize(QSize(300, 40))
         self.invalid_choice.setFont(font)
@@ -1469,11 +1506,11 @@ class Ui_MainWindow(object):
         self.creditsLabel = QLabel(self.bottomBar)
         self.creditsLabel.setObjectName(u"creditsLabel")
         self.creditsLabel.setMaximumSize(QSize(16777215, 16))
-        font4 = QFont()
-        font4.setFamily(u"Segoe UI")
-        font4.setBold(False)
-        font4.setItalic(False)
-        self.creditsLabel.setFont(font4)
+        font6 = QFont()
+        font6.setFamily(u"Segoe UI")
+        font6.setBold(False)
+        font6.setItalic(False)
+        self.creditsLabel.setFont(font6)
         self.creditsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_5.addWidget(self.creditsLabel)
@@ -1578,10 +1615,10 @@ class Ui_MainWindow(object):
         self.combo_classes.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Classes", None))
         self.func_label.setText(QCoreApplication.translate("MainWindow", u"Functions:", None))
         self.combo_functions.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Functions", None))
-        self.pairwise_check.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt;\">Select from the dropboxes your class or function.</span></p><p><span style=\" font-size:10pt;\">The table will autofill the parameters found for the selected function in columns.</span></p><p><span style=\" font-size:10pt;\">Fill the inputs for each parameter.</span></p><p><span style=\" font-size:10pt;\">LIMITATIONS:</span></p><p><span style=\" font-size:10pt;\">1. Boundary Value Analysis is limited to a single parameter per function.</span></p><p><br/></p></body></html>", None))
         ___qtablewidgetitem = self.process_user_input_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Empty", None));
+        self.pairwise_check.setText(QCoreApplication.translate("MainWindow", u"Pairwise", None))
 #if QT_CONFIG(statustip)
         self.new_row_btn.setStatusTip(QCoreApplication.translate("MainWindow", u"Add\n"
 "                                                                                                                                a\n"
@@ -1600,6 +1637,7 @@ class Ui_MainWindow(object):
 "                                                                                                                                table", None))
 #endif // QT_CONFIG(statustip)
         self.remove_a_row.setText(QCoreApplication.translate("MainWindow", u"Remove Row", None))
+        self.proc_error_label.setText("")
         self.invalid_choice.setText("")
         self.invalid_choice.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter the Invalid Choice for the rest", None))
         self.process_next_btn.setText(QCoreApplication.translate("MainWindow", u"Next", None))

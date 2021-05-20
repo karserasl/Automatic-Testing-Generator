@@ -49,6 +49,7 @@ class ATG:
         if not pairwise:
             for tech_id, technique in self._techniques.items():
                 self._processed_output[tech_id] = technique.run(outputs, inv_choice)
+                print(self._processed_output)
         return True
 
     def check_if_exists(self):

@@ -47,8 +47,12 @@ class MainWindow(QMainWindow):
         # SET UI DEFINITIONS
         # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
+
+        # SET UP VALIDATOR
+        # ///////////////////////////////////////////////////////////////
         delegate = validator.Delegate(widgets.process_user_input_table)
-        widgets.process_user_input_table.setItemDelegate(delegate)  # TODO: FIX VALIDATOR
+        widgets.process_user_input_table.setItemDelegate(delegate)
+        widgets.process_user_input_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         # QTableWidget PARAMETERS
         # ///////////////////////////////////////////////////////////////
         widgets.process_user_input_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
