@@ -95,7 +95,7 @@ class UiLogic(main.MainWindow):
 
                 if not inv_choice:
                     error_dialog('Range input detected but did not provide an invalid choice!')
-                    return
+                    return True
 
         answers_column = self.ui.process_user_input_table.columnCount() - 1
         inv_choice = self.ui.invalid_choice.text()
@@ -120,8 +120,8 @@ class UiLogic(main.MainWindow):
                     error_dialog('Please fill all the inputs and answer in a row!')
                     return
                 if len(list_of_ans) > 2 and range_ans:
-                    error_dialog('LIMITATION: Not able to process more than 1 BVA variable per function!')
-                    return
+                    error_dialog(
+                        'LIMITATION: Not able to process more than 1 BVA variable per function!\nOnly Equivalence Partitioning will run')
                 outputs.append(list_of_ans)
         if not outputs:
             self.ui.proc_error_label.setText('Please Fill at least 1 row!')

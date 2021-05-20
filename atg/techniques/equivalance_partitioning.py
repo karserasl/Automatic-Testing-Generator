@@ -18,10 +18,15 @@ def get_eq_partitions(outputs: list) -> list:
     process_output = []
 
     def process_partitions(partition):
-        if '-' in partition:
-            p = list(map(int, partition.split('-')))
-            rand = random.randint(p[0] + 2, p[1] - 2)
+        p = list(map(int, partition.split('-')))
+        try:
+            if p[1] - p[0] < 5:
+                rand = random.randint(p[0], p[1])
+            else:
+                rand = random.randint(p[0] + 2, p[1] - 2)
             result.append(rand)
+        except ValueError as e:
+            logger.error(f'Range input provided is not correct! :: {e}')
 
     for part in outputs:
         result = []
@@ -29,12 +34,16 @@ def get_eq_partitions(outputs: list) -> list:
         output_answer = part.pop()
         if len(part) == 1:
             part = ''.join(part)
-            process_partitions(part)
-            result.append(output_answer)
-            process_output.append(result)
-        else:
+            if '-' in part:
+                process_partitions(part)
+                result.append(output_answer)
+                process_output.append(result)
+        else:  # Support multiple inputs but limited by BVA
             for choice in part:
-                process_partitions(choice)
+                if '-' in choice:
+                    process_partitions(choice)
+                else:
+                    result.append(choice)
             result.append(output_answer)
             process_output.append(result)
 

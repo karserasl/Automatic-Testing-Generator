@@ -21,10 +21,10 @@ class ATG:
         self._processed_output = {}
         self._selected_function = None
         self._file_path = None
-        logger.info('Initialized ATG')
         self._file_node = None
         self._techniques = loader.get_all_techniques()
         self._generator = generator or DefaultGenerator()
+        logger.info('Initialized ATG')
 
     def find(self, key, dictionary):
         # everything is a dict
@@ -34,15 +34,6 @@ class ATG:
             elif isinstance(v, dict):
                 for result in self.find(key, v):
                     yield result
-
-    def getPartitions(self, variables):
-        partitions = {}
-        for arg, value in variables.items():
-            if isinstance(value, dict):
-                if 'partitions' in value:
-                    partitions[arg] = self._techniques['partitioning'].run(value['partitions'],
-                                                                           value['invalid_choices'])
-        return partitions
 
     def run(self, outputs: list, inv_choice, pairwise):
         print(outputs, inv_choice)  # TODO: Remove this
@@ -151,6 +142,3 @@ def recursive_lookup(k, d):
         if isinstance(v, dict):
             return recursive_lookup(k, v)
     return None
-
-# if __name__ == '__main__':
-#     main()

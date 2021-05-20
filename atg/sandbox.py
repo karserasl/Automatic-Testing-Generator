@@ -28,4 +28,4 @@ def car_deals(brand: str, price: int = 4, cond: str = 'test3'):
 
 
 from techniques.equivalance_partitioning import run
-print(run([['20-16', 'ghjhk']], 'Wrong'))
+print(run([['20-122', '30', 'ghjhk']], 'Wrong'))
