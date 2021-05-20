@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainecArBh.ui'
+## Form generated from reading UI file 'mainddcOZC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -1201,12 +1201,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_16.setContentsMargins(-1, 50, -1, -1)
         self.information_label = QLabel(self.selection_row)
         self.information_label.setObjectName(u"information_label")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.information_label.sizePolicy().hasHeightForWidth())
         self.information_label.setSizePolicy(sizePolicy4)
-        self.information_label.setMinimumSize(QSize(0, 150))
+        self.information_label.setMinimumSize(QSize(0, 0))
         self.information_label.setBaseSize(QSize(0, 150))
         self.information_label.setAlignment(Qt.AlignCenter)
 
@@ -1351,7 +1351,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(0, -1, 125, -1)
+        self.horizontalLayout_9.setContentsMargins(0, -1, 130, -1)
         self.proc_error_label = QLabel(self.processing)
         self.proc_error_label.setObjectName(u"proc_error_label")
         font5 = QFont()
@@ -1361,12 +1361,13 @@ class Ui_MainWindow(object):
         font5.setItalic(False)
         self.proc_error_label.setFont(font5)
         self.proc_error_label.setStyleSheet(u"font: 13pt \"Segoe UI\";")
-        self.proc_error_label.setAlignment(Qt.AlignCenter)
+        self.proc_error_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_9.addWidget(self.proc_error_label)
 
         self.invalid_choice = QLineEdit(self.processing)
         self.invalid_choice.setObjectName(u"invalid_choice")
+        self.invalid_choice.setEnabled(True)
         sizePolicy6 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
         sizePolicy6.setHorizontalStretch(0)
         sizePolicy6.setVerticalStretch(0)

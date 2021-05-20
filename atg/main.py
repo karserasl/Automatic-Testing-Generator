@@ -28,6 +28,8 @@ class MainWindow(QMainWindow):
         self.data = None
         self.core = ATG()
         self._pairwise = False
+        self._result = None
+        self._pw_ans = False
         # USE CUSTOM TITLE BAR
 
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
@@ -211,8 +213,8 @@ class MainWindow(QMainWindow):
     def create_table_input(self):
         UiLogic.create_table_input(self)
 
-    def populate_table(self, func_params_columns):
-        UiLogic.populate_table(self, func_params_columns)
+    def populate_table(self, func_params_columns, pairwise_results=None):
+        UiLogic.populate_table(self, func_params_columns, pairwise_results=None)
 
     def process_input_table(self):
         UiLogic.process_input_table(self)

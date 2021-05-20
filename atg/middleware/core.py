@@ -19,6 +19,7 @@ class ATG:
         self._analyzed_data = {}
         self._func_params = {}
         self._processed_output = {}
+        self._pairwise_output = []
         self._selected_function = None
         self._file_path = None
         self._file_node = None
@@ -35,17 +36,20 @@ class ATG:
                 for result in self.find(key, v):
                     yield result
 
-    def run(self, outputs: list, inv_choice, pairwise):
+    def run(self, outputs: list, inv_choice, pairwise, pw_ans):
         print(outputs, inv_choice)  # TODO: Remove this
-        if not pairwise:
+        if not pairwise and not pw_ans:
             for tech_id, technique in self._techniques.items():
                 if not tech_id == 'pairwise':
                     self._processed_output[tech_id] = technique.run(outputs, inv_choice)
                     print(self._processed_output)
+        elif pw_ans:
+            self._processed_output['pairwise'] = outputs
         else:
-            return self._techniques['pairwise'].run(outputs)
+            self._pairwise_output = self._techniques['pairwise'].run(outputs)
+            return self._pairwise_output
 
-        return True
+
 
     def check_if_exists(self):
         return False

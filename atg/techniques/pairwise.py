@@ -7,6 +7,7 @@ from copy import deepcopy
 from functools import cmp_to_key, reduce
 from itertools import combinations
 from techniques.equivalance_partitioning import run as eqv_run
+
 logger = logging.getLogger(__name__)
 
 TECH_ID = 'pairwise'
@@ -52,7 +53,7 @@ class Pairwise:
     def __init__(self, parameters, filter_func=lambda x: True, previously_tested=None, n=2):
         if not previously_tested:
             previously_tested = [[]]
-
+        self._outputs = parameters
         self._validate_parameter(parameters)
         self._param_name_list = []
         # https://realpython.com/python-namedtuple/
