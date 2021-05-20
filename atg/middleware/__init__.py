@@ -8,8 +8,8 @@ import sys
 from collections import defaultdict
 
 import middleware.runtime
-from generator.default_generator import DefaultGenerator
-from generator.generator import get_module_name
+from generator.module_generator import DefaultGenerator
+from generator.assist_generator import get_module_name
 
 
 class magic(object):

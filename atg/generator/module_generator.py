@@ -6,8 +6,8 @@ import sys
 import traceback
 import types
 
-from generator.generator import Generator
-from generator.generator import get_module_name
+from generator.assist_generator import Generator
+from generator.assist_generator import get_module_name
 from middleware import runtime
 
 

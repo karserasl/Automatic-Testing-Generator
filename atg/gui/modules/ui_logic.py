@@ -29,7 +29,6 @@ class UiLogic(main.MainWindow):
             self.ui.btn_processing.setStyleSheet(FunctionsUi.select_menu(self.ui.btn_processing.styleSheet()))
             self.create_combo_box_items()
 
-            print(self.data)  # TODO: Remove this
         else:
             self.ui.error_msg_label.setText(
                 'Please select a Python File that has Classes with methods or functions, and they have some arguments')
@@ -48,9 +47,14 @@ class UiLogic(main.MainWindow):
         def update_combo_box(index):
             ind = model.index(index, 0, self.ui.combo_classes.rootModelIndex())
             self.ui.combo_functions.setRootModelIndex(ind)
+            self.ui.combo_functions.show()
             self.ui.combo_functions.setCurrentIndex(0)
 
-        update_combo_box(0)
+        # update_combo_box(0)
+        if str(self.ui.combo_classes.currentText()) == '':
+            self.ui.combo_functions.hide()
+        else:
+            self.ui.combo_functions.show()
         self.ui.combo_classes.currentIndexChanged.connect(update_combo_box)
 
     def create_table_input(self):
@@ -61,9 +65,13 @@ class UiLogic(main.MainWindow):
         self.ui.process_user_input_table.setEditTriggers(
             QtWidgets.QAbstractItemView.DoubleClicked | QtWidgets.QAbstractItemView.EditKeyPressed | QtWidgets.QAbstractItemView.AnyKeyPressed)
         func_selected = str(self.ui.combo_functions.currentText())
+        cls_selected = str(self.ui.combo_classes.currentText())
+        print(cls_selected)  # TODO: Remove this
+        self.core.set_sel_function(func_selected)
+        self.core.set_sel_cls(cls_selected)
         self._sel_func_params = self.core.get_params[func_selected]
         self.ui.process_user_input_table.clear()
-        print(self._sel_func_params)  # TODO: Remove this
+
         if len(self._sel_func_params) > 2:
             # TODO: PAIRWISE
             self._pairwise = True
@@ -103,13 +111,14 @@ class UiLogic(main.MainWindow):
                     if isinstance(pairwise_results[row][column], int):
                         self.ui.process_user_input_table.setItem(row, column, QtWidgets.QTableWidgetItem(
                             str(pairwise_results[row][column])))
-                        print(pairwise_results[row][column])
                     else:
                         self.ui.process_user_input_table.setItem(row, column, QtWidgets.QTableWidgetItem(
                             (pairwise_results[row][column])))
 
     def process_input_table(self):
         self.ui.proc_error_label.setText('')
+        self.ui.output_text.clear()
+
         def error_dialog(msg):
             dlg = QtWidgets.QMessageBox(self)
             dlg.setIcon(QtWidgets.QMessageBox.Critical)
@@ -127,7 +136,6 @@ class UiLogic(main.MainWindow):
                 error_dialog('No more than 1 special symbol permitted')
                 return True
             if '-' in text:
-                print(text)
                 try:
                     t = list(map(int, text.split('-')))
                     if t[0] > t[1]:
@@ -172,30 +180,39 @@ class UiLogic(main.MainWindow):
                     if len(list_of_ans) != cols and not self._pairwise:
                         error_dialog('Please fill all the inputs and answer in a row!')
                         return
-                    if len(list_of_ans) <= 2:
-                        if not self._pairwise and not inv_choice:
-                            error_dialog('Range input detected but did not provide an invalid choice!')
-                            return
-                    if len(list_of_ans) > 2 and range_ans:
-                        error_dialog(
-                            'LIMITATION: Not able to process more than 1 BVA variable per function!\nOnly Equivalence Partitioning will run')
+                    if len(list_of_ans) <= 2 and not self._pairwise and not inv_choice:
+                        error_dialog('Range input detected but did not provide an invalid choice!')
+                        return
 
-                outputs.append(list_of_ans)
+                    outputs.append(list_of_ans)
         if not outputs:
             self.ui.proc_error_label.setText('Please Fill at least 1 row!')
             return
-        if len(outputs) < 2 and self._pairwise:
-            error_dialog('Need to provide at least 2 rows for Pairwise algorithm!')
+        if sum([len(i) for i in outputs]) < 6 and self._pairwise:
+            error_dialog('Need to provide more inputs for Pairwise algorithm to make sense!')
             return
+        if any('-' in x for j in outputs for x in j) and max([len(a) for a in outputs]) > 2:
+            error_dialog(
+                'LIMITATION: Not able to process more than 1 BVA variable per function!\nOnly Equivalence Partitioning will run')
 
-        self._result = self.core.run(outputs=outputs, inv_choice=inv_choice, pairwise=self._pairwise, pw_ans=self._pw_ans)
-        print(self._result)
+        self._result = self.core.run(outputs=outputs, inv_choice=inv_choice, pairwise=self._pairwise,
+                                     pw_ans=self._pw_ans)
         if isinstance(self._result, list) and self._result and self._pairwise:
             self._pairwise = False
             self._pw_ans = True
             self.populate_table(func_params_columns=self._sel_func_params, pairwise_results=self._result)
             return
         if not self._pairwise:
-            self.ui.stackedWidget.setCurrentWidget(self.ui.finalize)
-            FunctionsUi.reset_styling(self, "btn_output")
-            self.ui.btn_output.setStyleSheet(FunctionsUi.select_menu(self.ui.btn_output.styleSheet()))
+            self.core.dump()
+            dumped_tests, count_tests = self.core.get_generator_dump
+            if dumped_tests:
+                self.ui.output_text.insertPlainText(dumped_tests)
+                if not count_tests:
+                    self.ui.counter_label.setText('')
+                    self.ui.info_count_label.setText('')
+                else:
+                    self.ui.counter_label.setText(str(count_tests))
+
+                self.ui.stackedWidget.setCurrentWidget(self.ui.finalize)
+                FunctionsUi.reset_styling(self, "btn_output")
+                self.ui.btn_output.setStyleSheet(FunctionsUi.select_menu(self.ui.btn_output.styleSheet()))

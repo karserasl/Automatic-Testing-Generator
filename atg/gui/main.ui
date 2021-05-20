@@ -1821,7 +1821,7 @@ p, li { white-space: pre-wrap; }
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_40">
@@ -2211,7 +2211,7 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                             <item>
                              <widget class="QLabel" name="information_label">
                               <property name="sizePolicy">
-                               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                                 <horstretch>0</horstretch>
                                 <verstretch>0</verstretch>
                                </sizepolicy>
@@ -2219,7 +2219,7 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                               <property name="minimumSize">
                                <size>
                                 <width>0</width>
-                                <height>150</height>
+                                <height>0</height>
                                </size>
                               </property>
                               <property name="baseSize">
@@ -2651,7 +2651,7 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                           <number>0</number>
                          </property>
                          <property name="rightMargin">
-                          <number>125</number>
+                          <number>130</number>
                          </property>
                          <item>
                           <widget class="QLabel" name="proc_error_label">
@@ -2670,12 +2670,15 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                             <string/>
                            </property>
                            <property name="alignment">
-                            <set>Qt::AlignCenter</set>
+                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                            </property>
                           </widget>
                          </item>
                          <item>
                           <widget class="QLineEdit" name="invalid_choice">
+                           <property name="enabled">
+                            <bool>true</bool>
+                           </property>
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                              <horstretch>0</horstretch>
@@ -2761,43 +2764,73 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                         <layout class="QVBoxLayout" name="final_layout">
                          <item>
                           <widget class="QLabel" name="final_label">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>400</width>
+                             <height>0</height>
+                            </size>
+                           </property>
                            <property name="text">
-                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span
-                                                                                                                    style=&quot;
-                                                                                                                    font-weight:700;&quot;&gt;Please
-                                                                                                                    check
-                                                                                                                    the
-                                                                                                                    generated
-                                                                                                                    Tests:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span
-                                                                                                                    style=&quot;
-                                                                                                                    font-weight:700;&quot;&gt;If
-                                                                                                                    everything
-                                                                                                                    is
-                                                                                                                    ok,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span
-                                                                                                                    style=&quot;
-                                                                                                                    font-weight:700;&quot;&gt;press
-                                                                                                                    the
-                                                                                                                    save
-                                                                                                                    button
-                                                                                                                    on
-                                                                                                                    the
-                                                                                                                    left&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;Please check the generated Tests:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;If everything is ok, press the save button on the left to dump the tests into a test file.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                            </property>
                            <property name="alignment">
-                            <set>Qt::AlignCenter</set>
+                            <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                           </property>
+                           <property name="wordWrap">
+                            <bool>true</bool>
                            </property>
                            <property name="margin">
                             <number>10</number>
                            </property>
                           </widget>
                          </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_11">
+                           <item>
+                            <widget class="QLabel" name="info_count_label">
+                             <property name="text">
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;Number Of Tests generated:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="counter_label">
+                             <property name="styleSheet">
+                              <string notr="true">font: 24pt &quot;Segoe UI&quot;;
+color: rgb(212, 83, 255);</string>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
                         </layout>
                        </item>
                        <item>
                         <widget class="QPlainTextEdit" name="output_text">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
                          <property name="minimumSize">
                           <size>
-                           <width>200</width>
+                           <width>600</width>
                            <height>200</height>
                           </size>
                          </property>
@@ -2805,6 +2838,12 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                           <string notr="true">background-color:
                                                                                                             rgb(33, 37,
                                                                                                             43);</string>
+                         </property>
+                         <property name="documentTitle">
+                          <string>Generated Tests</string>
+                         </property>
+                         <property name="overwriteMode">
+                          <bool>false</bool>
                          </property>
                         </widget>
                        </item>

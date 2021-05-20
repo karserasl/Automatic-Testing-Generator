@@ -9,7 +9,7 @@ import inspect
 
 logger = logging.getLogger(__name__)
 
-TECH_ID = 'eqv'
+TECH_ID = 'Equivalence_Partitioning'
 
 MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
 PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
@@ -31,7 +31,7 @@ def get_eq_partitions(outputs: list, inv_choices: str) -> list:
 
     for part in outputs:
         result = []
-        if not inv_choices == 'pairwise':
+        if not inv_choices == 'Pairwise':
             output_answer = part.pop()
         else:
             output_answer = None
@@ -55,7 +55,7 @@ def get_eq_partitions(outputs: list, inv_choices: str) -> list:
 
 def run(outputs: list, inv_choices: str) -> Optional[list]:
     copy_outputs = deepcopy(outputs)
-    if not inv_choices == 'pairwise':
+    if not inv_choices == 'Pairwise':
         for lst in copy_outputs:
             if len(lst) < 2:
                 logger.critical('Did not provide all the inputs/answers for the function.')

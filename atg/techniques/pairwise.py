@@ -10,7 +10,7 @@ from techniques.equivalance_partitioning import run as eqv_run
 
 logger = logging.getLogger(__name__)
 
-TECH_ID = 'pairwise'
+TECH_ID = 'Pairwise'
 
 MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
 PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
@@ -20,7 +20,7 @@ def run(outputs: list) -> list:
     copy_outputs = deepcopy(outputs)
     process_output = []
     if any('-' in x for j in copy_outputs for x in j):
-        eqv_output = eqv_run(copy_outputs, 'pairwise')
+        eqv_output = eqv_run(copy_outputs, 'Pairwise')
         copy_outputs = [[elem for elem in sublist if elem is not None] for sublist in eqv_output]
     for i, pairs in enumerate(Pairwise(copy_outputs)):
         process_output.append(pairs)

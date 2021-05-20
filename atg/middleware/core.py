@@ -6,7 +6,7 @@ import logging
 
 from middleware import loader
 from middleware import initializelogging
-from generator.default_generator import DefaultGenerator
+from generator.generator import TestsGenerator
 
 initializelogging.setup_logging()
 logger = logging.getLogger(__name__)
@@ -20,36 +20,35 @@ class ATG:
         self._func_params = {}
         self._processed_output = {}
         self._pairwise_output = []
+        self._generator_dump = None
         self._selected_function = None
+        self._selected_cls = None
         self._file_path = None
         self._file_node = None
+        self._count_tests = 0
         self._techniques = loader.get_all_techniques()
-        self._generator = generator or DefaultGenerator()
+        self._generator = generator or TestsGenerator()
         logger.info('Initialized ATG')
 
-    def find(self, key, dictionary):
-        # everything is a dict
-        for k, v in dictionary.items():
-            if k == key:
-                yield v
-            elif isinstance(v, dict):
-                for result in self.find(key, v):
-                    yield result
-
     def run(self, outputs: list, inv_choice, pairwise, pw_ans):
-        print(outputs, inv_choice)  # TODO: Remove this
         if not pairwise and not pw_ans:
             for tech_id, technique in self._techniques.items():
-                if not tech_id == 'pairwise':
+                if not tech_id == 'Pairwise':
                     self._processed_output[tech_id] = technique.run(outputs, inv_choice)
-                    print(self._processed_output)
         elif pw_ans:
-            self._processed_output['pairwise'] = outputs
+            self._processed_output['Pairwise'] = outputs
         else:
-            self._pairwise_output = self._techniques['pairwise'].run(outputs)
+            self._pairwise_output = self._techniques['Pairwise'].run(outputs)
             return self._pairwise_output
 
 
+    def dump(self):
+        self._generator_dump, self._count_tests = self._generator.dump(
+            filename=self._file_path,
+            method=self._selected_function,
+            processed_output=self._processed_output,
+            cls=self._selected_cls if not self._selected_cls == 'Functions' else None,
+        )
 
     def check_if_exists(self):
         return False
@@ -90,8 +89,6 @@ class ATG:
     @property
     def get_data(self):
         self.clean_analyzed_data()
-        print(self._func_params)
-
         check = bool({k: v for k, v in self._analyzed_data.items() if v})
         return self._analyzed_data if check else None
 
@@ -100,9 +97,16 @@ class ATG:
         self.clean_analyzed_data()
         return self._func_params
 
+    @property
+    def get_generator_dump(self):
+        if self._generator_dump and self._count_tests:
+            return self._generator_dump, self._count_tests
+
     def set_sel_function(self, value):
-        if value:
-            self._selected_function = value
+        self._selected_function = value
+
+    def set_sel_cls(self, value):
+        self._selected_cls = value
 
     def clean_analyzed_data(self):
         self._func_params = {k: v for k, v in self._func_params.items() if v}
@@ -122,8 +126,9 @@ class ATG:
         for s in find(func, self._config):
             return s
 
-    def dump(self, filename, functions):
-        return self._generator.dump(filename, functions)
+    def dump_output(self, output_txt):
+        print(output_txt)
+        print(self._generator_dump)
 
 
 def show_info(functionNode):

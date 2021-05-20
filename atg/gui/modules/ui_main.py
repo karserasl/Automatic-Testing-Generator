@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainddcOZC.ui'
+## Form generated from reading UI file 'mainpRfCIv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -1305,7 +1305,7 @@ class Ui_MainWindow(object):
         self.process_user_input_table.setSortingEnabled(False)
         self.process_user_input_table.setRowCount(4)
         self.process_user_input_table.setColumnCount(1)
-        self.process_user_input_table.horizontalHeader().setVisible(True)
+        self.process_user_input_table.horizontalHeader().setVisible(False)
         self.process_user_input_table.horizontalHeader().setCascadingSectionResizes(True)
         self.process_user_input_table.horizontalHeader().setDefaultSectionSize(200)
         self.process_user_input_table.horizontalHeader().setHighlightSections(True)
@@ -1407,20 +1407,49 @@ class Ui_MainWindow(object):
         self.final_layout.setObjectName(u"final_layout")
         self.final_label = QLabel(self.finalize)
         self.final_label.setObjectName(u"final_label")
-        self.final_label.setAlignment(Qt.AlignCenter)
+        sizePolicy4.setHeightForWidth(self.final_label.sizePolicy().hasHeightForWidth())
+        self.final_label.setSizePolicy(sizePolicy4)
+        self.final_label.setMinimumSize(QSize(400, 0))
+        self.final_label.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
+        self.final_label.setWordWrap(True)
         self.final_label.setMargin(10)
 
         self.final_layout.addWidget(self.final_label)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.info_count_label = QLabel(self.finalize)
+        self.info_count_label.setObjectName(u"info_count_label")
+        self.info_count_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.horizontalLayout_11.addWidget(self.info_count_label)
+
+        self.counter_label = QLabel(self.finalize)
+        self.counter_label.setObjectName(u"counter_label")
+        self.counter_label.setStyleSheet(u"font: 24pt \"Segoe UI\";\n"
+"color: rgb(212, 83, 255);")
+        self.counter_label.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+
+        self.horizontalLayout_11.addWidget(self.counter_label)
+
+
+        self.final_layout.addLayout(self.horizontalLayout_11)
 
 
         self.horizontalLayout_6.addLayout(self.final_layout)
 
         self.output_text = QPlainTextEdit(self.finalize)
         self.output_text.setObjectName(u"output_text")
-        self.output_text.setMinimumSize(QSize(200, 200))
+        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.output_text.sizePolicy().hasHeightForWidth())
+        self.output_text.setSizePolicy(sizePolicy7)
+        self.output_text.setMinimumSize(QSize(600, 200))
         self.output_text.setStyleSheet(u"background-color:\n"
 "                                                                                                            rgb(33, 37,\n"
 "                                                                                                            43);")
+        self.output_text.setOverwriteMode(False)
 
         self.horizontalLayout_6.addWidget(self.output_text)
 
@@ -1567,7 +1596,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1664,28 +1693,10 @@ class Ui_MainWindow(object):
         self.invalid_choice.setText("")
         self.invalid_choice.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Invalid Choice for the rest", None))
         self.process_next_btn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
-        self.final_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
-"                                                                                                                    style=\"\n"
-"                                                                                                                    font-weight:700;\">Please\n"
-"                                                                                                                    check\n"
-"                                                                                                                    the\n"
-"                                                                                                                    generated\n"
-"                                                                                                                    Tests:</span></p><p><span\n"
-"                                                                                                                    style=\"\n"
-"                                                               "
-                        "                                                     font-weight:700;\">If\n"
-"                                                                                                                    everything\n"
-"                                                                                                                    is\n"
-"                                                                                                                    ok,</span></p><p><span\n"
-"                                                                                                                    style=\"\n"
-"                                                                                                                    font-weight:700;\">press\n"
-"                                                                                                                    the\n"
-"                                                                                                                    save\n"
-"                          "
-                        "                                                                                          button\n"
-"                                                                                                                    on\n"
-"                                                                                                                    the\n"
-"                                                                                                                    left</span></p></body></html>", None))
+        self.final_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Please check the generated Tests:</span></p><p><span style=\" font-size:12pt; font-weight:700;\">If everything is ok, press the save button on the left to dump the tests into a test file.</span></p></body></html>", None))
+        self.info_count_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Number Of Tests generated:</span></p></body></html>", None))
+        self.counter_label.setText("")
+        self.output_text.setDocumentTitle(QCoreApplication.translate("MainWindow", u"Generated Tests", None))
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))

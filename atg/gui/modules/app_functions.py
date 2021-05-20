@@ -18,8 +18,8 @@ class AppFunctions(main.MainWindow):
         """
 
         cwd = os.getcwd()
-        print(cwd)
         # SET MANUAL STYLES
+        self.ui.output_text.clear()
         self.ui.logo_label.setPixmap(QPixmap(f"{cwd}/gui/images/images/PythonLogoPNG.png"))
         self.ui.proc_error_label.setStyleSheet("color: #6272A4; font: 13pt 'Segoe UI';")
         self.ui.proc_error_label.setAlignment(Qt.AlignCenter)

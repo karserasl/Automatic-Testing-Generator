@@ -6,7 +6,7 @@ from typing import Optional
 from copy import deepcopy
 logger = logging.getLogger(__name__)
 
-TECH_ID = 'bva'
+TECH_ID = 'Boundary_Value_Analysis'
 
 MODULE_NAME = sys.modules[__name__].__name__.split('.')[-1]
 PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]

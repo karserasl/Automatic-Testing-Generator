@@ -150,8 +150,8 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(FunctionsUi.select_menu(btn.styleSheet()))  # SELECT MENU
 
         if btn_name == "btn_save":
-            print('saved button pressed !')
-            pass
+            output_txt = widgets.output_text.toPlainText()
+            self.core.dump_output(self, output_txt)
 
     # TABLE ADD/REMOVE BUTTONS
     def _add_row(self):
@@ -194,13 +194,6 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPos()
-
-    #
-    #     # PRINT MOUSE EVENTS
-    #     if event.buttons() == Qt.LeftButton:
-    #         print('Mouse click: LEFT CLICK')
-    #     if event.buttons() == Qt.RightButton:
-    #         print('Mouse click: RIGHT CLICK')
 
     # UI LOGIC
 
