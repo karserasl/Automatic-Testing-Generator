@@ -72,6 +72,7 @@ class MainWindow(QMainWindow):
         widgets.new_row_btn.clicked.connect(self._add_row)
         widgets.remove_a_row.clicked.connect(self._remove_row)
         widgets.combo_functions.currentIndexChanged.connect(self.create_table_input)
+        widgets.reset_table.clicked.connect(self.reset_table)
         # INFO BUTTON
         widgets.processing_info_btn.clicked.connect(self._information_btn)
         # NEXT BUTTON
@@ -215,6 +216,9 @@ class MainWindow(QMainWindow):
 
     def dump_output_helper(self):
         UiLogic.dump_output_helper(self)
+
+    def reset_table(self):
+        UiLogic.reset_table(self)
 
 
 if __name__ == '__main__':

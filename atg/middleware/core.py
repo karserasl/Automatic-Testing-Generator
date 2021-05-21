@@ -36,6 +36,7 @@ class ATG:
 
     def run(self, outputs: list, inv_choice, pairwise, pw_ans):
         copy_outs = deepcopy(outputs)
+        self._processed_output = {}
         if not pairwise and not pw_ans:
             for tech_id, technique in self._techniques.items():
                 if not tech_id == 'Pairwise':

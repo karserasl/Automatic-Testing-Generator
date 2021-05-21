@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainEZfuqi.ui'
+## Form generated from reading UI file 'mainDCNoom.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -1343,6 +1343,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_17.addWidget(self.remove_a_row)
 
+        self.reset_table = QPushButton(self.table_row)
+        self.reset_table.setObjectName(u"reset_table")
+        self.reset_table.setMinimumSize(QSize(0, 50))
+
+        self.verticalLayout_17.addWidget(self.reset_table)
+
 
         self.horizontalLayout_8.addLayout(self.verticalLayout_17)
 
@@ -1441,6 +1447,7 @@ class Ui_MainWindow(object):
         self.append_checkbox.setMinimumSize(QSize(200, 0))
         self.append_checkbox.setLayoutDirection(Qt.RightToLeft)
         self.append_checkbox.setStyleSheet(u"font: 14pt \"Segoe UI\";")
+        self.append_checkbox.setChecked(False)
 
         self.horizontalLayout_11.addWidget(self.append_checkbox)
 
@@ -1611,7 +1618,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1704,6 +1711,7 @@ class Ui_MainWindow(object):
 "                                                                                                                                table", None))
 #endif // QT_CONFIG(statustip)
         self.remove_a_row.setText(QCoreApplication.translate("MainWindow", u"Remove Row", None))
+        self.reset_table.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.proc_error_label.setText("")
         self.invalid_choice.setText("")
         self.invalid_choice.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Invalid Choice for the rest", None))

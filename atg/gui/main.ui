@@ -1821,7 +1821,7 @@ p, li { white-space: pre-wrap; }
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_40">
@@ -2640,6 +2640,19 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                               </property>
                              </widget>
                             </item>
+                            <item>
+                             <widget class="QPushButton" name="reset_table">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>50</height>
+                               </size>
+                              </property>
+                              <property name="text">
+                               <string>Reset</string>
+                              </property>
+                             </widget>
+                            </item>
                            </layout>
                           </item>
                          </layout>
@@ -2844,6 +2857,9 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                                </property>
                                <property name="text">
                                 <string>Append to Output</string>
+                               </property>
+                               <property name="checked">
+                                <bool>false</bool>
                                </property>
                               </widget>
                              </item>

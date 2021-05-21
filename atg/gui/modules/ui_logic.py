@@ -36,6 +36,9 @@ class UiLogic(main.MainWindow):
             self.ui.error_msg_label.setText(
                 'Please select a Python File that has Classes with methods or functions, and they have some arguments')
 
+    def reset_table(self):
+        self.create_table_input()
+
     def create_combo_box_items(self):
         model = QStandardItemModel()
         self.ui.combo_classes.setModel(model)
@@ -125,7 +128,7 @@ class UiLogic(main.MainWindow):
 
         def validator(text):
 
-            if not re.fullmatch(r'^[a-zA-Z0-9\-.: ]*', text.strip()):
+            if not re.fullmatch(r'^[a-zA-Z0-9\-.:! ]*', text.strip()):
                 error_dialog('Please check your inputs!')
                 return True
             if re.search(r'[\-.:]{2,}', text):
