@@ -3,6 +3,8 @@
 import ast
 import inspect
 import logging
+import os
+import pickle
 
 from middleware import loader
 from middleware import initializelogging
@@ -21,6 +23,7 @@ class ATG:
         self._processed_output = {}
         self._pairwise_output = []
         self._generator_dump = None
+        self._table_dump = None
         self._selected_function = None
         self._selected_cls = None
         self._file_path = None
@@ -31,6 +34,7 @@ class ATG:
         logger.info('Initialized ATG')
 
     def run(self, outputs: list, inv_choice, pairwise, pw_ans):
+        self._table_dump = outputs
         if not pairwise and not pw_ans:
             for tech_id, technique in self._techniques.items():
                 if not tech_id == 'Pairwise':
@@ -41,8 +45,8 @@ class ATG:
             self._pairwise_output = self._techniques['Pairwise'].run(outputs)
             return self._pairwise_output
 
-
     def dump(self):
+
         self._generator_dump, self._count_tests = self._generator.dump(
             filename=self._file_path,
             method=self._selected_function,
@@ -51,6 +55,16 @@ class ATG:
         )
 
     def check_if_exists(self):
+        from pathlib import Path
+        root = os.path.dirname(self._file_path)
+        config_file = Path(os.path.normpath(f'{root or "."}/.atg_config'))
+        if config_file.is_file():
+            try:
+                with open(config_file, 'rb') as f:
+                    self._selected_function, self._processed_output, self._selected_cls = pickle.load(f)
+                return True
+            except Exception as e:
+                logger.error(f'Error with loading config file :: {e}')
         return False
 
     def analyse_file(self, filepath):
@@ -102,6 +116,13 @@ class ATG:
         if self._generator_dump and self._count_tests:
             return self._generator_dump, self._count_tests
 
+    @property
+    def get_table_dump(self):
+        return self._table_dump
+
+    def set_table_dump(self, table_dump):
+        self._table_dump = table_dump
+
     def set_sel_function(self, value):
         self._selected_function = value
 
@@ -126,9 +147,48 @@ class ATG:
         for s in find(func, self._config):
             return s
 
-    def dump_output(self, output_txt):
-        print(output_txt)
-        print(self._generator_dump)
+    def dump_output(self, output_txt, append=False):
+        modname = self._generator.get_module_name(self._file_path)
+        if modname == '__main__':
+            modname = self._file_path.replace('.py', '').capitalize()
+        root = os.path.dirname(self._file_path)
+        output = os.path.normpath(f'{root or "."}/tests/test_{modname.replace(".", "_")}.py')
+        dir = os.path.dirname(output)
+        try:
+            if not os.path.exists(dir):
+                os.makedirs(dir)
+        except Exception as e:
+            logger.error(f'Error creating directory for test files :: {e}')
+        self._dump_config_file()
+        if append:
+            try:
+                with open(output, 'a') as f:
+                    f.write(output_txt)
+            except Exception as e:
+                logger.error(f'Error with file dump :: {e}')
+            finally:
+                logger.info(f'ATG generated {self._count_tests} tests')
+        else:
+            try:
+                with open(output, 'w') as f:
+                    f.write(output_txt)
+            except Exception as e:
+                logger.error(f'Error with file dump :: {e}')
+            finally:
+                logger.info(f'ATG generated {self._count_tests} tests')
+
+    def _dump_config_file(self):
+        root = os.path.dirname(self._file_path)
+        config_file = os.path.normpath(f'{root or "."}/.atg_config')
+        try:
+            with open(config_file, 'wb') as f:
+                pickle.dump([
+                    self._selected_function,
+                    self._processed_output,
+                    self._selected_cls,
+                ], f)
+        except Exception as e:
+            logger.error(f'Error with dumping config file :: {e}')
 
 
 def show_info(functionNode):

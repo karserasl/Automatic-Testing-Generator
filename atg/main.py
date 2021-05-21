@@ -151,7 +151,10 @@ class MainWindow(QMainWindow):
 
         if btn_name == "btn_save":
             output_txt = widgets.output_text.toPlainText()
-            self.core.dump_output(self, output_txt)
+            if widgets.append_checkbox.isChecked():
+                self.core.dump_output(output_txt, append=True)
+            else:
+                self.core.dump_output(output_txt)
 
     # TABLE ADD/REMOVE BUTTONS
     def _add_row(self):
@@ -211,6 +214,9 @@ class MainWindow(QMainWindow):
 
     def process_input_table(self):
         UiLogic.process_input_table(self)
+
+    def dump_output_helper(self):
+        UiLogic.dump_output_helper(self)
 
 
 if __name__ == '__main__':

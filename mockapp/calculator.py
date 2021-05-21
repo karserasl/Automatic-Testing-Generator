@@ -8,7 +8,7 @@ class Calculator:
     def __init__(self):
         self.statement = "Completed init"
 
-    def uniClassification(self, grade: int, test):
+    def uniClassification(self, grade):
         """
         University grade calculator
         :param grade: grade of student
@@ -16,7 +16,7 @@ class Calculator:
         """
         print(self.statement)
 
-        if 0 <= grade < 40 and test == 30:
+        if 0 <= grade < 40:
             return 'Failed'
         elif 40 <= grade < 50:
             return 'Pass'

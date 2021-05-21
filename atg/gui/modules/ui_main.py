@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainpRfCIv.ui'
+## Form generated from reading UI file 'mainEZfuqi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -1416,35 +1416,50 @@ class Ui_MainWindow(object):
 
         self.final_layout.addWidget(self.final_label)
 
-        self.horizontalLayout_11 = QHBoxLayout()
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.verticalLayout_18 = QVBoxLayout()
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.info_count_label = QLabel(self.finalize)
         self.info_count_label.setObjectName(u"info_count_label")
-        self.info_count_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        sizePolicy4.setHeightForWidth(self.info_count_label.sizePolicy().hasHeightForWidth())
+        self.info_count_label.setSizePolicy(sizePolicy4)
+        self.info_count_label.setMinimumSize(QSize(0, 0))
+        self.info_count_label.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_11.addWidget(self.info_count_label)
+        self.verticalLayout_18.addWidget(self.info_count_label)
 
-        self.counter_label = QLabel(self.finalize)
-        self.counter_label.setObjectName(u"counter_label")
-        self.counter_label.setStyleSheet(u"font: 24pt \"Segoe UI\";\n"
-"color: rgb(212, 83, 255);")
-        self.counter_label.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(0, -1, -1, -1)
+        self.append_checkbox = QCheckBox(self.finalize)
+        self.append_checkbox.setObjectName(u"append_checkbox")
+        self.append_checkbox.setEnabled(True)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Minimum)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.append_checkbox.sizePolicy().hasHeightForWidth())
+        self.append_checkbox.setSizePolicy(sizePolicy7)
+        self.append_checkbox.setMinimumSize(QSize(200, 0))
+        self.append_checkbox.setLayoutDirection(Qt.RightToLeft)
+        self.append_checkbox.setStyleSheet(u"font: 14pt \"Segoe UI\";")
 
-        self.horizontalLayout_11.addWidget(self.counter_label)
+        self.horizontalLayout_11.addWidget(self.append_checkbox)
 
 
-        self.final_layout.addLayout(self.horizontalLayout_11)
+        self.verticalLayout_18.addLayout(self.horizontalLayout_11)
+
+
+        self.final_layout.addLayout(self.verticalLayout_18)
 
 
         self.horizontalLayout_6.addLayout(self.final_layout)
 
         self.output_text = QPlainTextEdit(self.finalize)
         self.output_text.setObjectName(u"output_text")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.output_text.sizePolicy().hasHeightForWidth())
-        self.output_text.setSizePolicy(sizePolicy7)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.output_text.sizePolicy().hasHeightForWidth())
+        self.output_text.setSizePolicy(sizePolicy8)
         self.output_text.setMinimumSize(QSize(600, 200))
         self.output_text.setStyleSheet(u"background-color:\n"
 "                                                                                                            rgb(33, 37,\n"
@@ -1695,7 +1710,7 @@ class Ui_MainWindow(object):
         self.process_next_btn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.final_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Please check the generated Tests:</span></p><p><span style=\" font-size:12pt; font-weight:700;\">If everything is ok, press the save button on the left to dump the tests into a test file.</span></p></body></html>", None))
         self.info_count_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Number Of Tests generated:</span></p></body></html>", None))
-        self.counter_label.setText("")
+        self.append_checkbox.setText(QCoreApplication.translate("MainWindow", u"Append to Output", None))
         self.output_text.setDocumentTitle(QCoreApplication.translate("MainWindow", u"Generated Tests", None))
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))

@@ -16,12 +16,16 @@ class UiLogic(main.MainWindow):
                                                      filter="Python file (*.py)")
         if not name[0]: return
         self.core.analyse_file(name[0])
-
+        self.data = self.core.get_data
         # TODO: Handle the case that .atg_config file exists (Re-running the app)
         if self.core.check_if_exists():
-            return NotImplementedError
+            final_lbl = self.ui.final_label.text()
+            new_final_lbl = f'{final_lbl}\nFound ATG config file in directory and loaded previously choices'
+            self.ui.final_label.setText(new_final_lbl)
+            self.dump_output_helper()
+            self.create_combo_box_items()
+            return
 
-        self.data = self.core.get_data
         if self.data and isinstance(self.data, dict):
             self.ui.path_line.setText(name[0])
             self.ui.stackedWidget.setCurrentWidget(self.ui.processing)
@@ -50,11 +54,6 @@ class UiLogic(main.MainWindow):
             self.ui.combo_functions.show()
             self.ui.combo_functions.setCurrentIndex(0)
 
-        # update_combo_box(0)
-        if str(self.ui.combo_classes.currentText()) == '':
-            self.ui.combo_functions.hide()
-        else:
-            self.ui.combo_functions.show()
         self.ui.combo_classes.currentIndexChanged.connect(update_combo_box)
 
     def create_table_input(self):
@@ -129,7 +128,7 @@ class UiLogic(main.MainWindow):
 
         def validator(text):
 
-            if not re.fullmatch(r'^[a-zA-Z0-9\-.:]*', text):
+            if not re.fullmatch(r'^[a-zA-Z0-9\-.: ]*', text.strip()):
                 error_dialog('Please check your inputs!')
                 return True
             if re.search(r'[\-.:]{2,}', text):
@@ -158,7 +157,7 @@ class UiLogic(main.MainWindow):
                 for row in range(rows):
                     item = self.ui.process_user_input_table.item(row, col)
                     if item and item.text():
-                        list_of_ans.append(item.text())
+                        list_of_ans.append(item.text().strip())
                         if validator(item.text()):
                             return
                 outputs.append(list_of_ans)
@@ -170,7 +169,7 @@ class UiLogic(main.MainWindow):
                 for col in range(cols):
                     item = self.ui.process_user_input_table.item(row, col)
                     if item and item.text():
-                        list_of_ans.append(item.text())
+                        list_of_ans.append(item.text().strip())
                         if validator(item.text()):
                             return
                         if '-' in item.text():
@@ -180,7 +179,7 @@ class UiLogic(main.MainWindow):
                     if len(list_of_ans) != cols and not self._pairwise:
                         error_dialog('Please fill all the inputs and answer in a row!')
                         return
-                    if len(list_of_ans) <= 2 and not self._pairwise and not inv_choice:
+                    if len(list_of_ans) <= 2 and range_ans and not self._pairwise and not inv_choice:
                         error_dialog('Range input detected but did not provide an invalid choice!')
                         return
 
@@ -203,16 +202,18 @@ class UiLogic(main.MainWindow):
             self.populate_table(func_params_columns=self._sel_func_params, pairwise_results=self._result)
             return
         if not self._pairwise:
-            self.core.dump()
-            dumped_tests, count_tests = self.core.get_generator_dump
-            if dumped_tests:
-                self.ui.output_text.insertPlainText(dumped_tests)
-                if not count_tests:
-                    self.ui.counter_label.setText('')
-                    self.ui.info_count_label.setText('')
-                else:
-                    self.ui.counter_label.setText(str(count_tests))
+            self.dump_output_helper()
 
-                self.ui.stackedWidget.setCurrentWidget(self.ui.finalize)
-                FunctionsUi.reset_styling(self, "btn_output")
-                self.ui.btn_output.setStyleSheet(FunctionsUi.select_menu(self.ui.btn_output.styleSheet()))
+    def dump_output_helper(self):
+        self.core.dump()
+        dumped_tests, count_tests = self.core.get_generator_dump
+        if dumped_tests:
+            self.ui.output_text.insertPlainText(dumped_tests)
+            if not count_tests:
+                self.ui.info_count_label.setText('')
+            else:
+                self.ui.info_count_label.setText(f'Number of Tests Generated: {str(count_tests)}')
+
+            self.ui.stackedWidget.setCurrentWidget(self.ui.finalize)
+            FunctionsUi.reset_styling(self, "btn_output")
+            self.ui.btn_output.setStyleSheet(FunctionsUi.select_menu(self.ui.btn_output.styleSheet()))
