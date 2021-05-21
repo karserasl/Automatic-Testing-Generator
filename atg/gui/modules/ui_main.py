@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainDCNoom.ui'
+## Form generated from reading UI file 'mainicZcrp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.3
 ##
@@ -720,17 +720,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.toggleLeftBox = QPushButton(self.bottomMenu)
-        self.toggleLeftBox.setObjectName(u"toggleLeftBox")
-        sizePolicy.setHeightForWidth(self.toggleLeftBox.sizePolicy().hasHeightForWidth())
-        self.toggleLeftBox.setSizePolicy(sizePolicy)
-        self.toggleLeftBox.setMinimumSize(QSize(0, 45))
-        self.toggleLeftBox.setFont(font)
-        self.toggleLeftBox.setCursor(QCursor(Qt.PointingHandCursor))
-        self.toggleLeftBox.setLayoutDirection(Qt.LeftToRight)
-        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_settings.png);")
+        self.toggle_left_slide = QPushButton(self.bottomMenu)
+        self.toggle_left_slide.setObjectName(u"toggle_left_slide")
+        sizePolicy.setHeightForWidth(self.toggle_left_slide.sizePolicy().hasHeightForWidth())
+        self.toggle_left_slide.setSizePolicy(sizePolicy)
+        self.toggle_left_slide.setMinimumSize(QSize(0, 45))
+        self.toggle_left_slide.setFont(font)
+        self.toggle_left_slide.setCursor(QCursor(Qt.PointingHandCursor))
+        self.toggle_left_slide.setLayoutDirection(Qt.LeftToRight)
+        self.toggle_left_slide.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_settings.png);")
 
-        self.verticalLayout_9.addWidget(self.toggleLeftBox)
+        self.verticalLayout_9.addWidget(self.toggle_left_slide)
 
 
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, Qt.AlignBottom)
@@ -1422,6 +1422,19 @@ class Ui_MainWindow(object):
 
         self.final_layout.addWidget(self.final_label)
 
+        self.config_label = QLabel(self.finalize)
+        self.config_label.setObjectName(u"config_label")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.config_label.sizePolicy().hasHeightForWidth())
+        self.config_label.setSizePolicy(sizePolicy7)
+        self.config_label.setMinimumSize(QSize(0, 100))
+        self.config_label.setStyleSheet(u"font: 700 12pt \"Segoe UI\";")
+        self.config_label.setAlignment(Qt.AlignCenter)
+
+        self.final_layout.addWidget(self.config_label)
+
         self.verticalLayout_18 = QVBoxLayout()
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.info_count_label = QLabel(self.finalize)
@@ -1439,11 +1452,11 @@ class Ui_MainWindow(object):
         self.append_checkbox = QCheckBox(self.finalize)
         self.append_checkbox.setObjectName(u"append_checkbox")
         self.append_checkbox.setEnabled(True)
-        sizePolicy7 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Minimum)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.append_checkbox.sizePolicy().hasHeightForWidth())
-        self.append_checkbox.setSizePolicy(sizePolicy7)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Minimum)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.append_checkbox.sizePolicy().hasHeightForWidth())
+        self.append_checkbox.setSizePolicy(sizePolicy8)
         self.append_checkbox.setMinimumSize(QSize(200, 0))
         self.append_checkbox.setLayoutDirection(Qt.RightToLeft)
         self.append_checkbox.setStyleSheet(u"font: 14pt \"Segoe UI\";")
@@ -1462,11 +1475,11 @@ class Ui_MainWindow(object):
 
         self.output_text = QPlainTextEdit(self.finalize)
         self.output_text.setObjectName(u"output_text")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.output_text.sizePolicy().hasHeightForWidth())
-        self.output_text.setSizePolicy(sizePolicy8)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.output_text.sizePolicy().hasHeightForWidth())
+        self.output_text.setSizePolicy(sizePolicy9)
         self.output_text.setMinimumSize(QSize(600, 200))
         self.output_text.setStyleSheet(u"background-color:\n"
 "                                                                                                            rgb(33, 37,\n"
@@ -1618,7 +1631,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1634,7 +1647,7 @@ class Ui_MainWindow(object):
         self.btn_output.setText(QCoreApplication.translate("MainWindow", u"Finalize", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
+        self.toggle_left_slide.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
@@ -1717,6 +1730,7 @@ class Ui_MainWindow(object):
         self.invalid_choice.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Invalid Choice for the rest", None))
         self.process_next_btn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.final_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Please check the generated Tests:</span></p><p><span style=\" font-size:12pt; font-weight:700;\">If everything is ok, press the save button on the left to dump the tests into a test file.</span></p></body></html>", None))
+        self.config_label.setText("")
         self.info_count_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Number Of Tests generated:</span></p></body></html>", None))
         self.append_checkbox.setText(QCoreApplication.translate("MainWindow", u"Append to Output", None))
         self.output_text.setDocumentTitle(QCoreApplication.translate("MainWindow", u"Generated Tests", None))
@@ -1724,6 +1738,6 @@ class Ui_MainWindow(object):
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Lampros Karseras", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v0.0.4", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"v0.0.6", None))
     # retranslateUi
 

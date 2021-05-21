@@ -28,12 +28,13 @@ def car_deals(brand: str, price: int = 4, cond: str = 'test3'):
 
 
 from generator.generator import TestsGenerator
-
+from techniques.boundary_analysis import run
 # print(run([['20-122', 'ghjhk'], [432,1234,432], ['4321','4321234','14123'], ['4321']]))
-g = TestsGenerator()
-p = {'Boundary_Value_Analysis': [], 'Equivalence_Partitioning': [[2147, 'dfas', 'fdsa'], ['fdsa', 'dfas', 'dfsa']]}
-cls = 'Calculator'
-f = 'uniClassification'
-fil = 'C:/Users/Administrator/Uni-3rd_Year/CTEC3451 - Development Project/Development/Code/Automatic Testing Generator/mockapp/calculator.py'
-a, c = g.dump(processed_output=p, filename=fil, cls=cls, method=f)
-print(c)
+# g = TestsGenerator()
+# p = {'Boundary_Value_Analysis': [], 'Equivalence_Partitioning': [[2147, 'dfas', 'fdsa'], ['fdsa', 'dfas', 'dfsa']]}
+# cls = 'Calculator'
+# f = 'uniClassification'
+# fil = 'C:/Users/Administrator/Uni-3rd_Year/CTEC3451 - Development Project/Development/Code/Automatic Testing Generator/mockapp/calculator.py'
+# a, c = g.dump(processed_output=p, filename=fil, cls=cls, method=f)
+# print(c)
+run([['0-39','1-43', 'Failed'], ['40-49', 'Pass'], ['50-59', '2:2'], ['60-69', '2:1'], ['70-100', 'First!']], 'Wrong Grade')

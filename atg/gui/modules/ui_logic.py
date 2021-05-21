@@ -18,10 +18,8 @@ class UiLogic(main.MainWindow):
         self.core.analyse_file(name[0])
         self.data = self.core.get_data
         if self.core.check_if_exists():
-            final_lbl = self.ui.final_label.text()
-            new_final_lbl = f'{final_lbl}\nFound ATG config file in directory and loaded previously choices'
-            self.ui.final_label.setText(new_final_lbl)
             self.dump_output_helper()
+            self.ui.config_label.setText('Found ATG config file in directory and loaded previously choices')
             self.create_combo_box_items()
             return
 
@@ -55,6 +53,7 @@ class UiLogic(main.MainWindow):
             self.ui.combo_functions.setRootModelIndex(ind)
             self.ui.combo_functions.show()
             self.ui.combo_functions.setCurrentIndex(0)
+            self.ui.config_label.setText('')
 
         self.ui.combo_classes.currentIndexChanged.connect(update_combo_box)
 
@@ -215,7 +214,8 @@ class UiLogic(main.MainWindow):
             if not count_tests:
                 self.ui.info_count_label.setText('')
             else:
-                self.ui.info_count_label.setText(f'Number of Tests Generated: {str(count_tests)}')
+                self.ui.info_count_label.setText(
+                    f'<html><head/><body><p><span style=" font-size:12pt; font-weight:700;">Number Of Tests generated: </span><span style=" font-size:18pt; font-weight:700; color:#6272a4;">{str(count_tests)}</span></p></body></html>')
 
             self.ui.stackedWidget.setCurrentWidget(self.ui.finalize)
             FunctionsUi.reset_styling(self, "btn_output")

@@ -1043,7 +1043,7 @@ Button */
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="toggleLeftBox">
+                 <widget class="QPushButton" name="toggle_left_slide">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1821,7 +1821,7 @@ p, li { white-space: pre-wrap; }
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_40">
@@ -2804,6 +2804,31 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                           </widget>
                          </item>
                          <item>
+                          <widget class="QLabel" name="config_label">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>100</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
                           <layout class="QVBoxLayout" name="verticalLayout_18">
                            <item>
                             <widget class="QLabel" name="info_count_label">
@@ -3187,7 +3212,7 @@ font: 14pt &quot;Segoe UI&quot;;</string>
                 <item>
                  <widget class="QLabel" name="version">
                   <property name="text">
-                   <string>v0.0.4</string>
+                   <string>v0.0.6</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

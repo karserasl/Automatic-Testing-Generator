@@ -21,7 +21,7 @@ PACKAGE_NAME = sys.modules[__name__].__name__.split('.')[-2]
 def run(outputs: list) -> list:
     copy_outputs = deepcopy(outputs)
     process_output = []
-    if any('-' in x for j in copy_outputs for x in j):
+    if any('-' in x for j in copy_outputs for x in j if isinstance(x, str)):
         eqv_output = eqv_run(copy_outputs, 'Pairwise')
         copy_outputs = [[elem for elem in sublist if elem is not None] for sublist in eqv_output]
     for i, pairs in enumerate(Pairwise(copy_outputs)):

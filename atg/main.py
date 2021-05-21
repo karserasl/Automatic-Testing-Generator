@@ -1,7 +1,7 @@
 # @Author: Administrator
 # @Date:   03/02/2021 14:26
 
-# from PySide6 import QtWidgets
+from PySide6 import QtWidgets
 import sys
 import platform
 from gui.modules import *
@@ -62,10 +62,13 @@ class MainWindow(QMainWindow):
         enable_right_button = False
         enable_left_button = True
         # LEFT MENUS
-        widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_processing.clicked.connect(self.buttonClick)
-        widgets.btn_output.clicked.connect(self.buttonClick)
-        widgets.btn_save.clicked.connect(self.buttonClick)
+        widgets.btn_home.clicked.connect(self.button_click)
+        widgets.btn_processing.clicked.connect(self.button_click)
+        widgets.btn_output.clicked.connect(self.button_click)
+        widgets.btn_save.clicked.connect(self.button_click)
+        # SLIDE MENU
+        widgets.github_btn.clicked.connect(self.github_btn)
+        widgets.share_btn.clicked.connect(self.share_btn)
         # OPEN BUTTON
         widgets.open_btn.clicked.connect(self.open_file_btn)
         # TABLE BUTTONS
@@ -83,13 +86,13 @@ class MainWindow(QMainWindow):
             FunctionsUi.toggle_left_slide(self, True)
 
         if enable_left_button:
-            widgets.toggleLeftBox.clicked.connect(left_slide_open_close)
+            widgets.toggle_left_slide.clicked.connect(left_slide_open_close)
             widgets.extraCloseColumnBtn.clicked.connect(left_slide_open_close)
 
             widgets.btn_exit.clicked.connect(QApplication.quit)
         else:
-            widgets.toggleLeftBox.hide()
-            widgets.toggleLeftBox.setEnabled(False)
+            widgets.toggle_left_slide.hide()
+            widgets.toggle_left_slide.setEnabled(False)
             widgets.extraCloseColumnBtn.hide()
             widgets.extraCloseColumnBtn.setEnabled(False)
 
@@ -125,7 +128,15 @@ class MainWindow(QMainWindow):
         widgets.btn_home.setStyleSheet(FunctionsUi.select_menu(widgets.btn_home.styleSheet()))
 
     # BUTTONS CLICK
-    def buttonClick(self):
+    def github_btn(self):
+        url = QUrl('https://github.com/karserasl/Automatic-Testing-Generator')
+        QDesktopServices.openUrl(url)
+
+    def share_btn(self):
+        url = QUrl('https://twitter.com/intent/tweet?text=Automatic Test Generator in Python with PyQT!')
+        QDesktopServices.openUrl(url)
+
+    def button_click(self):
         # GET BUTTON CLICKED
         btn = self.sender()
         btn_name = btn.objectName()
@@ -150,10 +161,11 @@ class MainWindow(QMainWindow):
 
         if btn_name == "btn_save":
             output_txt = widgets.output_text.toPlainText()
-            if widgets.append_checkbox.isChecked():
-                self.core.dump_output(output_txt, append=True)
-            else:
-                self.core.dump_output(output_txt)
+            if output_txt:
+                if widgets.append_checkbox.isChecked():
+                    self.core.dump_output(output_txt, append=True)
+                else:
+                    self.core.dump_output(output_txt)
 
     # TABLE ADD/REMOVE BUTTONS
     def _add_row(self):
