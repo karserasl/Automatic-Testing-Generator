@@ -19,7 +19,6 @@ def get_all_techniques():
     for technique in found_techniques:
         technique_module = import_module(technique)
         loaded_techniques.append(technique_module)
-        # TODO: Validate techniques
 
     return (
         {technique.TECH_ID: technique for technique in loaded_techniques}

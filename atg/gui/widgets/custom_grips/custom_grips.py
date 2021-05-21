@@ -1,3 +1,5 @@
+# @Author: Administrator
+# @Date:   03/02/2021 14:26
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *

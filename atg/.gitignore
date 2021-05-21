@@ -178,7 +178,8 @@ cython_debug/
 # .idea/modules
 # *.iml
 # *.ipr
-
+sandbox.py
+objs.pkl
 # CMake
 cmake-build-*/
 

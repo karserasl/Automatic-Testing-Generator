@@ -1,3 +1,8 @@
+# @Author: Administrator
+# @Date:   03/02/2021 14:26
+
+# sample parameters are is taken from
+# http://www.stsc.hill.af.mil/consulting/sw_testing/improvement/cst.html
 from techniques.pairwise import Pairwise
 
 parameters = [
@@ -9,8 +14,6 @@ parameters = [
     # ["Salaried"],
     # [6],
 ]
-# sample parameters are is taken from
-# http://www.stsc.hill.af.mil/consulting/sw_testing/improvement/cst.html
 
 print("PAIRWISE:")
 for i, pairs in enumerate(Pairwise(parameters)):

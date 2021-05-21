@@ -1,13 +1,11 @@
-# IMPORT / GUI AND MODULES AND WIDGETS
-
-import sys
-import platform
+# @Author: Administrator
+# @Date:   03/02/2021 14:26
 
 # from PySide6 import QtWidgets
-
+import sys
+import platform
 from gui.modules import *
 from gui.modules import validator
-from gui.widgets import *
 from middleware.core import ATG
 
 # SET AS GLOBAL WIDGETS
@@ -110,7 +108,7 @@ class MainWindow(QMainWindow):
         # SET CUSTOM THEME
 
         use_custom_theme = True
-        theme_file = "gui/themes/py_dracula_light.qss"
+        theme_file = "gui/themes/light.qss"
 
         # SET THEME AND HACKS
         if use_custom_theme:

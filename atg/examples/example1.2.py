@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
+# @Author: Administrator
+# @Date:   03/02/2021 14:26
 
-"""
-Demo of the basic functionality - just getting pairwise/n-wise combinations
-"""
-
+# sample parameters are is taken from
+# http://www.stsc.hill.af.mil/consulting/sw_testing/improvement/cst.html
 from techniques.pairwise import Pairwise
 
 
@@ -14,8 +13,6 @@ parameters = [
     ["Salaried", "Hourly", "Part-Time", "Contr."],
     [6, 10, 15, 30, 60],
 ]
-# sample parameters are is taken from
-# http://www.stsc.hill.af.mil/consulting/sw_testing/improvement/cst.html
 
 print("TRIPLEWISE:")
 for i, pairs in enumerate(Pairwise(parameters, n=3)):

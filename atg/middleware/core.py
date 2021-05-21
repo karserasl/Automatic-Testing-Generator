@@ -5,6 +5,7 @@ import inspect
 import logging
 import os
 import pickle
+from copy import deepcopy
 
 from middleware import loader
 from middleware import initializelogging
@@ -34,15 +35,16 @@ class ATG:
         logger.info('Initialized ATG')
 
     def run(self, outputs: list, inv_choice, pairwise, pw_ans):
-        self._table_dump = outputs
+        copy_outs = deepcopy(outputs)
         if not pairwise and not pw_ans:
             for tech_id, technique in self._techniques.items():
                 if not tech_id == 'Pairwise':
-                    self._processed_output[tech_id] = technique.run(outputs, inv_choice)
+                    self._processed_output[tech_id] = technique.run(copy_outs, inv_choice)
+                    print(tech_id)
         elif pw_ans:
-            self._processed_output['Pairwise'] = outputs
+            self._processed_output['Pairwise'] = copy_outs
         else:
-            self._pairwise_output = self._techniques['Pairwise'].run(outputs)
+            self._pairwise_output = self._techniques['Pairwise'].run(copy_outs)
             return self._pairwise_output
 
     def dump(self):

@@ -17,7 +17,6 @@ class UiLogic(main.MainWindow):
         if not name[0]: return
         self.core.analyse_file(name[0])
         self.data = self.core.get_data
-        # TODO: Handle the case that .atg_config file exists (Re-running the app)
         if self.core.check_if_exists():
             final_lbl = self.ui.final_label.text()
             new_final_lbl = f'{final_lbl}\nFound ATG config file in directory and loaded previously choices'
@@ -65,14 +64,12 @@ class UiLogic(main.MainWindow):
             QtWidgets.QAbstractItemView.DoubleClicked | QtWidgets.QAbstractItemView.EditKeyPressed | QtWidgets.QAbstractItemView.AnyKeyPressed)
         func_selected = str(self.ui.combo_functions.currentText())
         cls_selected = str(self.ui.combo_classes.currentText())
-        print(cls_selected)  # TODO: Remove this
         self.core.set_sel_function(func_selected)
         self.core.set_sel_cls(cls_selected)
         self._sel_func_params = self.core.get_params[func_selected]
         self.ui.process_user_input_table.clear()
 
         if len(self._sel_func_params) > 2:
-            # TODO: PAIRWISE
             self._pairwise = True
             self.ui.pairwise_check.setChecked(True)
             self.ui.proc_error_label.setText(
@@ -146,7 +143,6 @@ class UiLogic(main.MainWindow):
 
             return False
 
-        answers_column = self.ui.process_user_input_table.columnCount() - 1
         inv_choice = self.ui.invalid_choice.text()
         cols = self.ui.process_user_input_table.columnCount()
         rows = self.ui.process_user_input_table.rowCount()
@@ -196,12 +192,16 @@ class UiLogic(main.MainWindow):
 
         self._result = self.core.run(outputs=outputs, inv_choice=inv_choice, pairwise=self._pairwise,
                                      pw_ans=self._pw_ans)
+        print(outputs)
+        print(self._result)
+        print(self._pairwise)
         if isinstance(self._result, list) and self._result and self._pairwise:
             self._pairwise = False
             self._pw_ans = True
             self.populate_table(func_params_columns=self._sel_func_params, pairwise_results=self._result)
             return
         if not self._pairwise:
+            self._pw_ans = False
             self.dump_output_helper()
 
     def dump_output_helper(self):
