@@ -1,6 +1,3 @@
-# @Author: Administrator
-# @Date:   01/02/2021 09:30
-
 # @Author: Lampros.Karseras
 # @Date:   11/01/2021 20:34
 import itertools
@@ -28,7 +25,10 @@ class TestsGenerator:
         copy_output = deepcopy(processed_output)
         self._dump_tests(filename, method, cls, copy_output)
         logger.info('Done creating output.')
-        self._add_import(self.get_module_name(filename))
+        if cls:
+            self._add_import(self.get_module_name(filename))
+        else:
+            self._add_import(self.get_module_name(filename), method)
         for line in open(filename):
             line = line.replace('\n', '')
             if line.startswith('import '):
@@ -62,8 +62,10 @@ class TestsGenerator:
             self._output.append(f'class {cls}(unittest.TestCase):')
             self._output.append(f'{self.indent(1)}def setUp(self) -> None:')
             self._output.append(f'{self.indent(2)}{cls_definition} = {self.get_module_name(filename)}.{cls}()\n')
-
-        self._output.append(f'# {"-" * 36} {method} - {"method" if cls else "function"} {"-" * 35} #')
+        else:
+            self._output.append(
+                f"class {''.join(map(str.capitalize, method.split('_'))) if '_' in method else method.title()}(unittest.TestCase):")
+        self._output.append(f'{self.indent(1)}# {"-" * 36} {method} - {"method" if cls else "function"} {"-" * 35} #')
 
         counter = itertools.count()
 
@@ -73,15 +75,12 @@ class TestsGenerator:
             for result in result_lst:
                 expected_ans = result.pop()
                 r = [int(i) if str(i).isdigit() else i for i in result]
+                self._output.append(f'{self.indent(1)}def test_{method}_{next(counter)}(self):')
+                self._output.append(f'{self.indent(2)}self.assertEqual(')
                 if cls_definition:
-                    self._output.append(f'{self.indent(1)}def test_{method}_{next(counter)}(self):')
-                    self._output.append(f'{self.indent(2)}self.assertEqual(')
                     self._output.append(f'{self.indent(3)}{cls_definition}.{method}(*{r}),')
                 else:
-                    self._output.append(f'def test_{method}_{next(counter)}(self):')
-                    self._output.append(f'{self.indent(1)}self.assertEqual(')
-                    self._output.append(f'{self.indent(2)}{method}(*{r}),')
-
+                    self._output.append(f'{self.indent(3)}{method}(*{r}),')
                 if str(expected_ans).isdigit():
                     self._output.append(f'{self.indent(3)}{expected_ans})\n')
                 else:

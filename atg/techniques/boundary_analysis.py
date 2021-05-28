@@ -61,12 +61,10 @@ def get_boundaries(outputs: list, inv_choices: str) -> list:
         else:
             logger.critical('LIMITATION: Not able to process more than 1 BVA variable per function!')
             break
-    print(process_output)
     return process_output
 
 
 def run(outputs: list, inv_choices: str) -> Optional[list]:
-    print(outputs, inv_choices)
     copy_outputs = deepcopy(outputs)
     for lst in copy_outputs:
         if len(lst) < 2:
