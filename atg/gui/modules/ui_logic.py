@@ -1,5 +1,6 @@
 # @Author: Administrator
 # @Date:   19/05/2021 06:11
+import logging
 import re
 
 from PySide6 import QtWidgets, QtCore
@@ -9,10 +10,12 @@ from PySide6.QtGui import QStandardItemModel, QStandardItem
 import main
 from gui.modules import FunctionsUi
 
+logger = logging.getLogger(__name__)
+
 
 class UiLogic(main.MainWindow):
     def open_file_btn(self):
-        name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', dir=QDir("../mockapp").absolutePath(),
+        name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', dir=QDir("./mockapp").absolutePath(),
                                                      filter="Python file (*.py)")
         if not name[0]: return
         self.core.analyse_file(name[0])
@@ -194,9 +197,8 @@ class UiLogic(main.MainWindow):
 
         self._result = self.core.run(outputs=outputs, inv_choice=inv_choice, pairwise=self._pairwise,
                                      pw_ans=self._pw_ans)
-        print(outputs)
-        print(self._result)
-        print(self._pairwise)
+        logger.info(f'Outputs: {outputs}')
+        logger.info(f'Core Run Result: {self._result}')
         if isinstance(self._result, list) and self._result and self._pairwise:
             self._pairwise = False
             self._pw_ans = True

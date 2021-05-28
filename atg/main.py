@@ -5,7 +5,8 @@ from PySide6 import QtWidgets
 import sys
 import platform
 from gui.modules import *
-from gui.modules import validator
+# from gui.modules import validator
+from middleware import initializelogging
 from middleware.core import ATG
 
 # SET AS GLOBAL WIDGETS
@@ -234,6 +235,7 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == '__main__':
+    initializelogging.setup_logging()
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("gui/icon.ico"))
     window = MainWindow()

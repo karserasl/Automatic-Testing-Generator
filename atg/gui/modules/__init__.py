@@ -16,3 +16,6 @@ from .app_functions import *
 
 # LOGIC
 from .ui_logic import UiLogic
+
+# VALIDATOR
+from .validator import Delegate

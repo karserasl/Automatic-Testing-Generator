@@ -11,7 +11,6 @@ from middleware import loader
 from middleware import initializelogging
 from generator.generator import TestsGenerator
 
-initializelogging.setup_logging()
 logger = logging.getLogger(__name__)
 
 
@@ -40,11 +39,13 @@ class ATG:
         if not pairwise and not pw_ans:
             for tech_id, technique in self._techniques.items():
                 if not tech_id == 'Pairwise':
+                    logger.info(f'Now running: {tech_id}')
                     self._processed_output[tech_id] = technique.run(copy_outs, inv_choice)
-                    print(tech_id)
+
         elif pw_ans:
             self._processed_output['Pairwise'] = copy_outs
         else:
+            logger.info(f'Now running: Pairwise')
             self._pairwise_output = self._techniques['Pairwise'].run(copy_outs)
             return self._pairwise_output
 
@@ -78,7 +79,7 @@ class ATG:
         except Exception as e:
             logger.error(f'Error reading py file :: {e}')
 
-        logger.info(self._file_path)
+        logger.info(f'File to process: {self._file_path}')
         functions = [n for n in self._file_node.body if isinstance(n, ast.FunctionDef)]
         classes = [n for n in self._file_node.body if isinstance(n, ast.ClassDef)]
         if classes:
