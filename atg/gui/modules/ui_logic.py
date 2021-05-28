@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 class UiLogic(main.MainWindow):
     def open_file_btn(self):
-        name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', dir=QDir("./mockapp").absolutePath(),
+        name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', dir=QDir("../mockapp").absolutePath(),
                                                      filter="Python file (*.py)")
         if not name[0]: return
         self.core.analyse_file(name[0])

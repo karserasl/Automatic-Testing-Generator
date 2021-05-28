@@ -60,10 +60,10 @@ class TestsGenerator:
         if cls:
             cls_definition = f'self.{cls.lower()}'
             self._output.append(f'class {cls}(unittest.TestCase):')
-            self._output.append(f'{self.indent(1)}def setUp(self) -> None:\n')
-            self._output.append(f'{self.indent(2)}{cls_definition}={self.get_module_name(filename)}.{cls}()')
+            self._output.append(f'{self.indent(1)}def setUp(self) -> None:')
+            self._output.append(f'{self.indent(2)}{cls_definition} = {self.get_module_name(filename)}.{cls}()\n')
 
-        self._output.append(f'{self.indent(1)}# {"-" * 36} {method} - {"method" if cls else "function"} {"-" * 35} #')
+        self._output.append(f'# {"-" * 36} {method} - {"method" if cls else "function"} {"-" * 35} #')
 
         counter = itertools.count()
 
@@ -73,20 +73,22 @@ class TestsGenerator:
             for result in result_lst:
                 expected_ans = result.pop()
                 r = [int(i) if str(i).isdigit() else i for i in result]
-                self._output.append(f'{self.indent(1)}def test_{method}_{next(counter)}(self):\n')
-                self._output.append(f'{self.indent(2)}self.assertEqual(\n')
                 if cls_definition:
-                    self._output.append(f'{self.indent(3)}{cls_definition}.{method}(*{r}),\n')
+                    self._output.append(f'{self.indent(1)}def test_{method}_{next(counter)}(self):')
+                    self._output.append(f'{self.indent(2)}self.assertEqual(')
+                    self._output.append(f'{self.indent(3)}{cls_definition}.{method}(*{r}),')
                 else:
-                    self._output.append(f'{self.indent(3)}{method}(*{r}),\n')
+                    self._output.append(f'def test_{method}_{next(counter)}(self):')
+                    self._output.append(f'{self.indent(1)}self.assertEqual(')
+                    self._output.append(f'{self.indent(2)}{method}(*{r}),')
 
                 if str(expected_ans).isdigit():
-                    self._output.append(f'{self.indent(3)}{expected_ans})')
+                    self._output.append(f'{self.indent(3)}{expected_ans})\n')
                 else:
-                    self._output.append(f'{self.indent(3)}"{expected_ans}")')
+                    self._output.append(f'{self.indent(3)}"{expected_ans}")\n')
                 self._count = next(copy(counter))
 
-        self._output.append('if __name__ == "__main__":')
+        self._output.append('\nif __name__ == "__main__":')
         self._output.append(f'{self.indent(1)}unittest.main()\n')
 
     def _add_import(self, module_name, part_name=None):
