@@ -8,7 +8,6 @@ import pickle
 from copy import deepcopy
 
 from middleware import loader
-from middleware import initializelogging
 from generator.generator import TestsGenerator
 
 logger = logging.getLogger(__name__)

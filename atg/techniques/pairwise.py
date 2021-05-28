@@ -125,7 +125,7 @@ class Pairwise:
 
             chosen_item_list[i] = self._working_item_matrix[i][indexes[i]]
 
-            if self._filter_func(self._get_values(chosen_item_list[: i + 1])):
+            if self._filter_func(self._get_values(chosen_item_list[: i + 1])):  # Check if item list has values
                 assert direction > -1
                 direction = 1
             else:
@@ -182,7 +182,7 @@ class Pairwise:
 
             item.set_elem_weights(weights)
 
-        self._working_item_matrix[num].sort(key=cmp_to_key(cmp_item))
+        self._working_item_matrix[num].sort(key=cmp_to_key(cmp_item))  # sort the matrix based on the weights to pick the correct item
 
     @staticmethod
     def _get_working_item_matrix(matrix):
